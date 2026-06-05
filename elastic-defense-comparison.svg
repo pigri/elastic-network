@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1470" font-family="'JetBrains Mono', ui-monospace, monospace">
+  <style>text { font-family: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace; }</style>
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e8eaef" stroke-width="0.5"/>
+    </pattern>
+    <marker id="arrow-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#dc2626"/>
+    </marker>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#006fff"/>
+    </marker>
+    <marker id="arrow-gray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#5a6178"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="1470" fill="#ffffff"/>
+  <rect width="1600" height="1470" fill="url(#grid)"/>
+
+  <!-- Title -->
+  <text x="80" y="62" fill="#8b92a5" font-size="16" letter-spacing="6">GEN0SEC · DOCTRINE</text>
+  <text x="80" y="118" fill="#1a1d23" font-size="44" font-weight="700">Elastic defense.</text>
+  <text x="520" y="118" fill="#5a6178" font-size="28" font-weight="500">Same doctrine. Different terrain.</text>
+
+  <!-- Column headers -->
+  <rect x="60" y="156" width="730" height="58" rx="8" fill="rgba(90,97,120,0.06)" stroke="#5a6178" stroke-width="1.5"/>
+  <text x="425" y="194" fill="#1a1d23" font-size="22" font-weight="700" text-anchor="middle">MILITARY DOCTRINE</text>
+  <text x="80" y="240" fill="#5a6178" font-size="13">WWI German &amp; modern combined-arms — trade space for time, absorb, counterstrike.</text>
+
+  <rect x="810" y="156" width="730" height="58" rx="8" fill="rgba(0,111,255,0.06)" stroke="#006fff" stroke-width="1.5"/>
+  <text x="1175" y="194" fill="#006fff" font-size="22" font-weight="700" text-anchor="middle">ELASTIC NETWORK DEFENSE</text>
+  <text x="830" y="240" fill="#5a6178" font-size="13">The same doctrine on a packet substrate — assume breach, slow the adversary, retake from depth.</text>
+
+  <!-- Center divider with attacker direction -->
+  <line x1="800" y1="270" x2="800" y2="1325" stroke="#1a1d23" stroke-width="1" stroke-dasharray="6,6"/>
+  <text x="800" y="266" fill="#5a6178" font-size="12" text-anchor="middle">ATTACKER ↓ ADVANCES ↓ TIME</text>
+
+  <!-- ====================== LAYER 1 — Forward observation ====================== -->
+  <g transform="translate(0, 290)">
+    <rect x="60" y="0" width="58" height="58" rx="8" fill="#0891b2"/>
+    <text x="89" y="38" fill="#ffffff" font-size="22" font-weight="700" text-anchor="middle">01</text>
+
+    <text x="138" y="22" fill="#0891b2" font-size="13" letter-spacing="3" font-weight="600">FORWARD OBSERVATION</text>
+    <text x="138" y="48" fill="#1a1d23" font-size="20" font-weight="700">Screen, see, warn.</text>
+
+    <!-- Military -->
+    <rect x="60" y="68" width="730" height="120" rx="10" fill="rgba(8,145,178,0.08)" stroke="#0891b2" stroke-width="1.5"/>
+    <text x="80" y="98" fill="#1a1d23" font-size="18" font-weight="700">Outpost line</text>
+    <text x="80" y="125" fill="#5a6178" font-size="13">Light recon, screening cavalry, listening posts.</text>
+    <text x="80" y="148" fill="#5a6178" font-size="13">Job: spot the attack early. Survive long enough to report. Slow them.</text>
+    <text x="80" y="176" fill="#0891b2" font-size="12" font-style="italic">"Vorpostenlinie" / cavalry vedettes / LP/OP</text>
+
+    <!-- Network -->
+    <rect x="810" y="68" width="730" height="120" rx="10" fill="rgba(8,145,178,0.08)" stroke="#0891b2" stroke-width="1.5"/>
+    <text x="830" y="98" fill="#1a1d23" font-size="18" font-weight="700">External signal &amp; deception</text>
+    <text x="830" y="125" fill="#5a6178" font-size="13">Dendrite captures every flow. CTI, honeypots, canaries, JA4+ telemetry.</text>
+    <text x="830" y="148" fill="#5a6178" font-size="13">Job: see the attack before it touches your perimeter. Tip the SOC.</text>
+    <text x="830" y="176" fill="#0891b2" font-size="12" font-style="italic">Dendrite (capture) · Cerebellum CTI · honeynets · canaries</text>
+  </g>
+
+  <!-- ====================== LAYER 2 — Forward defensive belt ====================== -->
+  <g transform="translate(0, 500)">
+    <rect x="60" y="0" width="58" height="58" rx="8" fill="#d97706"/>
+    <text x="89" y="38" fill="#ffffff" font-size="22" font-weight="700" text-anchor="middle">02</text>
+
+    <text x="138" y="22" fill="#d97706" font-size="13" letter-spacing="3" font-weight="600">FORWARD DEFENSIVE BELT</text>
+    <text x="138" y="48" fill="#1a1d23" font-size="20" font-weight="700">First shock absorber.</text>
+
+    <!-- Military -->
+    <rect x="60" y="68" width="730" height="120" rx="10" fill="rgba(217,119,6,0.08)" stroke="#d97706" stroke-width="1.5"/>
+    <text x="80" y="98" fill="#1a1d23" font-size="18" font-weight="700">Forward defensive belt</text>
+    <text x="80" y="125" fill="#5a6178" font-size="13">Wire entanglements, prepared MG nests, mortar TRPs, minefields.</text>
+    <text x="80" y="148" fill="#5a6178" font-size="13">Job: break up assault waves. Cheap, attritional, expendable on purpose.</text>
+    <text x="80" y="176" fill="#d97706" font-size="12" font-style="italic">"Vorfeldzone" / outpost zone</text>
+
+    <!-- Network -->
+    <rect x="810" y="68" width="730" height="120" rx="10" fill="rgba(217,119,6,0.08)" stroke="#d97706" stroke-width="1.5"/>
+    <text x="830" y="98" fill="#1a1d23" font-size="18" font-weight="700">Cerebrum + Synapse — the edge</text>
+    <text x="830" y="125" fill="#5a6178" font-size="13">Hillock enforces at wire speed. Amygdala blocks on JA4+ &amp; CTI.</text>
+    <text x="830" y="148" fill="#5a6178" font-size="13">WAF filters L7 in proxy mode. Cortex learns at the edge, feeds L05.</text>
+    <text x="830" y="176" fill="#d97706" font-size="12" font-style="italic">Hillock (enforce) · Amygdala (smart fw) · WAF (proxy) · Cortex · JA4+ · DDoS</text>
+  </g>
+
+  <!-- ====================== LAYER 3 — Main defensive zone ====================== -->
+  <g transform="translate(0, 710)">
+    <rect x="60" y="0" width="58" height="58" rx="8" fill="#dc2626"/>
+    <text x="89" y="38" fill="#ffffff" font-size="22" font-weight="700" text-anchor="middle">03</text>
+
+    <text x="138" y="22" fill="#dc2626" font-size="13" letter-spacing="3" font-weight="600">MAIN DEFENSIVE ZONE</text>
+    <text x="138" y="48" fill="#1a1d23" font-size="20" font-weight="700">The kill zone. Depth as a weapon.</text>
+
+    <!-- Military -->
+    <rect x="60" y="68" width="730" height="120" rx="10" fill="rgba(220,38,38,0.07)" stroke="#dc2626" stroke-width="1.5"/>
+    <text x="80" y="98" fill="#1a1d23" font-size="18" font-weight="700">Hauptkampflinie — main battle line</text>
+    <text x="80" y="125" fill="#5a6178" font-size="13">Layered trench systems, interlocking fields of fire, depth in km, not m.</text>
+    <text x="80" y="148" fill="#5a6178" font-size="13">Job: bleed the attacker. Identify their schwerpunkt. Channel them into traps.</text>
+    <text x="80" y="176" fill="#dc2626" font-size="12" font-style="italic">"Hauptkampffeld" / main fighting area</text>
+
+    <!-- Network -->
+    <rect x="810" y="68" width="730" height="120" rx="10" fill="rgba(220,38,38,0.07)" stroke="#dc2626" stroke-width="1.5"/>
+    <text x="830" y="98" fill="#1a1d23" font-size="18" font-weight="700">Inline IDS / IPS inspection</text>
+    <text x="830" y="125" fill="#5a6178" font-size="13">Thalamus IDS — Suricata rules, app parsers, microseg. Amygdala blocks.</text>
+    <text x="830" y="148" fill="#5a6178" font-size="13">Job: classify what survived the edge. Block, mark, or quietly route.</text>
+    <text x="830" y="176" fill="#dc2626" font-size="12" font-style="italic">Thalamus IDS · Amygdala (JA4+ block) · Suricata · microseg · NDR</text>
+  </g>
+
+  <!-- ====================== LAYER 4 — Reserves / counterattack ====================== -->
+  <g transform="translate(0, 920)">
+    <rect x="60" y="0" width="58" height="58" rx="8" fill="#9333ea"/>
+    <text x="89" y="38" fill="#ffffff" font-size="22" font-weight="700" text-anchor="middle">04</text>
+
+    <text x="138" y="22" fill="#9333ea" font-size="13" letter-spacing="3" font-weight="600">RESERVES &amp; COUNTERATTACK</text>
+    <text x="138" y="48" fill="#1a1d23" font-size="20" font-weight="700">Retake the initiative.</text>
+
+    <!-- Military -->
+    <rect x="60" y="68" width="730" height="120" rx="10" fill="rgba(147,51,234,0.08)" stroke="#9333ea" stroke-width="1.5"/>
+    <text x="80" y="98" fill="#1a1d23" font-size="18" font-weight="700">Eingreif divisions — mobile reserves</text>
+    <text x="80" y="125" fill="#5a6178" font-size="13">Held in depth. Armoured / motorised. Strike when attacker overextends.</text>
+    <text x="80" y="148" fill="#5a6178" font-size="13">Job: restore the line. Punish penetrations. Retake ground.</text>
+    <text x="80" y="176" fill="#9333ea" font-size="12" font-style="italic">"Eingreifdivisionen" / counterattack force</text>
+
+    <!-- Network -->
+    <rect x="810" y="68" width="730" height="120" rx="10" fill="rgba(147,51,234,0.08)" stroke="#9333ea" stroke-width="1.5"/>
+    <text x="830" y="98" fill="#1a1d23" font-size="18" font-weight="700">Workflow — SOC + automated response</text>
+    <text x="830" y="125" fill="#5a6178" font-size="13">AI playbooks. Standalone or wired into SOAR/SIEM. Approve outcomes in Slack.</text>
+    <text x="830" y="148" fill="#5a6178" font-size="13">Job: auto-push blocks across Cerebrum + Synapse. Cap blast radius in ms.</text>
+    <text x="830" y="176" fill="#9333ea" font-size="12" font-style="italic">Workflow · AI playbooks · SOAR/SIEM · Cerebrum + Synapse auto-block</text>
+  </g>
+
+  <!-- ====================== LAYER 5 — Intelligence & adaptation ====================== -->
+  <g transform="translate(0, 1130)">
+    <rect x="60" y="0" width="58" height="58" rx="8" fill="#16a34a"/>
+    <text x="89" y="38" fill="#ffffff" font-size="22" font-weight="700" text-anchor="middle">05</text>
+
+    <text x="138" y="22" fill="#16a34a" font-size="13" letter-spacing="3" font-weight="600">INTELLIGENCE &amp; ADAPTATION</text>
+    <text x="138" y="48" fill="#1a1d23" font-size="20" font-weight="700">Learn. Predict. Adapt.</text>
+
+    <!-- Military -->
+    <rect x="60" y="68" width="730" height="120" rx="10" fill="rgba(22,163,74,0.08)" stroke="#16a34a" stroke-width="1.5"/>
+    <text x="80" y="98" fill="#1a1d23" font-size="18" font-weight="700">Generalstab — operational intelligence</text>
+    <text x="80" y="125" fill="#5a6178" font-size="13">Maps the front. Correlates POW reports, intercepted comms, aerial recon.</text>
+    <text x="80" y="148" fill="#5a6178" font-size="13">Job: predict the next schwerpunkt. Plan the counter. Rewrite doctrine.</text>
+    <text x="80" y="176" fill="#16a34a" font-size="12" font-style="italic">Generalstab · OKH · operational intelligence · doctrine writers</text>
+
+    <!-- Network -->
+    <rect x="810" y="68" width="730" height="120" rx="10" fill="rgba(22,163,74,0.08)" stroke="#16a34a" stroke-width="1.5"/>
+    <text x="830" y="98" fill="#1a1d23" font-size="18" font-weight="700">Cerebellum — fleet intelligence</text>
+    <text x="830" y="125" fill="#5a6178" font-size="13">Backend that sees every sensor: cross-site correlation, CTI, threat prediction.</text>
+    <text x="830" y="148" fill="#5a6178" font-size="13">Job: feed Thalamus rules. Sharpen Workflow. Push lessons fleet-wide.</text>
+    <text x="830" y="176" fill="#16a34a" font-size="12" font-style="italic">Cerebellum · cross-site correlation · CTI · rule generation · Cortex feeds up</text>
+  </g>
+
+  <!-- Footer band -->
+  <rect x="60" y="1350" width="1480" height="70" rx="10" fill="#0f172a" stroke="#1e293b" stroke-width="1.5"/>
+  <text x="80" y="1378" fill="#66ffcc" font-size="13" letter-spacing="3" font-weight="700">DOCTRINE — INVARIANTS</text>
+  <text x="80" y="1404" fill="#a5b0c7" font-size="13">trade space for time   ·   absorb, don't meet head-on   ·   depth &gt; perimeter   ·   counterstrike from reserves   ·   learn from every fight</text>
+
+  <!-- Attacker arrow on left edge -->
+  <line x1="40" y1="320" x2="40" y2="1305" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow-red)" opacity="0.7"/>
+  <text x="20" y="800" fill="#dc2626" font-size="14" font-weight="700" text-anchor="middle" transform="rotate(-90 20 800)">ATTACK MOMENTUM</text>
+
+  <!-- Counterattack arrow on right edge -->
+  <line x1="1560" y1="1305" x2="1560" y2="1225" stroke="#006fff" stroke-width="3" marker-end="url(#arrow-blue)"/>
+  <text x="1582" y="1265" fill="#006fff" font-size="14" font-weight="700" text-anchor="middle" transform="rotate(90 1582 1265)">COUNTERSTRIKE</text>
+</svg>

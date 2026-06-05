@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" font-family="'JetBrains Mono', ui-monospace, monospace">
+  <style>text { font-family: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace; }</style>
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e8eaef" stroke-width="0.5"/>
+    </pattern>
+    <!-- Single neutral arrowhead, used by every flow line (line stroke matches). -->
+    <marker id="ah" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#5a6178"/>
+    </marker>
+    <!-- Feedback arrowhead (purple, matches the purple feedback line). -->
+    <marker id="ah-fb" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#9333ea"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="900" fill="#ffffff"/>
+  <rect width="1600" height="900" fill="url(#grid)"/>
+
+  <!-- ────────────────────── HEADER ────────────────────── -->
+  <text x="60" y="56" fill="#8b92a5" font-size="16" letter-spacing="6" font-family="Orbitron, 'JetBrains Mono', monospace" font-weight="600">GEN0SEC · ARCHITECTURE</text>
+
+  <rect x="60" y="100" width="68" height="68" rx="10" fill="#0891b2"/>
+  <text x="94" y="144" fill="#ffffff" font-size="28" font-weight="700" text-anchor="middle">01</text>
+
+  <text x="148" y="124" fill="#0891b2" font-size="14" letter-spacing="4" font-weight="600">LAYER 01 · FORWARD OBSERVATION</text>
+  <text x="148" y="158" fill="#1a1d23" font-size="32" font-weight="700">External signal &amp; deception. The Gen0Sec implementation.</text>
+  <text x="148" y="190" fill="#5a6178" font-size="16">Signal in, confidence-scored policy out. Cerebellum is the backend that closes the loop.</text>
+
+  <!-- Column captions -->
+  <text x="265" y="248" fill="#5a6178" font-size="12" font-weight="700" letter-spacing="3" text-anchor="middle">SOURCES</text>
+  <text x="815" y="248" fill="#0891b2" font-size="12" font-weight="700" letter-spacing="3" text-anchor="middle">CEREBELLUM · CTI ENGINE</text>
+  <text x="1335" y="248" fill="#16a34a" font-size="12" font-weight="700" letter-spacing="3" text-anchor="middle">POLICY OUT · TO THE LINE</text>
+
+  <!-- ════════════════════ FLOW ARROWS (drawn first, live only in the gutters) ════════════════════ -->
+  <!-- Sources → Cortex (gutter x=470..620) -->
+  <line x1="478" y1="340" x2="612" y2="370" stroke="#5a6178" stroke-width="1.8" marker-end="url(#ah)"/>
+  <line x1="478" y1="495" x2="612" y2="460" stroke="#5a6178" stroke-width="1.8" marker-end="url(#ah)"/>
+  <line x1="478" y1="630" x2="612" y2="550" stroke="#5a6178" stroke-width="1.8" marker-end="url(#ah)"/>
+
+  <!-- Cortex → Policy out (gutter x=1010..1130) -->
+  <line x1="1018" y1="365" x2="1122" y2="324" stroke="#5a6178" stroke-width="1.8" marker-end="url(#ah)"/>
+  <line x1="1018" y1="430" x2="1122" y2="434" stroke="#5a6178" stroke-width="1.8" marker-end="url(#ah)"/>
+  <line x1="1018" y1="500" x2="1122" y2="542" stroke="#5a6178" stroke-width="1.8" marker-end="url(#ah)"/>
+  <line x1="1018" y1="560" x2="1122" y2="650" stroke="#5a6178" stroke-width="1.8" marker-end="url(#ah)"/>
+
+  <!-- Feedback loop: Audit → Cortex (purple, runs through open space below the boxes) -->
+  <path d="M 1335 702 L 1335 740 L 815 740 L 815 698" fill="none" stroke="#9333ea" stroke-width="1.8" stroke-dasharray="8,4" marker-end="url(#ah-fb)"/>
+  <text x="1075" y="734" fill="#9333ea" font-size="12" font-weight="600" letter-spacing="1" text-anchor="middle">FEEDBACK · actions become training data</text>
+
+  <!-- ════════════════════ COLUMN 1 — SOURCES ════════════════════ -->
+
+  <!-- External signal group -->
+  <rect x="60" y="280" width="410" height="120" rx="8" fill="rgba(217,119,6,0.08)" stroke="#d97706" stroke-width="1.5"/>
+  <text x="80" y="306" fill="#d97706" font-size="11" letter-spacing="3" font-weight="700">EXTERNAL SIGNAL</text>
+  <text x="80" y="334" fill="#1a1d23" font-size="14" font-weight="600">• Commercial CTI feeds</text>
+  <text x="80" y="358" fill="#1a1d23" font-size="14" font-weight="600">• OSINT · ISAC peer reports</text>
+  <text x="80" y="382" fill="#1a1d23" font-size="14" font-weight="600">• Passive DNS · CT logs</text>
+
+  <!-- Deception group (red-dashed accent) -->
+  <rect x="60" y="430" width="410" height="120" rx="8" fill="rgba(220,38,38,0.07)" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <text x="80" y="456" fill="#dc2626" font-size="11" letter-spacing="3" font-weight="700">DECEPTION · THE MODERN SCHEINSTELLUNG</text>
+  <text x="80" y="484" fill="#1a1d23" font-size="14" font-weight="600">• Honeypots / honeynets</text>
+  <text x="80" y="508" fill="#1a1d23" font-size="14" font-weight="600">• Canary tokens — docs, creds, source</text>
+  <text x="80" y="532" fill="#1a1d23" font-size="14" font-weight="600">• DNS sinkholes</text>
+
+  <!-- Forest-of-sensors group -->
+  <rect x="60" y="580" width="410" height="110" rx="8" fill="rgba(22,163,74,0.08)" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="80" y="606" fill="#16a34a" font-size="11" letter-spacing="3" font-weight="700">FOREST-OF-SENSORS · DENDRITE CAPTURE</text>
+  <text x="80" y="634" fill="#1a1d23" font-size="14" font-weight="600">• Synapse-in-the-wild — Dendrite captures every flow</text>
+  <text x="80" y="658" fill="#1a1d23" font-size="14" font-weight="600">• Cerebrum sensors — JA4+ telemetry up to Cerebellum</text>
+  <text x="80" y="680" fill="#5a6178" font-size="11">Dendrite is the shared capture plane on every sensor</text>
+
+  <!-- ════════════════════ COLUMN 2 — CORTEX ════════════════════ -->
+
+  <rect x="620" y="280" width="390" height="410" rx="14" fill="rgba(8,145,178,0.06)" stroke="#0891b2" stroke-width="2"/>
+  <text x="815" y="312" fill="#0891b2" font-size="13" letter-spacing="3" font-weight="700" text-anchor="middle">CEREBELLUM</text>
+  <text x="815" y="344" fill="#1a1d23" font-size="22" font-weight="700" text-anchor="middle">Backend CTI engine</text>
+
+  <rect x="648" y="368" width="334" height="44" rx="6" fill="#ffffff" stroke="#0891b2" stroke-width="1.5"/>
+  <text x="815" y="395" fill="#0891b2" font-size="14" font-weight="600" text-anchor="middle">1 · ingest · normalise · timestamp</text>
+
+  <rect x="648" y="420" width="334" height="44" rx="6" fill="#ffffff" stroke="#0891b2" stroke-width="1.5"/>
+  <text x="815" y="447" fill="#0891b2" font-size="14" font-weight="600" text-anchor="middle">2 · confidence + freshness scoring</text>
+
+  <rect x="648" y="472" width="334" height="44" rx="6" fill="#ffffff" stroke="#0891b2" stroke-width="1.5"/>
+  <text x="815" y="499" fill="#0891b2" font-size="14" font-weight="600" text-anchor="middle">3 · adversary clustering</text>
+
+  <rect x="648" y="524" width="334" height="44" rx="6" fill="#ffffff" stroke="#0891b2" stroke-width="1.5"/>
+  <text x="815" y="551" fill="#0891b2" font-size="14" font-weight="600" text-anchor="middle">4 · cross-customer correlation</text>
+
+  <rect x="648" y="576" width="334" height="44" rx="6" fill="#ffffff" stroke="#0891b2" stroke-width="1.5"/>
+  <text x="815" y="603" fill="#0891b2" font-size="14" font-weight="600" text-anchor="middle">5 · policy generation, not reports</text>
+
+  <text x="815" y="650" fill="#1a1d23" font-size="13" font-style="italic" text-anchor="middle">every output carries a confidence score</text>
+
+  <!-- ════════════════════ COLUMN 3 — POLICY OUT ════════════════════ -->
+
+  <rect x="1130" y="288" width="410" height="84" rx="8" fill="rgba(22,163,74,0.08)" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="1150" y="313" fill="#16a34a" font-size="11" letter-spacing="2" font-weight="700">→ HILLOCK · LAYER 02 EDGE</text>
+  <text x="1150" y="337" fill="#1a1d23" font-size="16" font-weight="700">Blocklist updates</text>
+  <text x="1150" y="358" fill="#5a6178" font-size="13">Hot-loaded to the whole fleet in seconds.</text>
+
+  <rect x="1130" y="392" width="410" height="84" rx="8" fill="rgba(22,163,74,0.08)" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="1150" y="417" fill="#16a34a" font-size="11" letter-spacing="2" font-weight="700">→ THALAMUS · LAYER 03 IDS</text>
+  <text x="1150" y="441" fill="#1a1d23" font-size="16" font-weight="700">Rule signatures</text>
+  <text x="1150" y="462" fill="#5a6178" font-size="13">Suricata-compatible, ML-derived, scored.</text>
+
+  <rect x="1130" y="496" width="410" height="84" rx="8" fill="rgba(22,163,74,0.08)" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="1150" y="521" fill="#16a34a" font-size="11" letter-spacing="2" font-weight="700">→ WORKFLOW · LAYER 04 RESPONSE</text>
+  <text x="1150" y="545" fill="#1a1d23" font-size="16" font-weight="700">Playbook triggers</text>
+  <text x="1150" y="566" fill="#5a6178" font-size="13">Auto-execute, or stage for SOC approval.</text>
+
+  <rect x="1130" y="600" width="410" height="84" rx="8" fill="rgba(147,51,234,0.08)" stroke="#9333ea" stroke-width="1.5"/>
+  <text x="1150" y="625" fill="#9333ea" font-size="11" letter-spacing="2" font-weight="700">→ AUDIT TRAIL</text>
+  <text x="1150" y="649" fill="#1a1d23" font-size="16" font-weight="700">Provenance for every action</text>
+  <text x="1150" y="670" fill="#5a6178" font-size="13">Which source surfaced the indicator. Queryable.</text>
+
+  <!-- ════════════════════ FOOTER ════════════════════ -->
+  <line x1="60" y1="800" x2="1540" y2="800" stroke="#e8eaef" stroke-width="1"/>
+  <text x="60" y="830" fill="#0891b2" font-size="12" letter-spacing="3" font-weight="700">DOCTRINE INVARIANT</text>
+  <text x="60" y="858" fill="#1a1d23" font-size="20" font-weight="500" letter-spacing="-0.01em">The point of the outpost is the warning, not the report. Cerebellum turns warnings into policy at machine speed.</text>
+</svg>

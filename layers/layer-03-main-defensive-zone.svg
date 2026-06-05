@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 730" font-family="'JetBrains Mono', ui-monospace, monospace">
+  <style>text { font-family: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace; }</style>
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e8eaef" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="730" fill="#ffffff"/>
+  <rect width="1600" height="730" fill="url(#grid)"/>
+
+  <text x="60" y="56" fill="#8b92a5" font-size="16" letter-spacing="6" font-family="Orbitron, 'JetBrains Mono', monospace" font-weight="600">GEN0SEC · DOCTRINE</text>
+
+  <rect x="60" y="100" width="80" height="80" rx="12" fill="#dc2626"/>
+  <text x="100" y="158" fill="#ffffff" font-size="36" font-weight="700" text-anchor="middle">03</text>
+
+  <text x="160" y="128" fill="#dc2626" font-size="15" letter-spacing="4" font-weight="600">LAYER 03 · HAUPTKAMPFFELD</text>
+  <text x="160" y="168" fill="#1a1d23" font-size="36" font-weight="700" letter-spacing="-0.01em">The kill zone. Depth as a weapon.</text>
+
+  <rect x="60" y="220" width="710" height="48" rx="6" fill="rgba(90,97,120,0.06)" stroke="#5a6178" stroke-width="1.2"/>
+  <text x="415" y="251" fill="#1a1d23" font-size="18" font-weight="700" text-anchor="middle">MILITARY DOCTRINE</text>
+
+  <rect x="830" y="220" width="710" height="48" rx="6" fill="rgba(0,111,255,0.06)" stroke="#006fff" stroke-width="1.2"/>
+  <text x="1185" y="251" fill="#006fff" font-size="18" font-weight="700" text-anchor="middle">ELASTIC NETWORK DEFENSE</text>
+
+  
+  <rect x="60" y="290" width="710" height="250" rx="14" fill="rgba(220,38,38,0.07)" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="88" y="340" fill="#1a1d23" font-size="22" font-weight="700">Hauptkampflinie — main battle line</text>
+  <text x="88" y="368" fill="#5a6178" font-size="16">Layered trench systems, interlocking fields of fire, depth in</text>
+  <text x="88" y="390" fill="#5a6178" font-size="16">km, not m.</text>
+  <text x="88" y="430" fill="#5a6178" font-size="16">Job: bleed the attacker. Identify their schwerpunkt. Channel</text>
+  <text x="88" y="452" fill="#5a6178" font-size="16">them into traps.</text>
+  <text x="88" y="490" fill="#dc2626" font-size="14" font-style="italic">"Hauptkampffeld" / main fighting area</text>
+  
+  <rect x="830" y="290" width="710" height="250" rx="14" fill="rgba(220,38,38,0.07)" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="858" y="340" fill="#1a1d23" font-size="22" font-weight="700">Inline IDS / IPS inspection</text>
+  <text x="858" y="368" fill="#5a6178" font-size="16">Thalamus IDS — Suricata-grade rules, app-layer parsers, flow</text>
+  <text x="858" y="390" fill="#5a6178" font-size="16">tracking, east-west microseg.</text>
+  <text x="858" y="430" fill="#5a6178" font-size="16">Job: classify what survived the edge. Amygdala</text>
+  <text x="858" y="452" fill="#5a6178" font-size="16">fingerprint-blocks; Thalamus marks or routes.</text>
+  <text x="858" y="490" fill="#dc2626" font-size="14" font-style="italic">Thalamus IDS · Amygdala (JA4+ block) · Suricata · east-west microseg · NDR</text>
+
+  <line x1="60" y1="590" x2="1540" y2="590" stroke="#e8eaef" stroke-width="1"/>
+  <text x="60" y="630" fill="#0f172a" font-size="13" letter-spacing="3" font-weight="700">DOCTRINE</text>
+  <text x="60" y="662" fill="#1a1d23" font-size="22" font-weight="500" letter-spacing="-0.01em">Every workload boundary is another wall. Microseg is depth.</text>
+</svg>

@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1240" font-family="'JetBrains Mono', ui-monospace, monospace">
+<style>text{font-family:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;}</style>
+<defs>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e8eaef" stroke-width="0.5"/></pattern>
+  <marker id="atk" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0, 9 3.5, 0 7" fill="#dc2626"/></marker>
+  <marker id="ctr" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0, 9 3.5, 0 7" fill="#006fff"/></marker>
+</defs>
+<rect width="1600" height="1240" fill="#ffffff"/>
+<rect width="1600" height="1240" fill="url(#grid)"/>
+<text x="60" y="52" fill="#8b92a5" font-size="15" letter-spacing="6" font-weight="600">GEN0SEC · DOCTRINE</text>
+<text x="60" y="92" fill="#1a1d23" font-size="30" font-weight="700">Elastic defense — the German layout (1917)</text>
+<text x="60" y="120" fill="#5a6178" font-size="14"><tspan font-style="italic">Verteidigung in der Tiefe</tspan>: how a defending corps echeloned its zones, positions, and counterattack divisions in depth.</text>
+<rect x="150.0" y="232" width="126.4" height="826" fill="rgba(139,146,165,0.06)"/>
+<rect x="276.4" y="232" width="94.8" height="826" fill="rgba(0,111,255,0.05)"/>
+<rect x="371.2" y="232" width="316.0" height="826" fill="rgba(8,145,178,0.05)"/>
+<rect x="687.2" y="232" width="568.8" height="826" fill="rgba(147,51,234,0.045)"/>
+<rect x="1256.0" y="232" width="284.4" height="826" fill="rgba(22,163,74,0.05)"/>
+<path d="M 213.2 238 Q 220.2 251.0 213.2 264 Q 206.2 277.0 213.2 290 Q 220.2 303.0 213.2 316 Q 206.2 329.0 213.2 342 Q 220.2 355.0 213.2 368 Q 206.2 381.0 213.2 394 Q 220.2 407.0 213.2 420 Q 206.2 433.0 213.2 446 Q 220.2 459.0 213.2 472 Q 206.2 485.0 213.2 498 Q 220.2 511.0 213.2 524 Q 206.2 537.0 213.2 550 Q 220.2 563.0 213.2 576 Q 206.2 589.0 213.2 602 Q 220.2 615.0 213.2 628 Q 206.2 641.0 213.2 654 Q 220.2 667.0 213.2 680 Q 206.2 693.0 213.2 706 Q 220.2 719.0 213.2 732 Q 206.2 745.0 213.2 758 Q 220.2 771.0 213.2 784 Q 206.2 797.0 213.2 810 Q 220.2 823.0 213.2 836 Q 206.2 849.0 213.2 862 Q 220.2 875.0 213.2 888 Q 206.2 901.0 213.2 914 Q 220.2 927.0 213.2 940 Q 206.2 953.0 213.2 966 Q 220.2 979.0 213.2 992 Q 206.2 1005.0 213.2 1018 Q 220.2 1031.0 213.2 1044 Q 206.2 1048.0 213.2 1052" fill="none" stroke="#8b92a5" stroke-width="1.4" opacity="0.45"/>
+<path d="M 276.4 238 Q 285.4 251.0 276.4 264 Q 267.4 277.0 276.4 290 Q 285.4 303.0 276.4 316 Q 267.4 329.0 276.4 342 Q 285.4 355.0 276.4 368 Q 267.4 381.0 276.4 394 Q 285.4 407.0 276.4 420 Q 267.4 433.0 276.4 446 Q 285.4 459.0 276.4 472 Q 267.4 485.0 276.4 498 Q 285.4 511.0 276.4 524 Q 267.4 537.0 276.4 550 Q 285.4 563.0 276.4 576 Q 267.4 589.0 276.4 602 Q 285.4 615.0 276.4 628 Q 267.4 641.0 276.4 654 Q 285.4 667.0 276.4 680 Q 267.4 693.0 276.4 706 Q 285.4 719.0 276.4 732 Q 267.4 745.0 276.4 758 Q 285.4 771.0 276.4 784 Q 267.4 797.0 276.4 810 Q 285.4 823.0 276.4 836 Q 267.4 849.0 276.4 862 Q 285.4 875.0 276.4 888 Q 267.4 901.0 276.4 914 Q 285.4 927.0 276.4 940 Q 267.4 953.0 276.4 966 Q 285.4 979.0 276.4 992 Q 267.4 1005.0 276.4 1018 Q 285.4 1031.0 276.4 1044 Q 267.4 1048.0 276.4 1052" fill="none" stroke="#dc2626" stroke-width="2.4" opacity="0.85"/>
+<path d="M 320.6 238 Q 327.6 251.0 320.6 264 Q 313.6 277.0 320.6 290 Q 327.6 303.0 320.6 316 Q 313.6 329.0 320.6 342 Q 327.6 355.0 320.6 368 Q 313.6 381.0 320.6 394 Q 327.6 407.0 320.6 420 Q 313.6 433.0 320.6 446 Q 327.6 459.0 320.6 472 Q 313.6 485.0 320.6 498 Q 327.6 511.0 320.6 524 Q 313.6 537.0 320.6 550 Q 327.6 563.0 320.6 576 Q 313.6 589.0 320.6 602 Q 327.6 615.0 320.6 628 Q 313.6 641.0 320.6 654 Q 327.6 667.0 320.6 680 Q 313.6 693.0 320.6 706 Q 327.6 719.0 320.6 732 Q 313.6 745.0 320.6 758 Q 327.6 771.0 320.6 784 Q 313.6 797.0 320.6 810 Q 327.6 823.0 320.6 836 Q 313.6 849.0 320.6 862 Q 327.6 875.0 320.6 888 Q 313.6 901.0 320.6 914 Q 327.6 927.0 320.6 940 Q 313.6 953.0 320.6 966 Q 327.6 979.0 320.6 992 Q 313.6 1005.0 320.6 1018 Q 327.6 1031.0 320.6 1044 Q 313.6 1048.0 320.6 1052" fill="none" stroke="#006fff" stroke-width="1.4" opacity="0.4"/>
+<path d="M 371.2 238 Q 378.2 251.0 371.2 264 Q 364.2 277.0 371.2 290 Q 378.2 303.0 371.2 316 Q 364.2 329.0 371.2 342 Q 378.2 355.0 371.2 368 Q 364.2 381.0 371.2 394 Q 378.2 407.0 371.2 420 Q 364.2 433.0 371.2 446 Q 378.2 459.0 371.2 472 Q 364.2 485.0 371.2 498 Q 378.2 511.0 371.2 524 Q 364.2 537.0 371.2 550 Q 378.2 563.0 371.2 576 Q 364.2 589.0 371.2 602 Q 378.2 615.0 371.2 628 Q 364.2 641.0 371.2 654 Q 378.2 667.0 371.2 680 Q 364.2 693.0 371.2 706 Q 378.2 719.0 371.2 732 Q 364.2 745.0 371.2 758 Q 378.2 771.0 371.2 784 Q 364.2 797.0 371.2 810 Q 378.2 823.0 371.2 836 Q 364.2 849.0 371.2 862 Q 378.2 875.0 371.2 888 Q 364.2 901.0 371.2 914 Q 378.2 927.0 371.2 940 Q 364.2 953.0 371.2 966 Q 378.2 979.0 371.2 992 Q 364.2 1005.0 371.2 1018 Q 378.2 1031.0 371.2 1044 Q 364.2 1048.0 371.2 1052" fill="none" stroke="#0891b2" stroke-width="1.4" opacity="0.55"/>
+<path d="M 466.0 238 Q 473.0 251.0 466.0 264 Q 459.0 277.0 466.0 290 Q 473.0 303.0 466.0 316 Q 459.0 329.0 466.0 342 Q 473.0 355.0 466.0 368 Q 459.0 381.0 466.0 394 Q 473.0 407.0 466.0 420 Q 459.0 433.0 466.0 446 Q 473.0 459.0 466.0 472 Q 459.0 485.0 466.0 498 Q 473.0 511.0 466.0 524 Q 459.0 537.0 466.0 550 Q 473.0 563.0 466.0 576 Q 459.0 589.0 466.0 602 Q 473.0 615.0 466.0 628 Q 459.0 641.0 466.0 654 Q 473.0 667.0 466.0 680 Q 459.0 693.0 466.0 706 Q 473.0 719.0 466.0 732 Q 459.0 745.0 466.0 758 Q 473.0 771.0 466.0 784 Q 459.0 797.0 466.0 810 Q 473.0 823.0 466.0 836 Q 459.0 849.0 466.0 862 Q 473.0 875.0 466.0 888 Q 459.0 901.0 466.0 914 Q 473.0 927.0 466.0 940 Q 459.0 953.0 466.0 966 Q 473.0 979.0 466.0 992 Q 459.0 1005.0 466.0 1018 Q 473.0 1031.0 466.0 1044 Q 459.0 1048.0 466.0 1052" fill="none" stroke="#0891b2" stroke-width="1.4" opacity="0.5"/>
+<path d="M 592.4 238 Q 599.4 251.0 592.4 264 Q 585.4 277.0 592.4 290 Q 599.4 303.0 592.4 316 Q 585.4 329.0 592.4 342 Q 599.4 355.0 592.4 368 Q 585.4 381.0 592.4 394 Q 599.4 407.0 592.4 420 Q 585.4 433.0 592.4 446 Q 599.4 459.0 592.4 472 Q 585.4 485.0 592.4 498 Q 599.4 511.0 592.4 524 Q 585.4 537.0 592.4 550 Q 599.4 563.0 592.4 576 Q 585.4 589.0 592.4 602 Q 599.4 615.0 592.4 628 Q 585.4 641.0 592.4 654 Q 599.4 667.0 592.4 680 Q 585.4 693.0 592.4 706 Q 599.4 719.0 592.4 732 Q 585.4 745.0 592.4 758 Q 599.4 771.0 592.4 784 Q 585.4 797.0 592.4 810 Q 599.4 823.0 592.4 836 Q 585.4 849.0 592.4 862 Q 599.4 875.0 592.4 888 Q 585.4 901.0 592.4 914 Q 599.4 927.0 592.4 940 Q 585.4 953.0 592.4 966 Q 599.4 979.0 592.4 992 Q 585.4 1005.0 592.4 1018 Q 599.4 1031.0 592.4 1044 Q 585.4 1048.0 592.4 1052" fill="none" stroke="#0891b2" stroke-width="1.4" opacity="0.45"/>
+<path d="M 718.8 238 Q 725.8 251.0 718.8 264 Q 711.8 277.0 718.8 290 Q 725.8 303.0 718.8 316 Q 711.8 329.0 718.8 342 Q 725.8 355.0 718.8 368 Q 711.8 381.0 718.8 394 Q 725.8 407.0 718.8 420 Q 711.8 433.0 718.8 446 Q 725.8 459.0 718.8 472 Q 711.8 485.0 718.8 498 Q 725.8 511.0 718.8 524 Q 711.8 537.0 718.8 550 Q 725.8 563.0 718.8 576 Q 711.8 589.0 718.8 602 Q 725.8 615.0 718.8 628 Q 711.8 641.0 718.8 654 Q 725.8 667.0 718.8 680 Q 711.8 693.0 718.8 706 Q 725.8 719.0 718.8 732 Q 711.8 745.0 718.8 758 Q 725.8 771.0 718.8 784 Q 711.8 797.0 718.8 810 Q 725.8 823.0 718.8 836 Q 711.8 849.0 718.8 862 Q 725.8 875.0 718.8 888 Q 711.8 901.0 718.8 914 Q 725.8 927.0 718.8 940 Q 711.8 953.0 718.8 966 Q 725.8 979.0 718.8 992 Q 711.8 1005.0 718.8 1018 Q 725.8 1031.0 718.8 1044 Q 711.8 1048.0 718.8 1052" fill="none" stroke="#d97706" stroke-width="1.4" opacity="0.4"/>
+<path d="M 1287.6 238 Q 1294.6 251.0 1287.6 264 Q 1280.6 277.0 1287.6 290 Q 1294.6 303.0 1287.6 316 Q 1280.6 329.0 1287.6 342 Q 1294.6 355.0 1287.6 368 Q 1280.6 381.0 1287.6 394 Q 1294.6 407.0 1287.6 420 Q 1280.6 433.0 1287.6 446 Q 1294.6 459.0 1287.6 472 Q 1280.6 485.0 1287.6 498 Q 1294.6 511.0 1287.6 524 Q 1280.6 537.0 1287.6 550 Q 1294.6 563.0 1287.6 576 Q 1280.6 589.0 1287.6 602 Q 1294.6 615.0 1287.6 628 Q 1280.6 641.0 1287.6 654 Q 1294.6 667.0 1287.6 680 Q 1280.6 693.0 1287.6 706 Q 1294.6 719.0 1287.6 732 Q 1280.6 745.0 1287.6 758 Q 1294.6 771.0 1287.6 784 Q 1280.6 797.0 1287.6 810 Q 1294.6 823.0 1287.6 836 Q 1280.6 849.0 1287.6 862 Q 1294.6 875.0 1287.6 888 Q 1280.6 901.0 1287.6 914 Q 1294.6 927.0 1287.6 940 Q 1280.6 953.0 1287.6 966 Q 1294.6 979.0 1287.6 992 Q 1280.6 1005.0 1287.6 1018 Q 1294.6 1031.0 1287.6 1044 Q 1280.6 1048.0 1287.6 1052" fill="none" stroke="#16a34a" stroke-width="1.4" opacity="0.35"/>
+<line x1="276.4" y1="232" x2="276.4" y2="1058" stroke="#d5d9e0" stroke-width="1" stroke-dasharray="2 5"/>
+<text x="276.4" y="1080" fill="#5a6178" font-size="11.5" text-anchor="middle">Vordere</text>
+<text x="276.4" y="1095" fill="#5a6178" font-size="11.5" text-anchor="middle">Linie</text>
+<line x1="371.2" y1="232" x2="371.2" y2="1058" stroke="#d5d9e0" stroke-width="1" stroke-dasharray="2 5"/>
+<text x="371.2" y="1080" fill="#5a6178" font-size="11.5" text-anchor="middle">I.</text>
+<text x="371.2" y="1095" fill="#5a6178" font-size="11.5" text-anchor="middle">Stellung</text>
+<line x1="466.0" y1="232" x2="466.0" y2="1058" stroke="#d5d9e0" stroke-width="1" stroke-dasharray="2 5"/>
+<text x="466.0" y="1080" fill="#5a6178" font-size="11.5" text-anchor="middle">II.</text>
+<text x="466.0" y="1095" fill="#5a6178" font-size="11.5" text-anchor="middle">Stellung</text>
+<line x1="592.4" y1="232" x2="592.4" y2="1058" stroke="#d5d9e0" stroke-width="1" stroke-dasharray="2 5"/>
+<text x="592.4" y="1080" fill="#5a6178" font-size="11.5" text-anchor="middle">III.</text>
+<text x="592.4" y="1095" fill="#5a6178" font-size="11.5" text-anchor="middle">Stellung</text>
+<line x1="718.8" y1="232" x2="718.8" y2="1058" stroke="#d5d9e0" stroke-width="1" stroke-dasharray="2 5"/>
+<text x="718.8" y="1080" fill="#5a6178" font-size="11.5" text-anchor="middle">Artillerie-</text>
+<text x="718.8" y="1095" fill="#5a6178" font-size="11.5" text-anchor="middle">Schutzstellung</text>
+<line x1="162.6" y1="255" x2="1508.8" y2="255" stroke="#8b92a5" stroke-width="1.2" stroke-dasharray="7 5"/>
+<rect x="189.2" y="246" width="48" height="18" fill="#ffffff"/>
+<text x="213.2" y="259" fill="#8b92a5" font-size="12" letter-spacing="3" text-anchor="middle" font-weight="600">XXX</text>
+<rect x="505.2" y="246" width="48" height="18" fill="#ffffff"/>
+<text x="529.2" y="259" fill="#8b92a5" font-size="12" letter-spacing="3" text-anchor="middle" font-weight="600">XXX</text>
+<rect x="947.6" y="246" width="48" height="18" fill="#ffffff"/>
+<text x="971.6" y="259" fill="#8b92a5" font-size="12" letter-spacing="3" text-anchor="middle" font-weight="600">XXX</text>
+<rect x="1390.0" y="246" width="48" height="18" fill="#ffffff"/>
+<text x="1414.0" y="259" fill="#8b92a5" font-size="12" letter-spacing="3" text-anchor="middle" font-weight="600">XXX</text>
+<line x1="162.6" y1="650" x2="1508.8" y2="650" stroke="#8b92a5" stroke-width="1.2" stroke-dasharray="7 5"/>
+<rect x="189.2" y="641" width="48" height="18" fill="#ffffff"/>
+<text x="213.2" y="654" fill="#8b92a5" font-size="12" letter-spacing="3" text-anchor="middle" font-weight="600">XX</text>
+<rect x="505.2" y="641" width="48" height="18" fill="#ffffff"/>
+<text x="529.2" y="654" fill="#8b92a5" font-size="12" letter-spacing="3" text-anchor="middle" font-weight="600">XX</text>
+<rect x="947.6" y="641" width="48" height="18" fill="#ffffff"/>
+<text x="971.6" y="654" fill="#8b92a5" font-size="12" letter-spacing="3" text-anchor="middle" font-weight="600">XX</text>
+<rect x="1390.0" y="641" width="48" height="18" fill="#ffffff"/>
+<text x="1414.0" y="654" fill="#8b92a5" font-size="12" letter-spacing="3" text-anchor="middle" font-weight="600">XX</text>
+<line x1="162.6" y1="1045" x2="1508.8" y2="1045" stroke="#8b92a5" stroke-width="1.2" stroke-dasharray="7 5"/>
+<rect x="189.2" y="1036" width="48" height="18" fill="#ffffff"/>
+<text x="213.2" y="1049" fill="#8b92a5" font-size="12" letter-spacing="3" text-anchor="middle" font-weight="600">XXX</text>
+<rect x="505.2" y="1036" width="48" height="18" fill="#ffffff"/>
+<text x="529.2" y="1049" fill="#8b92a5" font-size="12" letter-spacing="3" text-anchor="middle" font-weight="600">XXX</text>
+<rect x="947.6" y="1036" width="48" height="18" fill="#ffffff"/>
+<text x="971.6" y="1049" fill="#8b92a5" font-size="12" letter-spacing="3" text-anchor="middle" font-weight="600">XXX</text>
+<rect x="1390.0" y="1036" width="48" height="18" fill="#ffffff"/>
+<text x="1414.0" y="1049" fill="#8b92a5" font-size="12" letter-spacing="3" text-anchor="middle" font-weight="600">XXX</text>
+<text x="213.2" y="168" fill="#8b92a5" font-size="12.5" font-weight="700" text-anchor="middle" letter-spacing="0.5">VORPOSTENZONE</text>
+<text x="213.2" y="186" fill="#8b92a5" font-size="10.5" text-anchor="middle">outpost screen</text>
+<text x="323.8" y="168" fill="#006fff" font-size="12.5" font-weight="700" text-anchor="middle" letter-spacing="0.5">VORFELDZONE</text>
+<text x="323.8" y="186" fill="#8b92a5" font-size="10.5" text-anchor="middle">forward belt</text>
+<text x="529.2" y="168" fill="#0891b2" font-size="12.5" font-weight="700" text-anchor="middle" letter-spacing="0.5">HAUPTKAMPFFELD</text>
+<text x="529.2" y="186" fill="#8b92a5" font-size="10.5" text-anchor="middle">main battle zone</text>
+<text x="971.6" y="168" fill="#9333ea" font-size="12.5" font-weight="700" text-anchor="middle" letter-spacing="0.5">EINGREIFZONE</text>
+<text x="971.6" y="186" fill="#8b92a5" font-size="10.5" text-anchor="middle">counterattack reserves</text>
+<text x="1398.2" y="168" fill="#16a34a" font-size="12.5" font-weight="700" text-anchor="middle" letter-spacing="0.5">GENERALSTAB</text>
+<text x="1398.2" y="186" fill="#8b92a5" font-size="10.5" text-anchor="middle">operational staff</text>
+<path d="M 150.0 202 L 150.0 210 L 687.2 210 L 687.2 202" fill="none" stroke="#006fff" stroke-width="1.4"/>
+<rect x="278.6" y="201" width="280" height="18" fill="#ffffff"/>
+<text x="418.6" y="214" fill="#006fff" font-size="13" font-weight="700" letter-spacing="2" text-anchor="middle">KAMPFZONE  ·  BATTLE ZONE</text>
+<path d="M 687.2 202 L 687.2 210 L 1540.4 210 L 1540.4 202" fill="none" stroke="#0891b2" stroke-width="1.4"/>
+<rect x="973.8" y="201" width="280" height="18" fill="#ffffff"/>
+<text x="1113.8" y="214" fill="#0891b2" font-size="13" font-weight="700" letter-spacing="2" text-anchor="middle">RÜCKWÄRTIGE TIEFE  ·  REAR DEPTH</text>
+<line x1="150.0" y1="360" x2="548.2" y2="420" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="6 5" opacity="0.75" marker-end="url(#atk)"/>
+<line x1="150.0" y1="440" x2="548.2" y2="450" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="6 5" opacity="0.75" marker-end="url(#atk)"/>
+<line x1="150.0" y1="520" x2="548.2" y2="470" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="6 5" opacity="0.75" marker-end="url(#atk)"/>
+<line x1="971.6" y1="330" x2="592.4" y2="430" stroke="#006fff" stroke-width="1.6" stroke-dasharray="6 5" opacity="0.8" marker-end="url(#ctr)"/>
+<line x1="971.6" y1="365" x2="592.4" y2="450" stroke="#006fff" stroke-width="1.6" stroke-dasharray="6 5" opacity="0.8" marker-end="url(#ctr)"/>
+<line x1="971.6" y1="400" x2="592.4" y2="468" stroke="#006fff" stroke-width="1.6" stroke-dasharray="6 5" opacity="0.8" marker-end="url(#ctr)"/>
+<g><rect x="188.2" y="344.0" width="50" height="32" rx="3" fill="#ffffff" stroke="#8b92a5" stroke-width="1.7"/><line x1="192.2" y1="348" x2="234.2" y2="372" stroke="#8b92a5" stroke-width="1.5"/><line x1="234.2" y1="348" x2="192.2" y2="372" stroke="#8b92a5" stroke-width="1.5"/><text x="213.2" y="339" fill="#8b92a5" font-size="11" letter-spacing="2.5" text-anchor="middle" font-weight="700">II</text><text x="213.2" y="392" fill="#5a6178" font-size="11" text-anchor="middle">Vorposten</text><text x="213.2" y="406" fill="#5a6178" font-size="11" text-anchor="middle">outpost bn</text></g>
+<g><rect x="298.8" y="304.0" width="50" height="32" rx="3" fill="#ffffff" stroke="#006fff" stroke-width="1.7"/><circle cx="323.8" cy="320" r="4.5" fill="#006fff"/><text x="323.8" y="352" fill="#5a6178" font-size="11" text-anchor="middle">MG-Nest</text></g>
+<g><rect x="320.9" y="464.0" width="50" height="32" rx="3" fill="#ffffff" stroke="#d97706" stroke-width="1.7"/><circle cx="345.9" cy="481" r="7" fill="none" stroke="#d97706" stroke-width="1.6"/><line x1="345.9" y1="485" x2="345.9" y2="471" stroke="#d97706" stroke-width="1.6"/><text x="345.9" y="512" fill="#5a6178" font-size="11" text-anchor="middle">Minenwerfer</text><text x="345.9" y="526" fill="#5a6178" font-size="11" text-anchor="middle">trench mortar</text></g>
+<g><rect x="441.0" y="344.0" width="50" height="32" rx="3" fill="#ffffff" stroke="#0891b2" stroke-width="1.7"/><line x1="445" y1="348" x2="487" y2="372" stroke="#0891b2" stroke-width="1.5"/><line x1="487" y1="348" x2="445" y2="372" stroke="#0891b2" stroke-width="1.5"/><text x="466.0" y="339" fill="#0891b2" font-size="11" letter-spacing="2.5" text-anchor="middle" font-weight="700">XX</text><text x="466.0" y="392" fill="#5a6178" font-size="11" text-anchor="middle">Stellungs-</text><text x="466.0" y="406" fill="#5a6178" font-size="11" text-anchor="middle">division (holding)</text></g>
+<g><rect x="567.4" y="464.0" width="50" height="32" rx="3" fill="#ffffff" stroke="#d97706" stroke-width="1.7"/><circle cx="592.4" cy="480" r="7" fill="#d97706"/><text x="592.4" y="459" fill="#d97706" font-size="11" letter-spacing="2.5" text-anchor="middle" font-weight="700">III</text><text x="592.4" y="512" fill="#5a6178" font-size="11" text-anchor="middle">Feldartillerie</text></g>
+<g><rect x="820.2" y="284.0" width="50" height="32" rx="3" fill="#ffffff" stroke="#dc2626" stroke-width="1.7"/><line x1="824.2" y1="288" x2="866.2" y2="312" stroke="#dc2626" stroke-width="1.5"/><line x1="866.2" y1="288" x2="824.2" y2="312" stroke="#dc2626" stroke-width="1.5"/><text x="845.2" y="279" fill="#dc2626" font-size="11" letter-spacing="2.5" text-anchor="middle" font-weight="700">II</text><text x="845.2" y="332" fill="#5a6178" font-size="11" text-anchor="middle">Sturm-</text><text x="845.2" y="346" fill="#5a6178" font-size="11" text-anchor="middle">bataillon</text></g>
+<g><rect x="946.6" y="364.0" width="50" height="32" rx="3" fill="#ffffff" stroke="#9333ea" stroke-width="1.7"/><line x1="950.6" y1="368" x2="992.6" y2="392" stroke="#9333ea" stroke-width="1.5"/><line x1="992.6" y1="368" x2="950.6" y2="392" stroke="#9333ea" stroke-width="1.5"/><text x="971.6" y="359" fill="#9333ea" font-size="11" letter-spacing="2.5" text-anchor="middle" font-weight="700">XX</text><text x="971.6" y="412" fill="#5a6178" font-size="11" text-anchor="middle">Eingreif-</text><text x="971.6" y="426" fill="#5a6178" font-size="11" text-anchor="middle">division</text></g>
+<g><rect x="1104.6" y="474.0" width="50" height="32" rx="3" fill="#ffffff" stroke="#16a34a" stroke-width="1.7"/><line x1="1108.6" y1="478" x2="1150.6" y2="502" stroke="#16a34a" stroke-width="1.5"/><line x1="1150.6" y1="478" x2="1108.6" y2="502" stroke="#16a34a" stroke-width="1.5"/><text x="1129.6" y="469" fill="#16a34a" font-size="11" letter-spacing="2.5" text-anchor="middle" font-weight="700">XX</text><text x="1129.6" y="522" fill="#5a6178" font-size="11" text-anchor="middle">Korps-</text><text x="1129.6" y="536" fill="#5a6178" font-size="11" text-anchor="middle">Reserve</text></g>
+<g><rect x="188.2" y="889.0" width="50" height="32" rx="3" fill="#ffffff" stroke="#8b92a5" stroke-width="1.7"/><line x1="192.2" y1="893" x2="234.2" y2="917" stroke="#8b92a5" stroke-width="1.5"/><line x1="234.2" y1="893" x2="192.2" y2="917" stroke="#8b92a5" stroke-width="1.5"/><text x="213.2" y="884" fill="#8b92a5" font-size="11" letter-spacing="2.5" text-anchor="middle" font-weight="700">II</text><text x="213.2" y="937" fill="#5a6178" font-size="11" text-anchor="middle">Vorposten</text><text x="213.2" y="951" fill="#5a6178" font-size="11" text-anchor="middle">outpost bn</text></g>
+<g><rect x="441.0" y="889.0" width="50" height="32" rx="3" fill="#ffffff" stroke="#0891b2" stroke-width="1.7"/><line x1="445" y1="893" x2="487" y2="917" stroke="#0891b2" stroke-width="1.5"/><line x1="487" y1="893" x2="445" y2="917" stroke="#0891b2" stroke-width="1.5"/><text x="466.0" y="884" fill="#0891b2" font-size="11" letter-spacing="2.5" text-anchor="middle" font-weight="700">XX</text><text x="466.0" y="937" fill="#5a6178" font-size="11" text-anchor="middle">Stellungs-</text><text x="466.0" y="951" fill="#5a6178" font-size="11" text-anchor="middle">division (holding)</text></g>
+<g><rect x="567.4" y="779.0" width="50" height="32" rx="3" fill="#ffffff" stroke="#d97706" stroke-width="1.7"/><circle cx="592.4" cy="795" r="7" fill="#d97706"/><text x="592.4" y="774" fill="#d97706" font-size="11" letter-spacing="2.5" text-anchor="middle" font-weight="700">III</text><text x="592.4" y="827" fill="#5a6178" font-size="11" text-anchor="middle">Feldartillerie</text></g>
+<g><rect x="820.2" y="934.0" width="50" height="32" rx="3" fill="#ffffff" stroke="#dc2626" stroke-width="1.7"/><line x1="824.2" y1="938" x2="866.2" y2="962" stroke="#dc2626" stroke-width="1.5"/><line x1="866.2" y1="938" x2="824.2" y2="962" stroke="#dc2626" stroke-width="1.5"/><text x="845.2" y="929" fill="#dc2626" font-size="11" letter-spacing="2.5" text-anchor="middle" font-weight="700">II</text><text x="845.2" y="982" fill="#5a6178" font-size="11" text-anchor="middle">Sturm-</text><text x="845.2" y="996" fill="#5a6178" font-size="11" text-anchor="middle">bataillon</text></g>
+<g><rect x="946.6" y="864.0" width="50" height="32" rx="3" fill="#ffffff" stroke="#9333ea" stroke-width="1.7"/><line x1="950.6" y1="868" x2="992.6" y2="892" stroke="#9333ea" stroke-width="1.5"/><line x1="992.6" y1="868" x2="950.6" y2="892" stroke="#9333ea" stroke-width="1.5"/><text x="971.6" y="859" fill="#9333ea" font-size="11" letter-spacing="2.5" text-anchor="middle" font-weight="700">XX</text><text x="971.6" y="912" fill="#5a6178" font-size="11" text-anchor="middle">Eingreif-</text><text x="971.6" y="926" fill="#5a6178" font-size="11" text-anchor="middle">division</text></g>
+<g><rect x="1381.0" y="600.0" width="66" height="40" rx="3" fill="#ffffff" stroke="#16a34a" stroke-width="1.7"/><line x1="1389" y1="606" x2="1389" y2="634" stroke="#16a34a" stroke-width="1.6"/><path d="M 1389 606 L 1403 610 L 1389 614 Z" fill="#16a34a"/><text x="1414.0" y="595" fill="#16a34a" font-size="11" letter-spacing="2.5" text-anchor="middle" font-weight="700">XXXX</text><text x="1414.0" y="656" fill="#5a6178" font-size="11" text-anchor="middle">Generalstab</text><text x="1414.0" y="670" fill="#5a6178" font-size="11" text-anchor="middle">Armee-Oberkommando (AOK)</text></g>
+<line x1="150.0" y1="1110" x2="1540.4" y2="1110" stroke="#5a6178" stroke-width="1.4"/>
+<line x1="150.0" y1="1110" x2="150.0" y2="1118" stroke="#5a6178" stroke-width="1.4"/>
+<text x="150.0" y="1136" fill="#5a6178" font-size="12" text-anchor="middle">2</text>
+<rect x="150.0" y="1105" width="126.4" height="5" fill="#ffffff" stroke="#5a6178" stroke-width="0.6"/>
+<line x1="276.4" y1="1110" x2="276.4" y2="1118" stroke="#5a6178" stroke-width="1.4"/>
+<text x="276.4" y="1136" fill="#5a6178" font-size="12" text-anchor="middle">0</text>
+<rect x="276.4" y="1105" width="126.4" height="5" fill="#1a1d23" stroke="#5a6178" stroke-width="0.6"/>
+<line x1="402.8" y1="1110" x2="402.8" y2="1118" stroke="#5a6178" stroke-width="1.4"/>
+<text x="402.8" y="1136" fill="#5a6178" font-size="12" text-anchor="middle">2</text>
+<rect x="402.8" y="1105" width="126.4" height="5" fill="#ffffff" stroke="#5a6178" stroke-width="0.6"/>
+<line x1="529.2" y1="1110" x2="529.2" y2="1118" stroke="#5a6178" stroke-width="1.4"/>
+<text x="529.2" y="1136" fill="#5a6178" font-size="12" text-anchor="middle">4</text>
+<rect x="529.2" y="1105" width="126.4" height="5" fill="#1a1d23" stroke="#5a6178" stroke-width="0.6"/>
+<line x1="655.6" y1="1110" x2="655.6" y2="1118" stroke="#5a6178" stroke-width="1.4"/>
+<text x="655.6" y="1136" fill="#5a6178" font-size="12" text-anchor="middle">6</text>
+<rect x="655.6" y="1105" width="126.4" height="5" fill="#ffffff" stroke="#5a6178" stroke-width="0.6"/>
+<line x1="782.0" y1="1110" x2="782.0" y2="1118" stroke="#5a6178" stroke-width="1.4"/>
+<text x="782.0" y="1136" fill="#5a6178" font-size="12" text-anchor="middle">8</text>
+<rect x="782.0" y="1105" width="126.4" height="5" fill="#1a1d23" stroke="#5a6178" stroke-width="0.6"/>
+<line x1="908.4" y1="1110" x2="908.4" y2="1118" stroke="#5a6178" stroke-width="1.4"/>
+<text x="908.4" y="1136" fill="#5a6178" font-size="12" text-anchor="middle">10</text>
+<rect x="908.4" y="1105" width="126.4" height="5" fill="#ffffff" stroke="#5a6178" stroke-width="0.6"/>
+<line x1="1034.8" y1="1110" x2="1034.8" y2="1118" stroke="#5a6178" stroke-width="1.4"/>
+<text x="1034.8" y="1136" fill="#5a6178" font-size="12" text-anchor="middle">12</text>
+<rect x="1034.8" y="1105" width="126.4" height="5" fill="#1a1d23" stroke="#5a6178" stroke-width="0.6"/>
+<line x1="1161.2" y1="1110" x2="1161.2" y2="1118" stroke="#5a6178" stroke-width="1.4"/>
+<text x="1161.2" y="1136" fill="#5a6178" font-size="12" text-anchor="middle">14</text>
+<rect x="1161.2" y="1105" width="126.4" height="5" fill="#ffffff" stroke="#5a6178" stroke-width="0.6"/>
+<line x1="1287.6" y1="1110" x2="1287.6" y2="1118" stroke="#5a6178" stroke-width="1.4"/>
+<text x="1287.6" y="1136" fill="#5a6178" font-size="12" text-anchor="middle">16</text>
+<rect x="1287.6" y="1105" width="126.4" height="5" fill="#1a1d23" stroke="#5a6178" stroke-width="0.6"/>
+<line x1="1414.0" y1="1110" x2="1414.0" y2="1118" stroke="#5a6178" stroke-width="1.4"/>
+<text x="1414.0" y="1136" fill="#5a6178" font-size="12" text-anchor="middle">18</text>
+<rect x="1414.0" y="1105" width="126.4" height="5" fill="#ffffff" stroke="#5a6178" stroke-width="0.6"/>
+<line x1="1540.4" y1="1110" x2="1540.4" y2="1118" stroke="#5a6178" stroke-width="1.4"/>
+<text x="1540.4" y="1136" fill="#5a6178" font-size="12" text-anchor="middle">20</text>
+<text x="1558.4" y="1136" fill="#5a6178" font-size="12">km</text>
+<line x1="718.8000000000001" y1="1118" x2="752.8000000000001" y2="1118" stroke="#dc2626" stroke-width="1.6" stroke-dasharray="6 5" marker-end="url(#atk)"/>
+<text x="760.8000000000001" y="1122" fill="#5a6178" font-size="11">attacker thrust</text>
+<line x1="1003.2" y1="1118" x2="1037.2" y2="1118" stroke="#006fff" stroke-width="1.6" stroke-dasharray="6 5" marker-end="url(#ctr)"/>
+<text x="1045.2" y="1122" fill="#5a6178" font-size="11">Eingreif counterstrike</text>
+<text x="60" y="1214" fill="#8b92a5" font-size="12">After German elastic-defense doctrine — <tspan font-style="italic">Verteidigung in der Tiefe</tspan>, 1916–1918. Gen0Sec elastic-defense series.</text>
+</svg>

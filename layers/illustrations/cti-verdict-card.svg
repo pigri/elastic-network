@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" font-family="'JetBrains Mono', ui-monospace, monospace">
+  <style>text { font-family: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace; }</style>
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e8eaef" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+
+  <rect width="1500" height="1000" fill="#ffffff"/>
+  <rect width="1500" height="1000" fill="url(#grid)"/>
+
+  <!-- ────────────────────── HEADER ────────────────────── -->
+  <text x="60" y="56" fill="#8b92a5" font-size="15" letter-spacing="6" font-family="Orbitron, 'JetBrains Mono', monospace" font-weight="600">GEN0SEC · CYBER THREAT INTELLIGENCE</text>
+
+  <text x="60" y="128" fill="#1a1d23" font-size="58" font-weight="700" letter-spacing="-0.01em">176.65.139.130</text>
+  <text x="60" y="162" fill="#5a6178" font-size="16">IPv4 · CORTEX verdict · generated 2026-06-05 18:21 UTC</text>
+
+  <!-- BLOCK verdict badge (top-right) -->
+  <rect x="1140" y="70" width="300" height="84" rx="12" fill="rgba(220,38,38,0.07)" stroke="#dc2626" stroke-width="2"/>
+  <circle cx="1186" cy="112" r="9" fill="#dc2626"/>
+  <text x="1212" y="106" fill="#dc2626" font-size="13" letter-spacing="3" font-weight="700">ADVICE</text>
+  <text x="1212" y="138" fill="#dc2626" font-size="32" font-weight="700">BLOCK</text>
+
+  <!-- ════════════════════ ROW 1 ════════════════════ -->
+
+  <!-- ── Panel: THREAT SCORE ── -->
+  <rect x="60" y="210" width="420" height="360" rx="12" fill="#ffffff" stroke="#d5d9e0" stroke-width="1.5"/>
+  <text x="84" y="246" fill="#dc2626" font-size="13" letter-spacing="3" font-weight="700">THREAT SCORE</text>
+
+  <!-- Score ring -->
+  <g transform="translate(270, 370)">
+    <circle cx="0" cy="0" r="92" fill="none" stroke="#e8eaef" stroke-width="18"/>
+    <!-- 94% arc: circumference = 2π·92 = 578.05 → 0.94 = 543.4 -->
+    <circle cx="0" cy="0" r="92" fill="none" stroke="#dc2626" stroke-width="18"
+            stroke-dasharray="543.4 578.05" stroke-dashoffset="0"
+            stroke-linecap="round" transform="rotate(-90)"/>
+    <text x="0" y="14" fill="#1a1d23" font-size="68" font-weight="700" text-anchor="middle">94</text>
+    <text x="0" y="44" fill="#8b92a5" font-size="16" text-anchor="middle">/ 100</text>
+  </g>
+
+  <!-- Confidence bar -->
+  <text x="84" y="500" fill="#5a6178" font-size="13" letter-spacing="2" font-weight="600">CONFIDENCE</text>
+  <text x="456" y="500" fill="#dc2626" font-size="14" font-weight="700" text-anchor="end">94%</text>
+  <rect x="84" y="512" width="372" height="14" rx="7" fill="#e8eaef"/>
+  <rect x="84" y="512" width="349.7" height="14" rx="7" fill="#dc2626"/>
+  <text x="84" y="556" fill="#8b92a5" font-size="12">score model v2025-09-01</text>
+
+  <!-- ── Panel: CATEGORIES ── -->
+  <rect x="500" y="210" width="460" height="360" rx="12" fill="#ffffff" stroke="#d5d9e0" stroke-width="1.5"/>
+  <text x="524" y="246" fill="#dc2626" font-size="13" letter-spacing="3" font-weight="700">CATEGORIES</text>
+
+  <!-- Category pills (5 malicious = red, 1 catch-all = amber) -->
+  <g font-size="18" font-weight="600">
+    <rect x="524" y="272" width="130" height="48" rx="24" fill="rgba(220,38,38,0.07)" stroke="#dc2626" stroke-width="1.5"/>
+    <text x="589" y="302" fill="#dc2626" text-anchor="middle">botnet</text>
+
+    <rect x="668" y="272" width="80" height="48" rx="24" fill="rgba(220,38,38,0.07)" stroke="#dc2626" stroke-width="1.5"/>
+    <text x="708" y="302" fill="#dc2626" text-anchor="middle">c2</text>
+
+    <rect x="762" y="272" width="160" height="48" rx="24" fill="rgba(220,38,38,0.07)" stroke="#dc2626" stroke-width="1.5"/>
+    <text x="842" y="302" fill="#dc2626" text-anchor="middle">malware</text>
+
+    <rect x="524" y="336" width="200" height="48" rx="24" fill="rgba(220,38,38,0.07)" stroke="#dc2626" stroke-width="1.5"/>
+    <text x="624" y="366" fill="#dc2626" text-anchor="middle">brute_force</text>
+
+    <rect x="738" y="336" width="150" height="48" rx="24" fill="rgba(220,38,38,0.07)" stroke="#dc2626" stroke-width="1.5"/>
+    <text x="813" y="366" fill="#dc2626" text-anchor="middle">scanner</text>
+
+    <rect x="524" y="400" width="140" height="48" rx="24" fill="rgba(217,119,6,0.10)" stroke="#d97706" stroke-width="1.5"/>
+    <text x="594" y="430" fill="#d97706" text-anchor="middle">default</text>
+  </g>
+
+  <text x="524" y="498" fill="#5a6178" font-size="13" letter-spacing="2" font-weight="600">REASON</text>
+  <text x="524" y="524" fill="#1a1d23" font-size="18" font-weight="700">MULTI_RECENT_SIGNALS</text>
+  <text x="524" y="550" fill="#5a6178" font-size="14">"Block IPs from threat intelligence feeds"</text>
+
+  <!-- ── Panel: CONTEXT ── -->
+  <rect x="980" y="210" width="460" height="360" rx="12" fill="#ffffff" stroke="#d5d9e0" stroke-width="1.5"/>
+  <text x="1004" y="246" fill="#0891b2" font-size="13" letter-spacing="3" font-weight="700">CONTEXT</text>
+
+  <text x="1004" y="296" fill="#8b92a5" font-size="13" letter-spacing="2">ASN</text>
+  <text x="1004" y="324" fill="#1a1d23" font-size="22" font-weight="700">AS214472</text>
+
+  <text x="1004" y="372" fill="#8b92a5" font-size="13" letter-spacing="2">ORGANISATION</text>
+  <text x="1004" y="400" fill="#1a1d23" font-size="22" font-weight="700">Offshore LC</text>
+
+  <text x="1004" y="448" fill="#8b92a5" font-size="13" letter-spacing="2">GEOLOCATION</text>
+  <!-- NL flag -->
+  <g>
+    <rect x="1004" y="466" width="48" height="11" fill="#AE1C28"/>
+    <rect x="1004" y="477" width="48" height="11" fill="#ffffff" stroke="#e8eaef" stroke-width="0.5"/>
+    <rect x="1004" y="488" width="48" height="11" fill="#21468B"/>
+    <rect x="1004" y="466" width="48" height="33" fill="none" stroke="#d5d9e0" stroke-width="1"/>
+  </g>
+  <text x="1066" y="490" fill="#1a1d23" font-size="22" font-weight="700">The Netherlands</text>
+  <text x="1066" y="514" fill="#5a6178" font-size="15">ISO · NL</text>
+
+  <!-- ════════════════════ ROW 2 ════════════════════ -->
+
+  <!-- ── Panel: ACTIVITY ── -->
+  <rect x="60" y="600" width="880" height="280" rx="12" fill="#ffffff" stroke="#d5d9e0" stroke-width="1.5"/>
+  <text x="84" y="636" fill="#9333ea" font-size="13" letter-spacing="3" font-weight="700">ACTIVITY</text>
+
+  <!-- Timeline -->
+  <text x="84" y="684" fill="#8b92a5" font-size="13" letter-spacing="2">FIRST SEEN</text>
+  <text x="84" y="712" fill="#1a1d23" font-size="20" font-weight="700">2026-05-25 11:20 UTC</text>
+
+  <text x="560" y="684" fill="#8b92a5" font-size="13" letter-spacing="2">LAST SEEN</text>
+  <text x="560" y="712" fill="#1a1d23" font-size="20" font-weight="700">2026-06-05 18:14 UTC</text>
+
+  <!-- Timeline bar -->
+  <circle cx="100" cy="752" r="7" fill="#9333ea"/>
+  <line x1="107" y1="752" x2="893" y2="752" stroke="#9333ea" stroke-width="3"/>
+  <circle cx="900" cy="752" r="7" fill="#9333ea"/>
+  <text x="500" y="746" fill="#5a6178" font-size="13" text-anchor="middle">active ~11 days, still firing</text>
+
+  <text x="84" y="812" fill="#8b92a5" font-size="13" letter-spacing="2">CORROBORATING SOURCES</text>
+  <text x="84" y="844" fill="#1a1d23" font-size="28" font-weight="700">14</text>
+  <text x="124" y="844" fill="#5a6178" font-size="16">independent threat-intel feeds agree</text>
+
+  <!-- ── Panel: ACTION ── -->
+  <rect x="960" y="600" width="480" height="280" rx="12" fill="rgba(220,38,38,0.05)" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="984" y="636" fill="#dc2626" font-size="13" letter-spacing="3" font-weight="700">ACTION</text>
+
+  <text x="984" y="684" fill="#8b92a5" font-size="13" letter-spacing="2">ADVICE</text>
+  <text x="984" y="716" fill="#dc2626" font-size="30" font-weight="700">block</text>
+
+  <text x="984" y="766" fill="#8b92a5" font-size="13" letter-spacing="2">BLOCK TTL</text>
+  <text x="984" y="798" fill="#1a1d23" font-size="30" font-weight="700">12h</text>
+  <text x="1110" y="798" fill="#5a6178" font-size="15">43,200 s</text>
+
+  <text x="984" y="844" fill="#8b92a5" font-size="13" letter-spacing="2">RULE</text>
+  <text x="984" y="866" fill="#1a1d23" font-size="15" font-weight="600">fdf885f0-ff3c-48d7-98af-d0ca4389625b</text>
+
+  <!-- ════════════════════ FOOTER ════════════════════ -->
+  <line x1="60" y1="922" x2="1440" y2="922" stroke="#e8eaef" stroke-width="1"/>
+  <text x="60" y="956" fill="#8b92a5" font-size="13">schema 1.0 · reason MULTI_RECENT_SIGNALS · tenant 684498c1…13ca · 14 sources · score model v2025-09-01</text>
+</svg>

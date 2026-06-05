@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 730" font-family="'JetBrains Mono', ui-monospace, monospace">
+  <style>text { font-family: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace; }</style>
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e8eaef" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="730" fill="#ffffff"/>
+  <rect width="1600" height="730" fill="url(#grid)"/>
+
+  <text x="60" y="56" fill="#8b92a5" font-size="16" letter-spacing="6" font-family="Orbitron, 'JetBrains Mono', monospace" font-weight="600">GEN0SEC · DOCTRINE</text>
+
+  <rect x="60" y="100" width="80" height="80" rx="12" fill="#16a34a"/>
+  <text x="100" y="158" fill="#ffffff" font-size="36" font-weight="700" text-anchor="middle">05</text>
+
+  <text x="160" y="128" fill="#16a34a" font-size="15" letter-spacing="4" font-weight="600">LAYER 05 · GENERAL STAFF</text>
+  <text x="160" y="168" fill="#1a1d23" font-size="36" font-weight="700" letter-spacing="-0.01em">Learn. Predict. Adapt.</text>
+
+  <rect x="60" y="220" width="710" height="48" rx="6" fill="rgba(90,97,120,0.06)" stroke="#5a6178" stroke-width="1.2"/>
+  <text x="415" y="251" fill="#1a1d23" font-size="18" font-weight="700" text-anchor="middle">MILITARY DOCTRINE</text>
+
+  <rect x="830" y="220" width="710" height="48" rx="6" fill="rgba(0,111,255,0.06)" stroke="#006fff" stroke-width="1.2"/>
+  <text x="1185" y="251" fill="#006fff" font-size="18" font-weight="700" text-anchor="middle">ELASTIC NETWORK DEFENSE</text>
+
+  
+  <rect x="60" y="290" width="710" height="250" rx="14" fill="rgba(22,163,74,0.08)" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="88" y="340" fill="#1a1d23" font-size="22" font-weight="700">Generalstab — operational intelligence</text>
+  <text x="88" y="368" fill="#5a6178" font-size="16">Maps the whole front. Cross-correlates prisoner reports,</text>
+  <text x="88" y="390" fill="#5a6178" font-size="16">intercepted comms, aerial recon.</text>
+  <text x="88" y="430" fill="#5a6178" font-size="16">Job: predict the next schwerpunkt. Plan the counter-operation.</text>
+  <text x="88" y="452" fill="#5a6178" font-size="16">Rewrite the doctrine.</text>
+  <text x="88" y="490" fill="#16a34a" font-size="14" font-style="italic">Generalstab · OKH · operational intelligence · doctrine writers</text>
+  
+  <rect x="830" y="290" width="710" height="250" rx="14" fill="rgba(22,163,74,0.08)" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="858" y="340" fill="#1a1d23" font-size="22" font-weight="700">Cerebellum — fleet intelligence</text>
+  <text x="858" y="368" fill="#5a6178" font-size="16">The backend that sees every sensor at once: cross-site</text>
+  <text x="858" y="390" fill="#5a6178" font-size="16">correlation, CTI, threat prediction.</text>
+  <text x="858" y="430" fill="#5a6178" font-size="16">Job: feed Thalamus rules, sharpen Workflow, push the lessons to</text>
+  <text x="858" y="452" fill="#5a6178" font-size="16">the whole fleet.</text>
+  <text x="858" y="490" fill="#16a34a" font-size="14" font-style="italic">Cerebellum · cross-site correlation · CTI · rule generation · Cortex feeds up</text>
+
+  <line x1="60" y1="590" x2="1540" y2="590" stroke="#e8eaef" stroke-width="1"/>
+  <text x="60" y="630" fill="#0f172a" font-size="13" letter-spacing="3" font-weight="700">DOCTRINE</text>
+  <text x="60" y="662" fill="#1a1d23" font-size="22" font-weight="500" letter-spacing="-0.01em">Learn from every fight. Push the lessons forward to every other layer.</text>
+</svg>
