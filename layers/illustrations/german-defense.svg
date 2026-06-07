@@ -45,8 +45,8 @@
 <text x="529.2" y="259" fill="#8b92a5" font-size="12" letter-spacing="3" text-anchor="middle" font-weight="600">XXX</text>
 <rect x="947.6" y="246" width="48" height="18" fill="#ffffff"/>
 <text x="971.6" y="259" fill="#8b92a5" font-size="12" letter-spacing="3" text-anchor="middle" font-weight="600">XXX</text>
-<rect x="1390.0" y="246" width="48" height="18" fill="#ffffff"/>
-<text x="1414.0" y="259" fill="#8b92a5" font-size="12" letter-spacing="3" text-anchor="middle" font-weight="600">XXX</text>
+<rect x="1263.6" y="246" width="48" height="18" fill="#ffffff"/>
+<text x="1287.6" y="259" fill="#8b92a5" font-size="12" letter-spacing="3" text-anchor="middle" font-weight="600">XXX</text>
 <line x1="162.6" y1="650" x2="1508.8" y2="650" stroke="#8b92a5" stroke-width="1.2" stroke-dasharray="7 5"/>
 <rect x="189.2" y="641" width="48" height="18" fill="#ffffff"/>
 <text x="213.2" y="654" fill="#8b92a5" font-size="12" letter-spacing="3" text-anchor="middle" font-weight="600">XX</text>
@@ -54,8 +54,8 @@
 <text x="529.2" y="654" fill="#8b92a5" font-size="12" letter-spacing="3" text-anchor="middle" font-weight="600">XX</text>
 <rect x="947.6" y="641" width="48" height="18" fill="#ffffff"/>
 <text x="971.6" y="654" fill="#8b92a5" font-size="12" letter-spacing="3" text-anchor="middle" font-weight="600">XX</text>
-<rect x="1390.0" y="641" width="48" height="18" fill="#ffffff"/>
-<text x="1414.0" y="654" fill="#8b92a5" font-size="12" letter-spacing="3" text-anchor="middle" font-weight="600">XX</text>
+<rect x="1263.6" y="641" width="48" height="18" fill="#ffffff"/>
+<text x="1287.6" y="654" fill="#8b92a5" font-size="12" letter-spacing="3" text-anchor="middle" font-weight="600">XX</text>
 <line x1="162.6" y1="1045" x2="1508.8" y2="1045" stroke="#8b92a5" stroke-width="1.2" stroke-dasharray="7 5"/>
 <rect x="189.2" y="1036" width="48" height="18" fill="#ffffff"/>
 <text x="213.2" y="1049" fill="#8b92a5" font-size="12" letter-spacing="3" text-anchor="middle" font-weight="600">XXX</text>
@@ -63,8 +63,8 @@
 <text x="529.2" y="1049" fill="#8b92a5" font-size="12" letter-spacing="3" text-anchor="middle" font-weight="600">XXX</text>
 <rect x="947.6" y="1036" width="48" height="18" fill="#ffffff"/>
 <text x="971.6" y="1049" fill="#8b92a5" font-size="12" letter-spacing="3" text-anchor="middle" font-weight="600">XXX</text>
-<rect x="1390.0" y="1036" width="48" height="18" fill="#ffffff"/>
-<text x="1414.0" y="1049" fill="#8b92a5" font-size="12" letter-spacing="3" text-anchor="middle" font-weight="600">XXX</text>
+<rect x="1263.6" y="1036" width="48" height="18" fill="#ffffff"/>
+<text x="1287.6" y="1049" fill="#8b92a5" font-size="12" letter-spacing="3" text-anchor="middle" font-weight="600">XXX</text>
 <text x="213.2" y="168" fill="#8b92a5" font-size="12.5" font-weight="700" text-anchor="middle" letter-spacing="0.5">VORPOSTENZONE</text>
 <text x="213.2" y="186" fill="#8b92a5" font-size="10.5" text-anchor="middle">outpost screen</text>
 <text x="323.8" y="168" fill="#006fff" font-size="12.5" font-weight="700" text-anchor="middle" letter-spacing="0.5">VORFELDZONE</text>
@@ -76,10 +76,10 @@
 <text x="1398.2" y="168" fill="#16a34a" font-size="12.5" font-weight="700" text-anchor="middle" letter-spacing="0.5">GENERALSTAB</text>
 <text x="1398.2" y="186" fill="#8b92a5" font-size="10.5" text-anchor="middle">operational staff</text>
 <path d="M 150.0 202 L 150.0 210 L 687.2 210 L 687.2 202" fill="none" stroke="#006fff" stroke-width="1.4"/>
-<rect x="278.6" y="201" width="280" height="18" fill="#ffffff"/>
+<rect x="280.1" y="201" width="277.0" height="18" fill="#ffffff"/>
 <text x="418.6" y="214" fill="#006fff" font-size="13" font-weight="700" letter-spacing="2" text-anchor="middle">KAMPFZONE  ·  BATTLE ZONE</text>
 <path d="M 687.2 202 L 687.2 210 L 1540.4 210 L 1540.4 202" fill="none" stroke="#0891b2" stroke-width="1.4"/>
-<rect x="973.8" y="201" width="280" height="18" fill="#ffffff"/>
+<rect x="941.0" y="201" width="345.6" height="18" fill="#ffffff"/>
 <text x="1113.8" y="214" fill="#0891b2" font-size="13" font-weight="700" letter-spacing="2" text-anchor="middle">RÜCKWÄRTIGE TIEFE  ·  REAR DEPTH</text>
 <line x1="150.0" y1="360" x2="548.2" y2="420" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="6 5" opacity="0.75" marker-end="url(#atk)"/>
 <line x1="150.0" y1="440" x2="548.2" y2="450" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="6 5" opacity="0.75" marker-end="url(#atk)"/>
@@ -91,7 +91,7 @@
 <g><rect x="298.8" y="304.0" width="50" height="32" rx="3" fill="#ffffff" stroke="#006fff" stroke-width="1.7"/><circle cx="323.8" cy="320" r="4.5" fill="#006fff"/><text x="323.8" y="352" fill="#5a6178" font-size="11" text-anchor="middle">MG-Nest</text></g>
 <g><rect x="320.9" y="464.0" width="50" height="32" rx="3" fill="#ffffff" stroke="#d97706" stroke-width="1.7"/><circle cx="345.9" cy="481" r="7" fill="none" stroke="#d97706" stroke-width="1.6"/><line x1="345.9" y1="485" x2="345.9" y2="471" stroke="#d97706" stroke-width="1.6"/><text x="345.9" y="512" fill="#5a6178" font-size="11" text-anchor="middle">Minenwerfer</text><text x="345.9" y="526" fill="#5a6178" font-size="11" text-anchor="middle">trench mortar</text></g>
 <g><rect x="441.0" y="344.0" width="50" height="32" rx="3" fill="#ffffff" stroke="#0891b2" stroke-width="1.7"/><line x1="445" y1="348" x2="487" y2="372" stroke="#0891b2" stroke-width="1.5"/><line x1="487" y1="348" x2="445" y2="372" stroke="#0891b2" stroke-width="1.5"/><text x="466.0" y="339" fill="#0891b2" font-size="11" letter-spacing="2.5" text-anchor="middle" font-weight="700">XX</text><text x="466.0" y="392" fill="#5a6178" font-size="11" text-anchor="middle">Stellungs-</text><text x="466.0" y="406" fill="#5a6178" font-size="11" text-anchor="middle">division (holding)</text></g>
-<g><rect x="567.4" y="464.0" width="50" height="32" rx="3" fill="#ffffff" stroke="#d97706" stroke-width="1.7"/><circle cx="592.4" cy="480" r="7" fill="#d97706"/><text x="592.4" y="459" fill="#d97706" font-size="11" letter-spacing="2.5" text-anchor="middle" font-weight="700">III</text><text x="592.4" y="512" fill="#5a6178" font-size="11" text-anchor="middle">Feldartillerie</text></g>
+<g><rect x="567.4" y="529.0" width="50" height="32" rx="3" fill="#ffffff" stroke="#d97706" stroke-width="1.7"/><circle cx="592.4" cy="545" r="7" fill="#d97706"/><text x="592.4" y="524" fill="#d97706" font-size="11" letter-spacing="2.5" text-anchor="middle" font-weight="700">III</text><text x="592.4" y="577" fill="#5a6178" font-size="11" text-anchor="middle">Feldartillerie</text></g>
 <g><rect x="820.2" y="284.0" width="50" height="32" rx="3" fill="#ffffff" stroke="#dc2626" stroke-width="1.7"/><line x1="824.2" y1="288" x2="866.2" y2="312" stroke="#dc2626" stroke-width="1.5"/><line x1="866.2" y1="288" x2="824.2" y2="312" stroke="#dc2626" stroke-width="1.5"/><text x="845.2" y="279" fill="#dc2626" font-size="11" letter-spacing="2.5" text-anchor="middle" font-weight="700">II</text><text x="845.2" y="332" fill="#5a6178" font-size="11" text-anchor="middle">Sturm-</text><text x="845.2" y="346" fill="#5a6178" font-size="11" text-anchor="middle">bataillon</text></g>
 <g><rect x="946.6" y="364.0" width="50" height="32" rx="3" fill="#ffffff" stroke="#9333ea" stroke-width="1.7"/><line x1="950.6" y1="368" x2="992.6" y2="392" stroke="#9333ea" stroke-width="1.5"/><line x1="992.6" y1="368" x2="950.6" y2="392" stroke="#9333ea" stroke-width="1.5"/><text x="971.6" y="359" fill="#9333ea" font-size="11" letter-spacing="2.5" text-anchor="middle" font-weight="700">XX</text><text x="971.6" y="412" fill="#5a6178" font-size="11" text-anchor="middle">Eingreif-</text><text x="971.6" y="426" fill="#5a6178" font-size="11" text-anchor="middle">division</text></g>
 <g><rect x="1104.6" y="474.0" width="50" height="32" rx="3" fill="#ffffff" stroke="#16a34a" stroke-width="1.7"/><line x1="1108.6" y1="478" x2="1150.6" y2="502" stroke="#16a34a" stroke-width="1.5"/><line x1="1150.6" y1="478" x2="1108.6" y2="502" stroke="#16a34a" stroke-width="1.5"/><text x="1129.6" y="469" fill="#16a34a" font-size="11" letter-spacing="2.5" text-anchor="middle" font-weight="700">XX</text><text x="1129.6" y="522" fill="#5a6178" font-size="11" text-anchor="middle">Korps-</text><text x="1129.6" y="536" fill="#5a6178" font-size="11" text-anchor="middle">Reserve</text></g>
@@ -100,7 +100,7 @@
 <g><rect x="567.4" y="779.0" width="50" height="32" rx="3" fill="#ffffff" stroke="#d97706" stroke-width="1.7"/><circle cx="592.4" cy="795" r="7" fill="#d97706"/><text x="592.4" y="774" fill="#d97706" font-size="11" letter-spacing="2.5" text-anchor="middle" font-weight="700">III</text><text x="592.4" y="827" fill="#5a6178" font-size="11" text-anchor="middle">Feldartillerie</text></g>
 <g><rect x="820.2" y="934.0" width="50" height="32" rx="3" fill="#ffffff" stroke="#dc2626" stroke-width="1.7"/><line x1="824.2" y1="938" x2="866.2" y2="962" stroke="#dc2626" stroke-width="1.5"/><line x1="866.2" y1="938" x2="824.2" y2="962" stroke="#dc2626" stroke-width="1.5"/><text x="845.2" y="929" fill="#dc2626" font-size="11" letter-spacing="2.5" text-anchor="middle" font-weight="700">II</text><text x="845.2" y="982" fill="#5a6178" font-size="11" text-anchor="middle">Sturm-</text><text x="845.2" y="996" fill="#5a6178" font-size="11" text-anchor="middle">bataillon</text></g>
 <g><rect x="946.6" y="864.0" width="50" height="32" rx="3" fill="#ffffff" stroke="#9333ea" stroke-width="1.7"/><line x1="950.6" y1="868" x2="992.6" y2="892" stroke="#9333ea" stroke-width="1.5"/><line x1="992.6" y1="868" x2="950.6" y2="892" stroke="#9333ea" stroke-width="1.5"/><text x="971.6" y="859" fill="#9333ea" font-size="11" letter-spacing="2.5" text-anchor="middle" font-weight="700">XX</text><text x="971.6" y="912" fill="#5a6178" font-size="11" text-anchor="middle">Eingreif-</text><text x="971.6" y="926" fill="#5a6178" font-size="11" text-anchor="middle">division</text></g>
-<g><rect x="1381.0" y="600.0" width="66" height="40" rx="3" fill="#ffffff" stroke="#16a34a" stroke-width="1.7"/><line x1="1389" y1="606" x2="1389" y2="634" stroke="#16a34a" stroke-width="1.6"/><path d="M 1389 606 L 1403 610 L 1389 614 Z" fill="#16a34a"/><text x="1414.0" y="595" fill="#16a34a" font-size="11" letter-spacing="2.5" text-anchor="middle" font-weight="700">XXXX</text><text x="1414.0" y="656" fill="#5a6178" font-size="11" text-anchor="middle">Generalstab</text><text x="1414.0" y="670" fill="#5a6178" font-size="11" text-anchor="middle">Armee-Oberkommando (AOK)</text></g>
+<g><rect x="1381.0" y="535.0" width="66" height="40" rx="3" fill="#ffffff" stroke="#16a34a" stroke-width="1.7"/><line x1="1389" y1="541" x2="1389" y2="569" stroke="#16a34a" stroke-width="1.6"/><path d="M 1389 541 L 1403 545 L 1389 549 Z" fill="#16a34a"/><text x="1414.0" y="530" fill="#16a34a" font-size="11" letter-spacing="2.5" text-anchor="middle" font-weight="700">XXXX</text><text x="1414.0" y="591" fill="#5a6178" font-size="11" text-anchor="middle">Generalstab</text><text x="1414.0" y="605" fill="#5a6178" font-size="11" text-anchor="middle">Armee-Oberkommando (AOK)</text></g>
 <line x1="150.0" y1="1110" x2="1540.4" y2="1110" stroke="#5a6178" stroke-width="1.4"/>
 <line x1="150.0" y1="1110" x2="150.0" y2="1118" stroke="#5a6178" stroke-width="1.4"/>
 <text x="150.0" y="1136" fill="#5a6178" font-size="12" text-anchor="middle">2</text>

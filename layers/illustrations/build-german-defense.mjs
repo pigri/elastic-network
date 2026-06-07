@@ -86,7 +86,7 @@ namedLine(7, ["Artillerie-", "Schutzstellung"]);
 
 function boundary(y, ech) {
   P(`<line x1="${x(-1.8).toFixed(1)}" y1="${y}" x2="${x(19.5).toFixed(1)}" y2="${y}" stroke="${C.faint}" stroke-width="1.2" stroke-dasharray="7 5"/>`);
-  for (const km of [-1, 4, 11, 18]) {
+  for (const km of [-1, 4, 11, 16]) {
     const xx = x(km);
     P(`<rect x="${(xx - 24).toFixed(1)}" y="${y - 9}" width="48" height="18" fill="#ffffff"/>`);
     P(`<text x="${xx.toFixed(1)}" y="${y + 4}" fill="${C.faint}" font-size="12" letter-spacing="3" text-anchor="middle" font-weight="600">${ech}</text>`);
@@ -109,7 +109,8 @@ colHead(17.75, "GENERALSTAB", "operational staff", C.green);
 function bracket(km0, km1, label, color) {
   const x0 = x(km0), x1 = x(km1), y = 210;
   P(`<path d="M ${x0.toFixed(1)} ${y - 8} L ${x0.toFixed(1)} ${y} L ${x1.toFixed(1)} ${y} L ${x1.toFixed(1)} ${y - 8}" fill="none" stroke="${color}" stroke-width="1.4"/>`);
-  P(`<rect x="${((x0 + x1) / 2 - 140).toFixed(1)}" y="${y - 9}" width="280" height="18" fill="#ffffff"/>`);
+  const halfw = label.length * 4.9 + 16;
+  P(`<rect x="${((x0 + x1) / 2 - halfw).toFixed(1)}" y="${y - 9}" width="${(halfw * 2).toFixed(1)}" height="18" fill="#ffffff"/>`);
   P(`<text x="${((x0 + x1) / 2).toFixed(1)}" y="${y + 4}" fill="${color}" font-size="13" font-weight="700" letter-spacing="2" text-anchor="middle">${label}</text>`);
 }
 bracket(-2, 6.5, "KAMPFZONE  ·  BATTLE ZONE", C.blue);
@@ -151,7 +152,7 @@ unit({ km: -1, cy: 360, type: "infantry", ech: "II", label: ["Vorposten", "outpo
 unit({ km: 0.75, cy: 320, type: "mg", label: ["MG-Nest"], color: C.blue });
 unit({ km: 1.1, cy: 480, type: "mortar", label: ["Minenwerfer", "trench mortar"], color: C.orange });
 unit({ km: 3, cy: 360, type: "infantry", ech: "XX", label: ["Stellungs-", "division (holding)"], color: C.cyan });
-unit({ km: 5, cy: 480, type: "arty", ech: "III", label: ["Feldartillerie"], color: C.orange });
+unit({ km: 5, cy: 545, type: "arty", ech: "III", label: ["Feldartillerie"], color: C.orange });
 unit({ km: 9, cy: 300, type: "infantry", ech: "II", label: ["Sturm-", "bataillon"], color: C.red });
 unit({ km: 11, cy: 380, type: "infantry", ech: "XX", label: ["Eingreif-", "division"], color: C.purple });
 unit({ km: 13.5, cy: 490, type: "infantry", ech: "XX", label: ["Korps-", "Reserve"], color: C.green });
@@ -164,7 +165,7 @@ unit({ km: 9, cy: 950, type: "infantry", ech: "II", label: ["Sturm-", "bataillon
 unit({ km: 11, cy: 880, type: "infantry", ech: "XX", label: ["Eingreif-", "division"], color: C.purple });
 
 // ── the operational brain ──
-unit({ km: 18, cy: 620, type: "cp", ech: "XXXX", label: ["Generalstab", "Armee-Oberkommando (AOK)"], color: C.green, uw: 66, uh: 40 });
+unit({ km: 18, cy: 555, type: "cp", ech: "XXXX", label: ["Generalstab", "Armee-Oberkommando (AOK)"], color: C.green, uw: 66, uh: 40 });
 
 // ── depth ruler ──
 const RY = 1110;
