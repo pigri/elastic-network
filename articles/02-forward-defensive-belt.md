@@ -16,6 +16,8 @@ The other doctrinal trick was that the belt had to be *cheap*. Wire is cheap. Mi
 
 A century later, this is the right way to think about your edge.
 
+![The Vorfeldzone in 1916: wire, staggered machine-gun nests, and pre-registered mortars bleed and channel a full-strength assault, so it reaches the main line later, weaker, and on the defender's chosen axis](../layers/illustrations/layer-02-military-cartoon.png)
+
 ## The technical version
 
 In a modern network architecture the *Vorfeldzone* is the layer that meets the attacker first. It is what most people mean when they say "the edge." Its components are familiar.
@@ -23,6 +25,8 @@ In a modern network architecture the *Vorfeldzone* is the layer that meets the a
 Volumetric DDoS scrubbing, usually upstream or in front of the public interfaces. Web application firewalls and bot management for HTTP-shaped traffic. Rate limiters per source IP, per geographic region, per ASN, per credential. Geo-blocking and country allowlists. Reputation-based blocks against the indicators surfaced by Layer 01. TLS fingerprint filtering. Connection-time JA4+ classification. Packet-level filters in XDP or eBPF for the L3/L4 stuff that does not need application context to decide on. CDN edge logic. SNI-based routing decisions.
 
 The point of all of this is to bleed off the obvious and the cheap before the deep, expensive layers behind have to look at it. The edge is not where you make sense of an attack. The edge is where you kill the parts of the attack that do not need to be understood.
+
+![The edge as a shedding funnel: volumetric scrubbing, reputation and geo, JA4+ fingerprinting, and rate-limiting each bleed off a category of traffic cheaply, leaving a thin enriched stream to hand up to Layer 03](../layers/illustrations/layer-02-edge-funnel.png)
 
 The mistake here, and it is the most common architectural mistake in security, is to treat the edge as the most important layer. To budget for it as if it were the *Hauptkampffeld*. To build clever, slow, contextual detection into it. To run deep ML inference on every packet at the edge. To stop the attack here, definitively, by being smarter than the attacker at line rate.
 
@@ -38,7 +42,13 @@ A useful Layer 02 has four properties.
 
 **It is attritional, not definitive.** You will not catch everything here. You will not catch most things here. The edge exists to take the cost out of the easy attacks so the depth can focus on the hard ones. If your Layer 02 produces zero "alerts" because everything is just a verdict, you are doing it right.
 
-There is a fifth property that some teams underweight: **the edge does not decrypt.** TLS termination at the perimeter creates two problems. First, you have made yourself a high-value MITM target. Now the attacker's prize is the box that decrypts every customer connection. Second, you have inverted the doctrine of "cheap and attritional," because TLS termination is expensive and stateful. The cleaner architecture is to inspect what you can see without decryption (TLS fingerprints, SNI, ALPN, JA4+, certificate metadata, timing), make the cheap decision, and pass the encrypted bytes through. The deep, application-layer inspection happens behind the termination point at the application, not at the edge.
+There is a fifth property that some teams underweight: **the edge does not decrypt. It reads the shape of a connection, not its contents.**
+
+A surprising amount can be decided from the shape alone. The order of the TLS extensions, the cipher list, the supported groups, the TCP options and their ordering, the ALPN, the first hundred bytes of the ClientHello, the size and timing of the opening packets — together these fingerprint the *client*, not the payload. A JA4 fingerprint will tell you that a connection came from a particular automation framework, a particular malware family's network stack, or a particular scanner, before a byte of application data is exchanged and without decrypting anything. The cavalry vedette did not read the enemy's written orders to report "a cavalry division, moving at speed, on the Cambrai road." He reported the shape of the thing. The edge does the same: it identifies *what kind of thing* is connecting, cheaply, from the outside of the envelope.
+
+Decryption at the edge breaks the doctrine twice. First, it makes you a target. A perimeter that terminates TLS is the single highest-value box you can build: compromise it and you have every customer's plaintext in one place. You have concentrated the entire estate's secrets at the most exposed point in the architecture. Second, it inverts "cheap and attritional." TLS termination is stateful, CPU-heavy, and key-bearing — the opposite of the wire-speed, stupid-on-purpose belt the *Vorfeldzone* is supposed to be. You have rebuilt the expensive fixed line you were trying to avoid, and parked it at the front, where it gets hit first.
+
+So the edge inspects what is visible without decryption — TLS and TCP fingerprints, SNI, ALPN, certificate metadata, timing — makes the cheap verdict, and passes the encrypted bytes through untouched. The genuine cases that need plaintext exist, but they belong *behind* the termination point, at the application, where there is context and time — not smeared across the wire-speed front. The one deliberate exception is proxy mode: when Synapse is explicitly deployed as a proxy in front of an application, it terminates and inspects L7 with the WAF. That is a scoped decision for a specific app, not a blanket policy of decrypting everything at the perimeter. The default belt stays blind to content on purpose, and sharp about shape.
 
 A useful Layer 02 also publishes its decisions backwards. Layer 01 should learn from edge verdicts. If the edge is blocking a /24 at 95% confidence after a week of unique-fingerprint reports, that is a signal Layer 01 can use to raise the confidence on that whole address space. The forward observer and the forward defensive belt are not separate organisations. They share intel.
 
@@ -49,6 +59,8 @@ The edge is Cerebrum hardware running Synapse.
 **Cerebrum is the appliance.** It is inline silicon at every site. The Edge SKU sits in a 1U at branch offices and remote sites. The Max SKU sits in a 2U with Nvidia Grace C1 + BlueField-3 DPU at datacenter spines. The hardware is purpose-built for wire-speed L2/L3/L4 work. Sub-microsecond verdicts. Hundreds of Gbps throughput. SynapseOS underneath, purpose-built for this single workload.
 
 **Synapse is the agent, and it is one binary.** The same Synapse binary runs on every Cerebrum and as a kernel-mode agent on commodity Linux and Windows. It is not five products. It is one binary with five core capabilities, named for the signal path through a neuron: **Dendrite** captures, **Hillock** and **Amygdala** enforce, **Thalamus** inspects, **Cortex** learns. In proxy mode it adds a sixth, a **WAF** for L7 HTTP filtering. You get the layered defence by *deploying Synapse at multiple points*: a capture tap here, an inline edge there, a proxy in front of an app, an east-west chokepoint deeper in. A single Synapse is a neuron. Many Synapses wired together are the nervous system, and the doctrine's depth is a function of where you place them. At the edge, the binary runs in its enforcing role. The decision happens at the kernel level, and the forwarding plane never sees application data, so the system is not a TLS MITM.
+
+![Synapse components and layers: one binary along the neuron signal path — Dendrite captures, Hillock and Amygdala enforce, Thalamus inspects, Cortex learns, with the WAF as the proxy-mode L7 capability; Cortex feeds findings up to Cerebellum, which pushes CTI, rules, and policy back into the binary](../layers/illustrations/synapse-components.png)
 
 **The edge learns, too.** Cortex runs on the edge Synapse just like everywhere else. So Layer 02 is not only enforcement: every edge sensor is also a forward observer that does local pattern recognition and ships its findings up to Cerebellum. This is why Layer 02 feeds Layer 05. The shock absorber at the front is also one of the eyes of the staff in the rear. The same deployment that blocks the obvious attack at wire speed is contributing the telemetry that makes tomorrow's blocks smarter.
 

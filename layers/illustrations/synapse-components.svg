@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1040" font-family="'JetBrains Mono', ui-monospace, monospace">
+<style>text{font-family:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;}</style>
+<defs>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e8eaef" stroke-width="0.5"/></pattern>
+  <marker id="ah" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0, 9 3.5, 0 7" fill="#5a6178"/></marker>
+  <marker id="ahp" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0, 9 3.5, 0 7" fill="#9333ea"/></marker>
+  <marker id="ahg" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0, 9 3.5, 0 7" fill="#16a34a"/></marker>
+  <marker id="aho" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0, 9 3.5, 0 7" fill="#d97706"/></marker>
+</defs>
+<rect width="1600" height="1040" fill="#ffffff"/>
+<rect width="1600" height="1040" fill="url(#grid)"/>
+<text x="60" y="52" fill="#8b92a5" font-size="15" letter-spacing="6" font-weight="600">GEN0SEC · ARCHITECTURE</text>
+<text x="60" y="92" fill="#1a1d23" font-size="30" font-weight="700">Synapse — components &amp; layers</text>
+<text x="60" y="120" fill="#5a6178" font-size="14">One binary, six capabilities — the signal path through a neuron: capture → enforce → inspect → learn.</text>
+<rect x="50" y="185" width="1500" height="600" rx="14" fill="none" stroke="#006fff" stroke-width="1.6" stroke-dasharray="8 4"/>
+<text x="74" y="217" fill="#006fff" font-size="15" font-weight="700" letter-spacing="2">SYNAPSE · ONE BINARY</text>
+<text x="1526" y="217" fill="#8b92a5" font-size="12" text-anchor="end">deployed at edge · host · proxy — many points, one agent</text>
+<rect x="128" y="255" width="300" height="170" rx="8" fill="#ffffff"/>
+<rect x="128" y="255" width="300" height="170" rx="8" fill="rgba(0,111,255,0.08)" stroke="#006fff" stroke-width="1.7"/>
+<text x="146" y="289" fill="#1a1d23" font-size="18" font-weight="700">Dendrite</text>
+<text x="146" y="310" fill="#006fff" font-size="12.5" font-weight="600">capture</text>
+<text x="146" y="335" fill="#5a6178" font-size="12.5">Sees every flow.</text>
+<text x="146" y="354" fill="#5a6178" font-size="12.5">JA4+ fingerprints,</text>
+<text x="146" y="373" fill="#5a6178" font-size="12.5">telemetry.</text>
+<rect x="372.8" y="269" width="41.2" height="22" rx="11" fill="#006fff"/>
+<text x="393.4" y="284" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">L01</text>
+<text x="146" y="409" fill="#006fff" font-size="11" font-weight="600">capture · JA4+</text>
+<rect x="476" y="255" width="300" height="170" rx="8" fill="#ffffff"/>
+<rect x="476" y="255" width="300" height="170" rx="8" fill="rgba(0,111,255,0.08)" stroke="#006fff" stroke-width="1.7"/>
+<text x="494" y="289" fill="#1a1d23" font-size="18" font-weight="700">Hillock</text>
+<text x="494" y="310" fill="#006fff" font-size="12.5" font-weight="600">enforcing firewall</text>
+<text x="494" y="335" fill="#5a6178" font-size="12.5">Stateless L3/L4 rules</text>
+<text x="494" y="354" fill="#5a6178" font-size="12.5">in XDP / eBPF.</text>
+<text x="494" y="373" fill="#5a6178" font-size="12.5">Wire speed.</text>
+<rect x="687.2" y="269" width="74.80000000000001" height="22" rx="11" fill="#006fff"/>
+<text x="724.6" y="284" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">L02·L03</text>
+<text x="494" y="409" fill="#006fff" font-size="11" font-weight="600">XDP · eBPF</text>
+<rect x="824" y="255" width="300" height="170" rx="8" fill="#ffffff"/>
+<rect x="824" y="255" width="300" height="170" rx="8" fill="rgba(220,38,38,0.07)" stroke="#dc2626" stroke-width="1.7"/>
+<text x="842" y="289" fill="#1a1d23" font-size="18" font-weight="700">Amygdala</text>
+<text x="842" y="310" fill="#dc2626" font-size="12.5" font-weight="600">smart firewall</text>
+<text x="842" y="335" fill="#5a6178" font-size="12.5">Blocks on JA4+</text>
+<text x="842" y="354" fill="#5a6178" font-size="12.5">fingerprints &amp;</text>
+<text x="842" y="373" fill="#5a6178" font-size="12.5">Cerebellum CTI.</text>
+<rect x="1035.2" y="269" width="74.80000000000001" height="22" rx="11" fill="#dc2626"/>
+<text x="1072.6" y="284" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">L02·L03</text>
+<text x="842" y="409" fill="#dc2626" font-size="11" font-weight="600">JA4+ · CTI</text>
+<rect x="1172" y="255" width="300" height="170" rx="8" fill="#ffffff"/>
+<rect x="1172" y="255" width="300" height="170" rx="8" fill="rgba(8,145,178,0.10)" stroke="#0891b2" stroke-width="1.7"/>
+<text x="1190" y="289" fill="#1a1d23" font-size="18" font-weight="700">Thalamus</text>
+<text x="1190" y="310" fill="#0891b2" font-size="12.5" font-weight="600">IDS / NDR</text>
+<text x="1190" y="335" fill="#5a6178" font-size="12.5">Suricata-grade rules,</text>
+<text x="1190" y="354" fill="#5a6178" font-size="12.5">app-layer parsers,</text>
+<text x="1190" y="373" fill="#5a6178" font-size="12.5">east-west microseg.</text>
+<rect x="1416.8" y="269" width="41.2" height="22" rx="11" fill="#0891b2"/>
+<text x="1437.4" y="284" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">L03</text>
+<text x="1190" y="409" fill="#0891b2" font-size="11" font-weight="600">IDS · microseg</text>
+<text x="60" y="328" fill="#8b92a5" font-size="12">traffic</text>
+<line x1="62" y1="340" x2="124" y2="340" stroke="#5a6178" stroke-width="1.8" marker-end="url(#ah)"/>
+<line x1="432" y1="340" x2="472" y2="340" stroke="#5a6178" stroke-width="1.8" marker-end="url(#ah)"/>
+<line x1="780" y1="340" x2="820" y2="340" stroke="#5a6178" stroke-width="1.8" marker-end="url(#ah)"/>
+<line x1="1128" y1="340" x2="1168" y2="340" stroke="#5a6178" stroke-width="1.8" marker-end="url(#ah)"/>
+<line x1="1322" y1="425" x2="1322" y2="466" stroke="#5a6178" stroke-width="1.8" marker-end="url(#ah)"/>
+<rect x="1172" y="470" width="300" height="46" rx="23" fill="#ffffff" stroke="#5a6178" stroke-width="1.5"/>
+<text x="1322" y="499" fill="#1a1d23" font-size="13" font-weight="700" text-anchor="middle">verdict: drop · pass · tag</text>
+<line x1="974" y1="425" x2="974" y2="466" stroke="#d97706" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#aho)"/>
+<text x="984" y="460" fill="#d97706" font-size="11" font-weight="600">proxy mode</text>
+<rect x="824" y="470" width="300" height="110" rx="8" fill="#ffffff"/>
+<rect x="824" y="470" width="300" height="110" rx="8" fill="rgba(217,119,6,0.10)" stroke="#d97706" stroke-width="1.7" stroke-dasharray="6 4"/>
+<text x="842" y="504" fill="#1a1d23" font-size="18" font-weight="700">WAF</text>
+<text x="842" y="525" fill="#d97706" font-size="12.5" font-weight="600">web app firewall</text>
+<text x="842" y="550" fill="#5a6178" font-size="12.5">L7 HTTP filtering. CTI-driven.</text>
+<rect x="1068.8" y="484" width="41.2" height="22" rx="11" fill="#d97706"/>
+<text x="1089.4" y="499" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">L02</text>
+<text x="842" y="564" fill="#d97706" font-size="11" font-weight="600">PROXY MODE ONLY</text>
+<path d="M 200 446 H 1400" fill="none" stroke="#9333ea" stroke-width="1.4" stroke-dasharray="3 5" opacity="0.8"/>
+<line x1="278" y1="425" x2="278" y2="446" stroke="#9333ea" stroke-width="1.2" stroke-dasharray="3 4" opacity="0.7"/>
+<line x1="626" y1="425" x2="626" y2="446" stroke="#9333ea" stroke-width="1.2" stroke-dasharray="3 4" opacity="0.7"/>
+<line x1="974" y1="425" x2="974" y2="446" stroke="#9333ea" stroke-width="1.2" stroke-dasharray="3 4" opacity="0.7"/>
+<line x1="1322" y1="425" x2="1322" y2="446" stroke="#9333ea" stroke-width="1.2" stroke-dasharray="3 4" opacity="0.7"/>
+<text x="1410" y="450" fill="#9333ea" font-size="11" font-weight="600">telemetry</text>
+<line x1="206" y1="446" x2="206" y2="601" stroke="#9333ea" stroke-width="1.4" stroke-dasharray="3 5" marker-end="url(#ahp)"/>
+<rect x="110" y="605" width="1100" height="130" rx="8" fill="#ffffff"/>
+<rect x="110" y="605" width="1100" height="130" rx="8" fill="rgba(147,51,234,0.08)" stroke="#9333ea" stroke-width="1.7"/>
+<text x="128" y="639" fill="#1a1d23" font-size="18" font-weight="700">Cortex</text>
+<text x="128" y="660" fill="#9333ea" font-size="12.5" font-weight="600">per-sensor ML engine</text>
+<text x="128" y="685" fill="#5a6178" font-size="12.5">Runs on every Synapse — learns locally from the whole path.</text>
+<text x="128" y="704" fill="#5a6178" font-size="12.5">Ships findings up to Cerebellum. Does not produce CTI itself.</text>
+<rect x="1138" y="619" width="58" height="22" rx="11" fill="#9333ea"/>
+<text x="1167" y="634" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">→ L05</text>
+<text x="128" y="719" fill="#9333ea" font-size="11" font-weight="600">ML · anomaly · clustering</text>
+<rect x="350" y="850" width="900" height="130" rx="10" fill="#ffffff"/>
+<rect x="350" y="850" width="900" height="130" rx="10" fill="rgba(22,163,74,0.08)" stroke="#16a34a" stroke-width="1.8"/>
+<text x="372" y="886" fill="#1a1d23" font-size="19" font-weight="700">Cerebellum</text>
+<text x="372" y="908" fill="#16a34a" font-size="12.5" font-weight="600">backend platform — not part of the Synapse binary</text>
+<text x="372" y="934" fill="#5a6178" font-size="12.5">CTI engine &amp; fleet brain. Produces CTI verdicts, clusters behaviour,</text>
+<text x="372" y="953" fill="#5a6178" font-size="12.5">generates Thalamus rules + Hillock policy, pushes them fleet-wide.</text>
+<rect x="1206" y="866" width="30" height="22" rx="11" fill="#16a34a"/>
+<text x="1221" y="881" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">L05</text>
+<line x1="660" y1="735" x2="660" y2="846" stroke="#9333ea" stroke-width="1.8" marker-end="url(#ahp)"/>
+<text x="672" y="796.5" fill="#9333ea" font-size="11.5" font-weight="600">findings → fleet brain</text>
+<path d="M 1250 890 H 1500 V 340 H 1476" fill="none" stroke="#16a34a" stroke-width="1.8" marker-end="url(#ahg)"/>
+<text x="1496" y="844" fill="#16a34a" font-size="11.5" font-weight="600" text-anchor="end">CTI · rules · policy → Hillock · Amygdala · Thalamus · WAF</text>
+<text x="60" y="1014" fill="#8b92a5" font-size="12">One Synapse is a neuron; many Synapses wired together are the nervous system. CTI is produced by Cerebellum — Cortex only feeds it.</text>
+</svg>
