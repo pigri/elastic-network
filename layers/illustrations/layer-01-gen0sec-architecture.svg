@@ -67,8 +67,8 @@
   <!-- Forest-of-sensors group -->
   <rect x="60" y="580" width="410" height="110" rx="8" fill="rgba(22,163,74,0.08)" stroke="#16a34a" stroke-width="1.5"/>
   <text x="80" y="606" fill="#16a34a" font-size="11" letter-spacing="3" font-weight="700">FOREST-OF-SENSORS · DENDRITE CAPTURE</text>
-  <text x="80" y="634" fill="#1a1d23" font-size="14" font-weight="600">• Synapse-in-the-wild — Dendrite captures every flow</text>
-  <text x="80" y="658" fill="#1a1d23" font-size="14" font-weight="600">• Cerebrum sensors — JA4+ telemetry up to Cerebellum</text>
+  <text x="80" y="634" fill="#1a1d23" font-size="14" font-weight="600">• Synapse-in-the-wild — captures every flow</text>
+  <text x="80" y="658" fill="#1a1d23" font-size="14" font-weight="600">• Cerebrum — JA4+ telemetry → Cerebellum</text>
   <text x="80" y="680" fill="#5a6178" font-size="11">Dendrite is the shared capture plane on every sensor</text>
 
   <!-- ════════════════════ COLUMN 2 — CORTEX ════════════════════ -->
