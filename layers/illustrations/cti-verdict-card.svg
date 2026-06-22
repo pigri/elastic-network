@@ -13,7 +13,7 @@
   <text x="60" y="56" fill="#8b92a5" font-size="15" letter-spacing="6" font-family="Orbitron, 'JetBrains Mono', monospace" font-weight="600">GEN0SEC · CYBER THREAT INTELLIGENCE</text>
 
   <text x="60" y="128" fill="#1a1d23" font-size="58" font-weight="700" letter-spacing="-0.01em">176.65.139.130</text>
-  <text x="60" y="162" fill="#5a6178" font-size="16">IPv4 · CORTEX verdict · generated 2026-06-05 18:21 UTC</text>
+  <text x="60" y="162" fill="#5a6178" font-size="16">IPv4 · CEREBELLUM verdict · generated 2026-06-05 18:21 UTC</text>
 
   <!-- BLOCK verdict badge (top-right) -->
   <rect x="1140" y="70" width="300" height="84" rx="12" fill="rgba(220,38,38,0.07)" stroke="#dc2626" stroke-width="2"/>

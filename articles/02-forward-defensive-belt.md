@@ -64,19 +64,45 @@ The edge is Cerebrum hardware running Synapse.
 
 **The edge learns, too.** Cortex runs on the edge Synapse just like everywhere else. So Layer 02 is not only enforcement: every edge sensor is also a forward observer that does local pattern recognition and ships its findings up to Cerebellum. This is why Layer 02 feeds Layer 05. The shock absorber at the front is also one of the eyes of the staff in the rear. The same deployment that blocks the obvious attack at wire speed is contributing the telemetry that makes tomorrow's blocks smarter.
 
+The edge is the fleet's richest source of training data, and the reason is not volume — it is *labels*. Most machine learning in security drowns in unlabelled traffic: billions of flows and no ground truth about which were hostile. The belt produces ground truth as a side effect of doing its job. Every flow it drops, passes, rate-limits, or tags is a decision with a knowable outcome — the blocked /24 that no legitimate customer ever complained about is a confirmed-bad label; the fingerprint that was tagged and then cleared by Thalamus is a confirmed-false-positive. Cerebellum learns from both. The cluster the edge matched against on the card above, `SCAN-CLUSTER-07`, did not come from a feed; it was assembled out of edge verdicts across every tenant, which is exactly why a scanner that has never touched your network can be turned away at your door on its first connection. The down-loop and the up-loop run on the same wire: Cerebellum pushes what it knows out to the edge, the edge pushes what it sees back to Cerebellum, and the belt gets sharper every time it is hit.
+
 **Hillock is the enforcing firewall.** XDP-native, eBPF-backed. Stateless rule evaluation against compiled policy. Hot-loadable: a new rule set propagates to every Synapse in the fleet in milliseconds. The kind of high-volume, attritional packet filtering the *Vorfeldzone* was designed to do, except in software and at hundreds of millions of packets per second. This is the cheap, fast, deliberately-dumb half of the edge.
 
 **Amygdala is the smart firewall.** Where Hillock enforces stateless L3/L4 rules, Amygdala enforces on fingerprints and threat data. A JA4 or JA4T that Cerebellum has flagged gets blocked by Amygdala at the edge, before the connection completes, without Hillock needing a static IP/port rule for it. This is the threat-aware enforcement that Hillock's rules cannot express, and it is the component that spans the edge and the main defensive zone: Amygdala blocks the obviously-bad fingerprint at the door (Layer 02), and the fingerprint that only became suspicious after deeper inspection (Layer 03). Dendrite feeds it the raw connection; Cerebellum tells it which fingerprints to fear. The CTI verdict and the smart firewall are the same loop: Cerebellum produces the threat intelligence, Amygdala enforces it inline.
 
 **WAF runs in proxy mode.** When Synapse is deployed as a proxy in front of an application rather than as an inline passthrough, it adds a web application firewall: L7 HTTP inspection and blocking. This is the deployment from the PROXY-protocol and JA4+ architecture, where the edge peeks the cleartext ClientHello, fingerprints the connection, and can terminate or forward HTTP. Like Amygdala, the WAF is CTI-driven: it blocks on the threat data Cerebellum supplies, not just on a static OWASP ruleset. Inline and passthrough deployments do not have a WAF, because they never see the application layer. It is a proxy-mode capability, and it is where the smart firewall reaches up into L7.
 
-**JA4+ is the classifier.** Every TLS ClientHello gets fingerprinted before the connection completes. We use JA4 for the TLS stack, JA4T for the TCP SYN, JA4H for HTTP, JA4S for the ServerHello, JA4SSH for SSH sessions, JA4L/LS for latency, JA4X for certificates, JA4 DHCP for DHCP option fingerprints. The fingerprint becomes a tag on the flow that downstream Thalamus can use. None of this requires decryption. We see the shape of the connection, not its contents.
+**JA4+ is the classifier.** Every TLS ClientHello gets fingerprinted before the connection completes. We use JA4 for the TLS stack, JA4T for the TCP SYN, JA4H for HTTP, JA4S for the ServerHello, JA4SSH for SSH sessions, JA4L/LS for latency, JA4X for certificates, JA4 DHCP for DHCP option fingerprints. The fingerprint becomes a tag on the flow that downstream Thalamus can use, and none of it requires decryption.
 
 **The output is a tagged stream.** Traffic that survived the edge arrives at Thalamus with metadata: who it was, what fingerprint stack it came from, what reputation Cerebellum assigned the source, whether it was rate-limited, what the source ASN is, what JA4+ tags it carries. Layer 03 inherits enrichment for free. It does not have to re-derive the fingerprint or re-look-up the reputation. The edge already did that.
 
 **It is genuinely cheap to operate.** A Cerebrum sensor processes traffic at line rate without escalating cost as throughput grows. There is no per-flow licensing. There is no decryption tax. There is no need to scale CPU linearly with packet rate, because the heavy lifting is in eBPF and the DPU. The economic model of the doctrine matches: edge throughput is the cheap thing, depth and response are the expensive things.
 
 The forward belt only works if it stays cheap. We built Cerebrum and Synapse so that staying cheap is the architecture, not a discipline you have to remember.
+
+## What the edge actually tags
+
+Most edge filtering is a lookup: is this IP, this domain, this signature on a list? A list is blind to anything it has not seen before. A brand-new scanner from a fresh IP is invisible to it until someone, somewhere, gets hit and reports the address.
+
+The edge does not have to wait for that. Before the TLS handshake even completes, it has fingerprinted the connection from the outside of the envelope — and a fingerprint describes the *client*, not the address it happens to be using today. Here is what one flow looks like by the time the edge has decided on it.
+
+![A JA4+ connection fingerprint card: the JA4, JA4T, JA4H, and JA4L dimensions of a single TLS flow, the Cerebellum cluster match, and the inline edge action — all without decryption](../layers/illustrations/ja4-fingerprint-card.png)
+
+Read it left to right, because each fingerprint is a different facet of the same connection, and none of them required decrypting a byte.
+
+**JA4 is the TLS client.** The order of the extensions, the cipher list, the supported groups, the ALPN — together they identify the stack that built the ClientHello. This one is a Go `net/http` client, not a browser. That alone does not make it malicious, but it makes it *not a customer*, which is most of the decision.
+
+**JA4T is the TCP stack.** Window size, MSS, the options and their order. It pins the operating system underneath the TLS. A claim of "I am Chrome on Windows" in the TLS layer, sitting on a Linux TCP fingerprint, is a lie the edge can see without reading anything.
+
+**JA4H is the HTTP behaviour.** Method, version, which headers are present and in what order, whether there is a cookie or a referer. A real browser carries a heavy, specific header set. This client carries the minimum — the shape of automation, not a person.
+
+**JA4L is distance.** Round-trip time and TTL place the origin roughly in the network: a datacenter a few milliseconds away behaves differently from a residential user across the world. A weak signal alone, a useful one in combination.
+
+The fingerprints are the cheap part. The **Cerebellum match** is where they pay off. Taken together, these dimensions match a behavioural cluster — `SCAN-CLUSTER-07` — that Cerebellum has already seen on nine other tenants this week, at 0.91 confidence. No single customer had to be attacked first; the fleet had already met this stack, and the verdict travelled ahead of the attacker.
+
+So the **edge action** is not a lookup hit. It is Amygdala blocking inline, with no static IP/port rule, because the fingerprint — not the address — is what Cerebellum flagged. The flow is tagged `scanner`, and that tag rides up to Thalamus as enrichment. The whole decision happens in under a millisecond, before the handshake finishes, without a single byte of plaintext read.
+
+That is the difference between a blocklist and a forward defensive belt. A blocklist knows addresses. The belt knows *what kind of thing* is knocking — so it can turn away an attacker it has never seen, on an IP that has never been reported, because the shape gave it away.
 
 ---
 
@@ -91,3 +117,5 @@ The forward belt only works if it stays cheap. We built Cerebrum and Synapse so 
 ---
 
 *This is part 2 of a 5-part series on elastic network defense. Layer 03 covers the main defensive zone: deep inspection, IDS/IPS, and east-west microsegmentation.*
+
+*TLP:CLEAR — approved for public distribution.*
