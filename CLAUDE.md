@@ -11,15 +11,30 @@ Gen0Sec stack, and how it maps onto the 5 doctrine layers:
 - **Cerebrum** — the hardware appliance (inline silicon at every site).
   - Edge SKU: 1U, LX2160A, up to 100 Gb/s.
   - Max SKU: 2U, **ECA-6710** (Nvidia MGX / Grace C1 / BlueField-3 DPU, 256 GB LPDDR5).
-- **Synapse** — the agent. **One binary, multiple use cases**; you get the
-  layered defense by *deploying Synapse at multiple points*. Components are named
-  for the signal path through a neuron:
-  - **Dendrite** — capture layer.
-  - **Hillock** — enforcing firewall (stateless L3/L4, XDP/eBPF).
-  - **Amygdala** — smart firewall (blocks on JA4+ fingerprints **and CTI**). Spans L02 (edge) + L03 (main zone).
-  - **Thalamus** — IDS (Suricata-grade, app-layer parsers).
-  - **Cortex** — per-sensor ML. Runs on **every** Synapse, including the edge.
-  - **WAF** — L7 HTTP filtering, **proxy-mode only** (not in inline/passthrough). CTI-driven like Amygdala.
+- **Synapse** — the **orchestrator**: one binary, two modes (**Agent + Proxy**).
+  You get the layered defense by *deploying Synapse at multiple points*. The
+  pipeline is **capture → detect → decide → execute**, and components are named
+  for the signal path through a neuron. In path order:
+  - **hillock** — the **kernel data-plane** (eBPF · TC · XDP): packet taps +
+    in-kernel enforcement *execution*, ring events, metrics. **First** in the
+    path; it executes drops but does **not** decide.
+  - **dendrite** — **capture / fingerprint**. JA4+ capture & parse, the **source
+    of truth** (FingerprintInfo + decoder buffers). Captures only, enforces
+    nothing. Fans out to thalamus, cortex, and amygdala.
+  - **thalamus** — **IDS engine** (Suricata-compatible rules, flow tracking →
+    threat events). Detection runs **before** enforcement; feeds amygdala.
+  - **cortex** — **JA4+ ML classifier** (ONNX inference pool), classify-and-block
+    verdict → amygdala. Per-sensor; also ships findings up to Cerebellum.
+  - **amygdala** — the **smart firewall / enforcement decision-maker**. wirefilter
+    rules over fingerprints; **decides** drops and dispatches to a **multi-backend
+    (XDP / nftables / iptables)**. The enforcement loop runs back to hillock.
+    Spans L02 (edge) + L03 (main zone).
+  - **Proxy mode** — inline **L7** via **Pingora** reverse proxy: TLS
+    passthrough/termination, **WAF (wirefilter)**, rate-limit, CAPTCHA, content
+    scan, load-balancing → backend. Proxy-mode only.
+  - Shared engines: **wirefilter** (rules for amygdala + WAF), **Pingora** (proxy).
+  - NB: the synapse-components diagram is **binary-internal** (no Cerebellum).
+    Amygdala's wirefilter rules are still fed by Cerebellum CTI at fleet scale.
 - **Cerebellum** — the backend platform. The **CTI engine** and the **fleet brain**
   (the Generalstab / Layer 05). Produces CTI verdicts, aggregates telemetry,
   clusters behaviour, generates Thalamus rules + edge policy.
@@ -37,8 +52,8 @@ also runs Cortex, **L02 feeds L05** (the edge is also a forward observer).
 ## Layer map
 
 - **01 Forward observation** — *Vorpostenlinie* / outpost. CTI (Cerebellum), honeynets, canaries, Dendrite capture.
-- **02 Forward defensive belt** — *Vorfeldzone* / the edge. Cerebrum + Synapse; Hillock enforces, Amygdala blocks on JA4+/CTI, WAF in proxy mode, Cortex learns → L05.
-- **03 Main defensive zone** — *Hauptkampffeld*. Thalamus IDS, Amygdala (deeper context), Hillock east-west microseg.
+- **02 Forward defensive belt** — *Vorfeldzone* / the edge. Cerebrum + Synapse; dendrite captures, thalamus/cortex detect, **amygdala decides** drops (executed in-kernel by hillock / nftables / iptables), WAF in Pingora proxy mode, Cortex feeds L05.
+- **03 Main defensive zone** — *Hauptkampffeld*. Thalamus IDS + cortex feed amygdala (deeper context); amygdala decides east-west microseg drops, executed by hillock.
 - **04 Reserves / counterattack** — *Eingreifdivision*. Workflow (SOC/SOAR).
 - **05 Intelligence / adaptation** — *Generalstab*. Cerebellum (fleet brain); Cortex feeds it.
 

@@ -33,11 +33,11 @@
   
   <rect x="830" y="290" width="710" height="250" rx="14" fill="rgba(217,119,6,0.08)" stroke="#d97706" stroke-width="1.5"/>
   <text x="858" y="340" fill="#1a1d23" font-size="22" font-weight="700">Cerebrum + Synapse — the edge</text>
-  <text x="858" y="368" fill="#5a6178" font-size="16">Hillock enforces in XDP. Amygdala blocks on JA4+ &amp; CTI. WAF</text>
-  <text x="858" y="390" fill="#5a6178" font-size="16">(proxy mode) filters L7. DDoS shed.</text>
+  <text x="858" y="368" fill="#5a6178" font-size="16">Amygdala decides on JA4+ &amp; CTI; Hillock executes in XDP. WAF in</text>
+  <text x="858" y="390" fill="#5a6178" font-size="16">Pingora proxy. DDoS shed.</text>
   <text x="858" y="430" fill="#5a6178" font-size="16">Job: kill obvious traffic at wire speed; tag the rest. Cortex</text>
   <text x="858" y="452" fill="#5a6178" font-size="16">also runs here and feeds L05.</text>
-  <text x="858" y="490" fill="#d97706" font-size="14" font-style="italic">Hillock (enforce) · Amygdala (smart fw) · WAF (proxy) · Cortex · JA4+</text>
+  <text x="858" y="490" fill="#d97706" font-size="14" font-style="italic">Amygdala (decides) · Hillock (kernel) · WAF (proxy) · Thalamus · Cortex</text>
 
   <line x1="60" y1="590" x2="1540" y2="590" stroke="#e8eaef" stroke-width="1"/>
   <text x="60" y="630" fill="#0f172a" font-size="13" letter-spacing="3" font-weight="700">DOCTRINE</text>

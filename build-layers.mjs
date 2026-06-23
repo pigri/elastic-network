@@ -53,9 +53,9 @@ const layers = [
     },
     net: {
       title: "Cerebrum + Synapse — the edge",
-      body1: "Hillock enforces in XDP. Amygdala blocks on JA4+ & CTI. WAF (proxy mode) filters L7. DDoS shed.",
+      body1: "Amygdala decides on JA4+ & CTI; Hillock executes in XDP. WAF in Pingora proxy. DDoS shed.",
       body2: "Job: kill obvious traffic at wire speed; tag the rest. Cortex also runs here and feeds L05.",
-      tag: "Hillock (enforce) · Amygdala (smart fw) · WAF (proxy) · Cortex · JA4+",
+      tag: "Amygdala (decides) · Hillock (kernel) · WAF (proxy) · Thalamus · Cortex",
     },
     invariant: "Wire-speed and stupid on purpose. The forward belt only works if it stays cheap.",
   },

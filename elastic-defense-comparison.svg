@@ -77,9 +77,9 @@
     <!-- Network -->
     <rect x="810" y="68" width="730" height="120" rx="10" fill="rgba(217,119,6,0.08)" stroke="#d97706" stroke-width="1.5"/>
     <text x="830" y="98" fill="#1a1d23" font-size="18" font-weight="700">Cerebrum + Synapse — the edge</text>
-    <text x="830" y="125" fill="#5a6178" font-size="13">Hillock enforces at wire speed. Amygdala blocks on JA4+ &amp; CTI.</text>
+    <text x="830" y="125" fill="#5a6178" font-size="13">Amygdala decides on JA4+ &amp; CTI. Hillock executes in XDP.</text>
     <text x="830" y="148" fill="#5a6178" font-size="13">WAF filters L7 in proxy mode. Cortex learns at the edge, feeds L05.</text>
-    <text x="830" y="176" fill="#d97706" font-size="12" font-style="italic">Hillock (enforce) · Amygdala (smart fw) · WAF (proxy) · Cortex · JA4+ · DDoS</text>
+    <text x="830" y="176" fill="#d97706" font-size="12" font-style="italic">Amygdala (decides) · Hillock (kernel) · WAF (proxy) · Thalamus · Cortex</text>
   </g>
 
   <!-- ====================== LAYER 3 — Main defensive zone ====================== -->
