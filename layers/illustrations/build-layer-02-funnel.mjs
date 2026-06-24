@@ -69,8 +69,8 @@ for (const s of segs) {
 
 // entry
 P(`<line x1="150" y1="480" x2="${X0 - 6}" y2="480" stroke="${C.orange}" stroke-width="7" marker-end="url(#ar-orange)" opacity="0.9"/>`);
-P(`<text x="175" y="462" fill="${C.ink}" font-size="13" font-weight="700">ALL INBOUND</text>`);
-P(`<text x="175" y="500" fill="${C.faint}" font-size="12">100% of traffic</text>`);
+P(`<text x="150" y="440" fill="${C.ink}" font-size="13" font-weight="700">ALL INBOUND</text>`);
+P(`<text x="150" y="460" fill="${C.faint}" font-size="12">100% of traffic</text>`);
 
 // exit (thin survivor)
 P(`<line x1="${X1 + 4}" y1="480" x2="1372" y2="480" stroke="${C.green}" stroke-width="3" marker-end="url(#ar-green)"/>`);
