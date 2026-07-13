@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" font-family="'JetBrains Mono', ui-monospace, monospace">
+<style>text{font-family:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;}</style>
+<defs>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e8eaef" stroke-width="0.5"/></pattern>
+  <marker id="ap" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0, 9 3.5, 0 7" fill="#9333ea"/></marker>
+  <marker id="ag" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0, 9 3.5, 0 7" fill="#16a34a"/></marker>
+  <marker id="af" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0, 9 3.5, 0 7" fill="#8b92a5"/></marker>
+</defs>
+<rect width="1600" height="900" fill="#ffffff"/>
+<rect width="1600" height="900" fill="url(#grid)"/>
+<text x="60" y="56" fill="#8b92a5" font-size="16" letter-spacing="6" font-weight="600">GEN0SEC · ARCHITECTURE</text>
+<rect x="60" y="100" width="68" height="68" rx="10" fill="#9333ea"/>
+<text x="94" y="144" fill="#ffffff" font-size="28" font-weight="700" text-anchor="middle">04</text>
+<text x="148" y="124" fill="#9333ea" font-size="14" letter-spacing="4" font-weight="600">LAYER 04 · RESERVES &amp; COUNTERATTACK</text>
+<text x="148" y="158" fill="#1a1d23" font-size="32" font-weight="700">Approve the outcome, not the alert.</text>
+<text x="148" y="190" fill="#5a6178" font-size="16">Confidence routes the response. The SOC's tempo is a strategic reserve — spend it only on the decisive call.</text>
+<text x="70" y="268" fill="#8b92a5" font-size="13" font-weight="700" text-anchor="start">DETECTIONS</text>
+<rect x="70" y="300" width="250" height="48" rx="10" fill="#ffffff" stroke="#d97706" stroke-width="1.5"/>
+<rect x="70" y="300" width="5" height="48" rx="2" fill="#d97706"/>
+<text x="90" y="329" fill="#1a1d23" font-size="14" font-weight="700" text-anchor="start">L02 · edge verdicts</text>
+<line x1="320" y1="324" x2="392" y2="324" stroke="#8b92a5" stroke-width="1.6" marker-end="url(#af)"/>
+<rect x="70" y="364" width="250" height="48" rx="10" fill="#ffffff" stroke="#006fff" stroke-width="1.5"/>
+<rect x="70" y="364" width="5" height="48" rx="2" fill="#006fff"/>
+<text x="90" y="393" fill="#1a1d23" font-size="14" font-weight="700" text-anchor="start">L03 · east-west drops</text>
+<line x1="320" y1="388" x2="392" y2="388" stroke="#8b92a5" stroke-width="1.6" marker-end="url(#af)"/>
+<rect x="70" y="428" width="250" height="48" rx="10" fill="#ffffff" stroke="#16a34a" stroke-width="1.5"/>
+<rect x="70" y="428" width="5" height="48" rx="2" fill="#16a34a"/>
+<text x="90" y="457" fill="#1a1d23" font-size="14" font-weight="700" text-anchor="start">L01 · CTI indicators</text>
+<line x1="320" y1="452" x2="392" y2="452" stroke="#8b92a5" stroke-width="1.6" marker-end="url(#af)"/>
+<rect x="400" y="296" width="230" height="224" rx="10" fill="rgba(147,51,234,0.04)" stroke="#9333ea" stroke-width="2"/>
+<text x="515" y="330" fill="#9333ea" font-size="16" font-weight="700" text-anchor="middle">WORKFLOW</text>
+<text x="515" y="352" fill="#5a6178" font-size="13" font-weight="400" text-anchor="middle">confidence gate</text>
+<text x="515" y="392" fill="#1a1d23" font-size="13" font-weight="400" text-anchor="middle">is the system sure?</text>
+<text x="420" y="432" fill="#16a34a" font-size="13" font-weight="700" text-anchor="start">HIGH ≥ 0.9</text>
+<text x="420" y="466" fill="#d97706" font-size="13" font-weight="700" text-anchor="start">MEDIUM</text>
+<text x="420" y="500" fill="#8b92a5" font-size="13" font-weight="700" text-anchor="start">LOW</text>
+<line x1="630" y1="430" x2="700" y2="378" stroke="#16a34a" stroke-width="1.8" marker-end="url(#ag)"/>
+<line x1="630" y1="466" x2="700" y2="470" stroke="#d97706" stroke-width="1.8" marker-end="url(#af)"/>
+<line x1="630" y1="500" x2="700" y2="566" stroke="#8b92a5" stroke-width="1.8" marker-end="url(#af)"/>
+<rect x="704" y="344" width="300" height="70" rx="10" fill="#ffffff" stroke="#16a34a" stroke-width="1.5"/>
+<text x="724" y="374" fill="#16a34a" font-size="15" font-weight="700" text-anchor="start">AUTO-EXECUTE</text>
+<text x="724" y="396" fill="#5a6178" font-size="12" font-weight="400" text-anchor="start">commit decisively · no human</text>
+<rect x="704" y="436" width="300" height="70" rx="10" fill="rgba(217,119,6,0.05)" stroke="#d97706" stroke-width="1.5"/>
+<text x="724" y="466" fill="#d97706" font-size="14" font-weight="700" text-anchor="start">SLACK — APPROVE OUTCOME</text>
+<text x="724" y="488" fill="#5a6178" font-size="12" font-weight="400" text-anchor="start">“should we execute this?” — y/n</text>
+<rect x="704" y="540" width="300" height="70" rx="10" fill="#ffffff" stroke="#8b92a5" stroke-width="1.5"/>
+<text x="724" y="570" fill="#8b92a5" font-size="15" font-weight="700" text-anchor="start">ENRICH ONLY</text>
+<text x="724" y="592" fill="#5a6178" font-size="12" font-weight="400" text-anchor="start">add to the case · do not act</text>
+<line x1="1004" y1="379" x2="1090" y2="404" stroke="#16a34a" stroke-width="1.8" marker-end="url(#ag)"/>
+<line x1="1004" y1="471" x2="1090" y2="446" stroke="#9333ea" stroke-width="1.8" marker-end="url(#ap)"/>
+<text x="1012" y="510" fill="#9333ea" font-size="11" font-weight="400" text-anchor="start">approved</text>
+<rect x="1092" y="360" width="440" height="120" rx="10" fill="rgba(147,51,234,0.05)" stroke="#9333ea" stroke-width="2"/>
+<text x="1312" y="392" fill="#9333ea" font-size="15" font-weight="700" text-anchor="middle">FLEET-WIDE COUNTERSTRIKE</text>
+<text x="1312" y="414" fill="#5a6178" font-size="12" font-weight="400" text-anchor="middle">every Cerebrum + Synapse, simultaneously</text>
+<rect x="1130" y="440" width="26" height="20" rx="3" fill="#ffffff" stroke="#9333ea" stroke-width="1.2"/>
+<rect x="1172" y="440" width="26" height="20" rx="3" fill="#ffffff" stroke="#9333ea" stroke-width="1.2"/>
+<rect x="1214" y="440" width="26" height="20" rx="3" fill="#ffffff" stroke="#9333ea" stroke-width="1.2"/>
+<rect x="1256" y="440" width="26" height="20" rx="3" fill="#ffffff" stroke="#9333ea" stroke-width="1.2"/>
+<rect x="1298" y="440" width="26" height="20" rx="3" fill="#ffffff" stroke="#9333ea" stroke-width="1.2"/>
+<rect x="1340" y="440" width="26" height="20" rx="3" fill="#ffffff" stroke="#9333ea" stroke-width="1.2"/>
+<rect x="1382" y="440" width="26" height="20" rx="3" fill="#ffffff" stroke="#9333ea" stroke-width="1.2"/>
+<rect x="1424" y="440" width="26" height="20" rx="3" fill="#ffffff" stroke="#9333ea" stroke-width="1.2"/>
+<rect x="1466" y="440" width="26" height="20" rx="3" fill="#ffffff" stroke="#9333ea" stroke-width="1.2"/>
+<text x="1516" y="455" fill="#9333ea" font-size="11" font-weight="700" text-anchor="end">+5</text>
+<text x="1312" y="500" fill="#9333ea" font-size="12" font-weight="400" text-anchor="middle">policy compiled &amp; pushed in milliseconds — rollback is also fleet-wide</text>
+<rect x="1092" y="540" width="440" height="70" rx="10" fill="#ffffff" stroke="#d5d9e0" stroke-width="1.5"/>
+<text x="1112" y="570" fill="#1a1d23" font-size="14" font-weight="700" text-anchor="start">AUDIT</text>
+<text x="1112" y="592" fill="#5a6178" font-size="12" font-weight="400" text-anchor="start">detection · playbook · approver · change · rollback</text>
+<path d="M 1300 610 L 1300 662 L 480 662 L 480 522" fill="none" stroke="#16a34a" stroke-width="1.8" stroke-dasharray="6,5" marker-end="url(#ag)"/>
+<rect x="688" y="650" width="436" height="22" fill="#ffffff" opacity="0.92"/>
+<text x="906" y="666" fill="#16a34a" font-size="12" font-weight="700" text-anchor="middle">audit feeds Cerebellum (L05) — retrains the confidence model</text>
+<line x1="60" y1="790" x2="1540" y2="790" stroke="#e8eaef" stroke-width="1"/>
+<text x="60" y="828" fill="#9333ea" font-size="12" letter-spacing="3" font-weight="700">DOCTRINE</text>
+<text x="60" y="860" fill="#1a1d23" font-size="22" font-weight="500">If the system is confident, commit. If it is uncertain, ask about the effect — never make the SOC triage the evidence.</text>
+</svg>

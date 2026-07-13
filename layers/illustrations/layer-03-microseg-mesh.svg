@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" font-family="'JetBrains Mono', ui-monospace, monospace">
+<style>text{font-family:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;}</style>
+<defs>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e8eaef" stroke-width="0.5"/></pattern>
+  <marker id="ar-green" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0, 9 3.5, 0 7" fill="#16a34a"/></marker>
+  <marker id="ar-red" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0, 9 3.5, 0 7" fill="#dc2626"/></marker>
+  <marker id="ar-blue" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0, 9 3.5, 0 7" fill="#006fff"/></marker>
+</defs>
+<rect width="1600" height="900" fill="#ffffff"/>
+<rect width="1600" height="900" fill="url(#grid)"/>
+<text x="60" y="56" fill="#8b92a5" font-size="16" letter-spacing="6" font-weight="600">GEN0SEC · ARCHITECTURE</text>
+<rect x="60" y="100" width="68" height="68" rx="10" fill="#006fff"/>
+<text x="94" y="144" fill="#ffffff" font-size="28" font-weight="700" text-anchor="middle">03</text>
+<text x="148" y="124" fill="#006fff" font-size="14" letter-spacing="4" font-weight="600">LAYER 03 · MAIN DEFENSIVE ZONE</text>
+<text x="148" y="158" fill="#1a1d23" font-size="32" font-weight="700">There is no inside. Every boundary is another wall.</text>
+<text x="148" y="190" fill="#5a6178" font-size="16">Per-workload deny-by-default. Lateral movement costs evidence and time at every hop.</text>
+<text x="442.5" y="262" fill="#8b92a5" font-size="13" letter-spacing="2">EAST-WEST · DENY-BY-DEFAULT · WORKLOAD-SCOPED</text>
+<rect x="360" y="322" width="165" height="94" rx="9" fill="rgba(220,38,38,0.07)" stroke="#dc2626" stroke-width="2"/>
+<g stroke="#dc2626" stroke-width="1" opacity="0.7"><line x1="360" y1="362" x2="360" y2="376"/><line x1="525" y1="362" x2="525" y2="376"/></g>
+<text x="442.5" y="360" fill="#dc2626" font-size="14.5" font-weight="700" text-anchor="middle">web-frontend</text>
+<text x="442.5" y="382" fill="#8b92a5" font-size="11" text-anchor="middle">ingress · public</text>
+<rect x="406.5" y="392" width="72" height="16" rx="3" fill="#dc2626"/>
+<text x="442.5" y="404" fill="#ffffff" font-size="10" font-weight="700" letter-spacing="1" text-anchor="middle">POPPED</text>
+<rect x="555" y="322" width="165" height="94" rx="9" fill="#ffffff" stroke="#d5d9e0" stroke-width="1.5"/>
+<g stroke="#d5d9e0" stroke-width="1" opacity="0.7"><line x1="555" y1="362" x2="555" y2="376"/><line x1="720" y1="362" x2="720" y2="376"/></g>
+<text x="637.5" y="360" fill="#1a1d23" font-size="14.5" font-weight="700" text-anchor="middle">api-gateway</text>
+<text x="637.5" y="382" fill="#8b92a5" font-size="11" text-anchor="middle">svc · authn</text>
+<text x="637.5" y="402" fill="#16a34a" font-size="9.5" text-anchor="middle">deny-by-default</text>
+<rect x="750" y="322" width="165" height="94" rx="9" fill="#ffffff" stroke="#d5d9e0" stroke-width="1.5"/>
+<g stroke="#d5d9e0" stroke-width="1" opacity="0.7"><line x1="750" y1="362" x2="750" y2="376"/><line x1="915" y1="362" x2="915" y2="376"/></g>
+<text x="832.5" y="360" fill="#1a1d23" font-size="14.5" font-weight="700" text-anchor="middle">auth-svc</text>
+<text x="832.5" y="382" fill="#8b92a5" font-size="11" text-anchor="middle">svc · OIDC</text>
+<text x="832.5" y="402" fill="#16a34a" font-size="9.5" text-anchor="middle">deny-by-default</text>
+<rect x="945" y="322" width="165" height="94" rx="9" fill="#ffffff" stroke="#d5d9e0" stroke-width="1.5"/>
+<g stroke="#d5d9e0" stroke-width="1" opacity="0.7"><line x1="945" y1="362" x2="945" y2="376"/><line x1="1110" y1="362" x2="1110" y2="376"/></g>
+<text x="1027.5" y="360" fill="#1a1d23" font-size="14.5" font-weight="700" text-anchor="middle">session-cache</text>
+<text x="1027.5" y="382" fill="#8b92a5" font-size="11" text-anchor="middle">redis :6379</text>
+<text x="1027.5" y="402" fill="#16a34a" font-size="9.5" text-anchor="middle">deny-by-default</text>
+<rect x="360" y="444" width="165" height="94" rx="9" fill="#ffffff" stroke="#d5d9e0" stroke-width="1.5"/>
+<g stroke="#d5d9e0" stroke-width="1" opacity="0.7"><line x1="360" y1="484" x2="360" y2="498"/><line x1="525" y1="484" x2="525" y2="498"/></g>
+<text x="442.5" y="482" fill="#1a1d23" font-size="14.5" font-weight="700" text-anchor="middle">orders-api</text>
+<text x="442.5" y="504" fill="#8b92a5" font-size="11" text-anchor="middle">svc · signed</text>
+<text x="442.5" y="524" fill="#16a34a" font-size="9.5" text-anchor="middle">deny-by-default</text>
+<rect x="555" y="444" width="165" height="94" rx="9" fill="#ffffff" stroke="#d5d9e0" stroke-width="1.5"/>
+<g stroke="#d5d9e0" stroke-width="1" opacity="0.7"><line x1="555" y1="484" x2="555" y2="498"/><line x1="720" y1="484" x2="720" y2="498"/></g>
+<text x="637.5" y="482" fill="#1a1d23" font-size="14.5" font-weight="700" text-anchor="middle">payments-api</text>
+<text x="637.5" y="504" fill="#8b92a5" font-size="11" text-anchor="middle">svc · PCI</text>
+<text x="637.5" y="524" fill="#16a34a" font-size="9.5" text-anchor="middle">deny-by-default</text>
+<rect x="750" y="444" width="165" height="94" rx="9" fill="#ffffff" stroke="#d5d9e0" stroke-width="1.5"/>
+<g stroke="#d5d9e0" stroke-width="1" opacity="0.7"><line x1="750" y1="484" x2="750" y2="498"/><line x1="915" y1="484" x2="915" y2="498"/></g>
+<text x="832.5" y="482" fill="#1a1d23" font-size="14.5" font-weight="700" text-anchor="middle">inventory</text>
+<text x="832.5" y="504" fill="#8b92a5" font-size="11" text-anchor="middle">svc</text>
+<text x="832.5" y="524" fill="#16a34a" font-size="9.5" text-anchor="middle">deny-by-default</text>
+<rect x="945" y="444" width="165" height="94" rx="9" fill="#ffffff" stroke="#d5d9e0" stroke-width="1.5"/>
+<g stroke="#d5d9e0" stroke-width="1" opacity="0.7"><line x1="945" y1="484" x2="945" y2="498"/><line x1="1110" y1="484" x2="1110" y2="498"/></g>
+<text x="1027.5" y="482" fill="#1a1d23" font-size="14.5" font-weight="700" text-anchor="middle">message-queue</text>
+<text x="1027.5" y="504" fill="#8b92a5" font-size="11" text-anchor="middle">amqp :5672</text>
+<text x="1027.5" y="524" fill="#16a34a" font-size="9.5" text-anchor="middle">deny-by-default</text>
+<rect x="360" y="566" width="165" height="94" rx="9" fill="#ffffff" stroke="#d5d9e0" stroke-width="1.5"/>
+<g stroke="#d5d9e0" stroke-width="1" opacity="0.7"><line x1="360" y1="606" x2="360" y2="620"/><line x1="525" y1="606" x2="525" y2="620"/></g>
+<text x="442.5" y="604" fill="#1a1d23" font-size="14.5" font-weight="700" text-anchor="middle">orders-db</text>
+<text x="442.5" y="626" fill="#8b92a5" font-size="11" text-anchor="middle">pg :5432</text>
+<text x="442.5" y="646" fill="#16a34a" font-size="9.5" text-anchor="middle">deny-by-default</text>
+<rect x="555" y="566" width="165" height="94" rx="9" fill="#ffffff" stroke="#d5d9e0" stroke-width="1.5"/>
+<g stroke="#d5d9e0" stroke-width="1" opacity="0.7"><line x1="555" y1="606" x2="555" y2="620"/><line x1="720" y1="606" x2="720" y2="620"/></g>
+<text x="637.5" y="604" fill="#1a1d23" font-size="14.5" font-weight="700" text-anchor="middle">payments-db</text>
+<text x="637.5" y="626" fill="#8b92a5" font-size="11" text-anchor="middle">pg :5432 · PCI</text>
+<text x="637.5" y="646" fill="#16a34a" font-size="9.5" text-anchor="middle">deny-by-default</text>
+<rect x="750" y="566" width="165" height="94" rx="9" fill="#ffffff" stroke="#d5d9e0" stroke-width="1.5"/>
+<g stroke="#d5d9e0" stroke-width="1" opacity="0.7"><line x1="750" y1="606" x2="750" y2="620"/><line x1="915" y1="606" x2="915" y2="620"/></g>
+<text x="832.5" y="604" fill="#1a1d23" font-size="14.5" font-weight="700" text-anchor="middle">inventory-db</text>
+<text x="832.5" y="626" fill="#8b92a5" font-size="11" text-anchor="middle">pg :5432</text>
+<text x="832.5" y="646" fill="#16a34a" font-size="9.5" text-anchor="middle">deny-by-default</text>
+<rect x="945" y="566" width="165" height="94" rx="9" fill="#ffffff" stroke="#d5d9e0" stroke-width="1.5"/>
+<g stroke="#d5d9e0" stroke-width="1" opacity="0.7"><line x1="945" y1="606" x2="945" y2="620"/><line x1="1110" y1="606" x2="1110" y2="620"/></g>
+<text x="1027.5" y="604" fill="#1a1d23" font-size="14.5" font-weight="700" text-anchor="middle">audit-log</text>
+<text x="1027.5" y="626" fill="#8b92a5" font-size="11" text-anchor="middle">append-only</text>
+<text x="1027.5" y="646" fill="#16a34a" font-size="9.5" text-anchor="middle">deny-by-default</text>
+<line x1="525" y1="369" x2="553" y2="369" stroke="#16a34a" stroke-width="2"  marker-end="url(#ar-green)"/>
+<rect x="522.6" y="349" width="34.8" height="15" fill="#ffffff" opacity="0.92"/>
+<text x="540" y="361" fill="#16a34a" font-size="10" font-weight="700" text-anchor="middle">:443</text>
+<line x1="720" y1="369" x2="748" y2="369" stroke="#16a34a" stroke-width="2"  marker-end="url(#ar-green)"/>
+<rect x="714.5" y="349" width="41" height="15" fill="#ffffff" opacity="0.92"/>
+<text x="735" y="361" fill="#16a34a" font-size="10" font-weight="700" text-anchor="middle">:8443</text>
+<line x1="637.5" y1="416" x2="637.5" y2="442" stroke="#16a34a" stroke-width="2"  marker-end="url(#ar-green)"/>
+<rect x="617" y="422" width="41" height="15" fill="#ffffff" opacity="0.92"/>
+<text x="637.5" y="434" fill="#16a34a" font-size="10" font-weight="700" text-anchor="middle">:8080</text>
+<line x1="637.5" y1="538" x2="637.5" y2="564" stroke="#16a34a" stroke-width="2"  marker-end="url(#ar-green)"/>
+<rect x="617" y="544" width="41" height="15" fill="#ffffff" opacity="0.92"/>
+<text x="637.5" y="556" fill="#16a34a" font-size="10" font-weight="700" text-anchor="middle">:5432</text>
+<line x1="442.5" y1="416" x2="442.5" y2="440" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,5" marker-end="url(#ar-red)" opacity="0.85"/>
+<g stroke="#dc2626" stroke-width="2.6"><line x1="433.5" y1="429" x2="451.5" y2="447"/><line x1="451.5" y1="429" x2="433.5" y2="447"/></g>
+<line x1="509" y1="408" x2="561" y2="452" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,5" marker-end="url(#ar-red)" opacity="0.85"/>
+<g stroke="#dc2626" stroke-width="2.6"><line x1="556" y1="449" x2="574" y2="467"/><line x1="574" y1="449" x2="556" y2="467"/></g>
+<path d="M 702 416 L 735 430 L 735 550 L 702 562" fill="none" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,5" marker-end="url(#ar-red)" opacity="0.85"/>
+<g stroke="#dc2626" stroke-width="2.6"><line x1="693" y1="551" x2="711" y2="569"/><line x1="711" y1="551" x2="693" y2="569"/></g>
+<line x1="735" y1="296" x2="735" y2="422" stroke="#dc2626" stroke-width="1" stroke-dasharray="2,3" opacity="0.55"/>
+<rect x="610.65" y="278" width="248.7" height="16" fill="#ffffff" opacity="0.92"/>
+<text x="735" y="290" fill="#dc2626" font-size="11" font-weight="700" text-anchor="middle">api → db pivot: blocked on identity</text>
+<line x1="380" y1="700" x2="420" y2="700" stroke="#16a34a" stroke-width="2" marker-end="url(#ar-green)"/>
+<text x="430" y="704" fill="#5a6178" font-size="12">explicit allow (workload · port · identity)</text>
+<line x1="780" y1="700" x2="820" y2="700" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,5" marker-end="url(#ar-red)"/>
+<text x="830" y="704" fill="#5a6178" font-size="12">lateral attempt → dropped at the wall</text>
+<rect x="1170" y="300" width="372" height="360" rx="12" fill="rgba(0,111,255,0.04)" stroke="#d5d9e0" stroke-width="1.5"/>
+<text x="1356" y="334" fill="#006fff" font-size="13" letter-spacing="2" font-weight="700" text-anchor="middle">ENFORCED ON EVERY SYNAPSE</text>
+<rect x="1194" y="372" width="324" height="50" rx="8" fill="#ffffff" stroke="#d5d9e0" stroke-width="1.2"/>
+<text x="1210" y="394" fill="#006fff" font-size="15" font-weight="700">Amygdala</text>
+<text x="1210" y="412" fill="#5a6178" font-size="11">decides — wirefilter over fingerprints</text>
+<line x1="1356" y1="422" x2="1356" y2="434" stroke="#8b92a5" stroke-width="1.5" marker-end="url(#ar-blue)"/>
+<rect x="1194" y="440" width="324" height="50" rx="8" fill="#ffffff" stroke="#d5d9e0" stroke-width="1.2"/>
+<text x="1210" y="462" fill="#006fff" font-size="15" font-weight="700">Hillock</text>
+<text x="1210" y="480" fill="#5a6178" font-size="11">executes the drop — eBPF, in-kernel</text>
+<line x1="1356" y1="490" x2="1356" y2="502" stroke="#8b92a5" stroke-width="1.5" marker-end="url(#ar-blue)"/>
+<rect x="1194" y="508" width="324" height="50" rx="8" fill="#ffffff" stroke="#d5d9e0" stroke-width="1.2"/>
+<text x="1210" y="530" fill="#5a6178" font-size="15" font-weight="700">Thalamus</text>
+<text x="1210" y="548" fill="#5a6178" font-size="11">sees the attempt — IDS telemetry</text>
+<line x1="1356" y1="558" x2="1356" y2="570" stroke="#8b92a5" stroke-width="1.5" marker-end="url(#ar-blue)"/>
+<rect x="1194" y="576" width="324" height="50" rx="8" fill="#ffffff" stroke="#d5d9e0" stroke-width="1.2"/>
+<text x="1210" y="598" fill="#16a34a" font-size="15" font-weight="700">Cortex → Cerebellum</text>
+<text x="1210" y="616" fill="#5a6178" font-size="11">local ML ships findings up → L05</text>
+<line x1="60" y1="790" x2="1540" y2="790" stroke="#e8eaef" stroke-width="1"/>
+<text x="60" y="828" fill="#006fff" font-size="12" letter-spacing="3" font-weight="700">DOCTRINE</text>
+<text x="60" y="860" fill="#1a1d23" font-size="22" font-weight="500">Pop one workload and you have popped one workload. The next wall is still deny-by-default.</text>
+</svg>

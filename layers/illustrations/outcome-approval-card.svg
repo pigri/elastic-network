@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" font-family="'JetBrains Mono', ui-monospace, monospace">
+<style>text{font-family:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;}</style>
+<defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e8eaef" stroke-width="0.5"/></pattern></defs>
+<rect width="1500" height="1000" fill="#ffffff"/><rect width="1500" height="1000" fill="url(#grid)"/>
+<text x="60" y="56" fill="#8b92a5" font-size="15" letter-spacing="6" font-weight="600">GEN0SEC · WORKFLOW — OUTCOME APPROVAL</text>
+<rect x="60" y="80" width="44" height="44" rx="9" fill="#9333ea"/>
+<text x="82" y="108" fill="#ffffff" font-size="20" font-weight="700" text-anchor="middle">W</text>
+<text x="118" y="100" fill="#1a1d23" font-size="18" font-weight="700">Workflow</text>
+<text x="210" y="100" fill="#8b92a5" font-size="13">bot · #soc-actions · 02:14 UTC</text>
+<text x="118" y="120" fill="#5a6178" font-size="13">Counterstrike ready — needs a decision on the outcome.</text>
+<rect x="1150" y="78" width="290" height="48" rx="10" fill="rgba(217,119,6,0.08)" stroke="#d97706" stroke-width="2"/>
+<circle cx="1180" cy="102" r="7" fill="#d97706"/>
+<text x="1198" y="107" fill="#d97706" font-size="15" letter-spacing="2" font-weight="700">AWAITING APPROVAL</text>
+<rect x="60" y="150" width="1380" height="96" rx="12" fill="rgba(147,51,234,0.04)" stroke="#9333ea" stroke-width="1.6"/>
+<rect x="60" y="150" width="6" height="96" rx="3" fill="#9333ea"/>
+<text x="88" y="184" fill="#9333ea" font-size="13" letter-spacing="3" font-weight="700">PROPOSED ACTION</text>
+<text x="88" y="222" fill="#1a1d23" font-size="30" font-weight="700">Block 198.51.100.0/24 across all 14 sensors</text>
+<rect x="60" y="268" width="680" height="230" rx="12" fill="#ffffff" stroke="#d5d9e0" stroke-width="1.5"/>
+<text x="88" y="304" fill="#006fff" font-size="13" letter-spacing="3" font-weight="700">WHY — TRIGGER</text>
+<text x="88" y="344" fill="#8b92a5" font-size="12" letter-spacing="2">DETECTION</text>
+<text x="88" y="366" fill="#1a1d23" font-size="15">JA4T match → scanner cluster</text>
+<text x="88" y="406" fill="#8b92a5" font-size="12" letter-spacing="2">CEREBELLUM</text>
+<text x="88" y="428" fill="#1a1d23" font-size="16" font-weight="700">SCAN-CLUSTER-07 · confidence 0.94</text>
+<text x="88" y="466" fill="#8b92a5" font-size="12" letter-spacing="2">CORROBORATION</text>
+<text x="88" y="488" fill="#5a6178" font-size="14">seen on 9 tenants / 7 days</text>
+<rect x="760" y="268" width="680" height="230" rx="12" fill="rgba(22,163,74,0.04)" stroke="#d5d9e0" stroke-width="1.5"/>
+<text x="788" y="304" fill="#16a34a" font-size="13" letter-spacing="3" font-weight="700">EFFECT — BLAST RADIUS</text>
+<text x="788" y="344" fill="#8b92a5" font-size="12" letter-spacing="2">INBOUND AFFECTED</text>
+<text x="788" y="366" fill="#1a1d23" font-size="16" font-weight="700">~6 connections / hour</text>
+<text x="788" y="406" fill="#8b92a5" font-size="12" letter-spacing="2">KNOWN CUSTOMERS HIT</text>
+<text x="788" y="428" fill="#16a34a" font-size="16" font-weight="700">0 — no customer fingerprints</text>
+<text x="788" y="466" fill="#8b92a5" font-size="12" letter-spacing="2">ROLLBACK</text>
+<text x="788" y="488" fill="#16a34a" font-size="14">fleet-wide · 1 click</text>
+<rect x="60" y="520" width="680" height="200" rx="12" fill="#ffffff" stroke="#d5d9e0" stroke-width="1.5"/>
+<text x="88" y="556" fill="#5a6178" font-size="13" letter-spacing="3" font-weight="700">PROVENANCE — AUDITABLE</text>
+<text x="88" y="596" fill="#8b92a5" font-size="12" letter-spacing="2">DETECTION ID</text>
+<text x="88" y="622" fill="#1a1d23" font-size="15" font-weight="700">det_8f3a…  → playbook pb-scan-block</text>
+<text x="88" y="664" fill="#8b92a5" font-size="12" letter-spacing="2">RULE ID</text>
+<text x="88" y="690" fill="#1a1d23" font-size="15" font-weight="700">rule_2f9c · authored by Cerebellum</text>
+<rect x="760" y="520" width="680" height="200" rx="12" fill="#ffffff" stroke="#d5d9e0" stroke-width="1.5"/>
+<text x="788" y="556" fill="#9333ea" font-size="13" letter-spacing="3" font-weight="700">SCOPE — FLEET</text>
+<text x="788" y="596" fill="#8b92a5" font-size="12" letter-spacing="2">TARGETS</text>
+<text x="788" y="622" fill="#1a1d23" font-size="16" font-weight="700">14 Cerebrum + Synapse</text>
+<text x="788" y="664" fill="#8b92a5" font-size="12" letter-spacing="2">PROPAGATION</text>
+<text x="788" y="690" fill="#9333ea" font-size="16" font-weight="700">compiled &amp; pushed in &lt; 1 s</text>
+<rect x="60" y="752" width="320" height="64" rx="10" fill="#16a34a"/>
+<text x="220" y="792" fill="#ffffff" font-size="20" font-weight="700" text-anchor="middle">✓ Approve outcome</text>
+<rect x="400" y="752" width="220" height="64" rx="10" fill="#ffffff" stroke="#5a6178" stroke-width="1.6"/>
+<text x="510" y="792" fill="#5a6178" font-size="20" font-weight="700" text-anchor="middle">Reject</text>
+<text x="660" y="784" fill="#1a1d23" font-size="16" font-weight="700">You approve the effect —</text>
+<text x="660" y="806" fill="#5a6178" font-size="14">not a triage of the evidence. The question is “should we”, not “is it real”.</text>
+<line x1="60" y1="922" x2="1440" y2="922" stroke="#e8eaef" stroke-width="1"/>
+<text x="60" y="956" fill="#8b92a5" font-size="13">High-confidence actions auto-execute; this one crossed the human-approval threshold · audit feeds Cerebellum (L05) · synthetic example (RFC 5737) · TLP:CLEAR</text>
+</svg>

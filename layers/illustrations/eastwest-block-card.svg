@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1000" font-family="'JetBrains Mono', ui-monospace, monospace">
+<style>text{font-family:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;}</style>
+<defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e8eaef" stroke-width="0.5"/></pattern></defs>
+<rect width="1500" height="1000" fill="#ffffff"/><rect width="1500" height="1000" fill="url(#grid)"/>
+<text x="60" y="56" fill="#8b92a5" font-size="15" letter-spacing="6" font-weight="600">GEN0SEC · EAST-WEST VERDICT</text>
+<text x="60" y="126" fill="#1a1d23" font-size="42" font-weight="700" letter-spacing="-0.01em">web-frontend → payments-db:5432</text>
+<text x="60" y="160" fill="#5a6178" font-size="16">Lateral attempt inside the Hauptkampffeld · inspected without decryption · 2026-06-21 02:14 UTC</text>
+<rect x="1140" y="70" width="300" height="84" rx="12" fill="rgba(220,38,38,0.07)" stroke="#dc2626" stroke-width="2"/>
+<circle cx="1186" cy="112" r="9" fill="#dc2626"/>
+<text x="1212" y="106" fill="#dc2626" font-size="13" letter-spacing="3" font-weight="700">EAST-WEST</text>
+<text x="1212" y="138" fill="#dc2626" font-size="32" font-weight="700">DROP</text>
+<rect x="60" y="210" width="430" height="300" rx="12" fill="#ffffff" stroke="#d5d9e0" stroke-width="1.5"/>
+<text x="84" y="246" fill="#0891b2" font-size="13" letter-spacing="3" font-weight="700">SOURCE WORKLOAD</text>
+<text x="84" y="288" fill="#1a1d23" font-size="18" font-weight="700">web-frontend-7c9f8</text>
+<text x="84" y="334" fill="#8b92a5" font-size="12" letter-spacing="2">KUBERNETES</text>
+<text x="84" y="360" fill="#1a1d23" font-size="15">ns=prod · app=web · tier=frontend</text>
+<text x="84" y="406" fill="#8b92a5" font-size="12" letter-spacing="2">IMAGE</text>
+<text x="84" y="432" fill="#1a1d23" font-size="15">registry/web@sha256:4e… · public</text>
+<text x="84" y="478" fill="#8b92a5" font-size="12" letter-spacing="2">IDENTITY</text>
+<text x="84" y="504" fill="#0891b2" font-size="16">ingress pod — no DB grant</text>
+<rect x="520" y="210" width="430" height="300" rx="12" fill="#ffffff" stroke="#d5d9e0" stroke-width="1.5"/>
+<text x="544" y="246" fill="#0891b2" font-size="13" letter-spacing="3" font-weight="700">TARGET WORKLOAD</text>
+<text x="544" y="288" fill="#1a1d23" font-size="18" font-weight="700">payments-db :5432</text>
+<text x="544" y="334" fill="#8b92a5" font-size="12" letter-spacing="2">ZONE</text>
+<text x="544" y="360" fill="#1a1d23" font-size="15">PCI · deny-by-default</text>
+<text x="544" y="406" fill="#8b92a5" font-size="12" letter-spacing="2">ALLOWED CALLERS</text>
+<text x="544" y="432" fill="#1a1d23" font-size="15">payments-api only</text>
+<text x="544" y="478" fill="#8b92a5" font-size="12" letter-spacing="2">CONDITION</text>
+<text x="544" y="504" fill="#0891b2" font-size="16">signed build · port 5432</text>
+<rect x="980" y="210" width="460" height="300" rx="12" fill="#ffffff" stroke="#d5d9e0" stroke-width="1.5"/>
+<text x="1004" y="246" fill="#006fff" font-size="13" letter-spacing="3" font-weight="700">WIREFILTER RULE</text>
+<text x="1004" y="286" fill="#5a6178" font-size="15" font-weight="700">allow tcp/5432 if</text>
+<text x="1004" y="308" fill="#1a1d23" font-size="15" font-weight="700">  src.svc == "payments-api"</text>
+<text x="1004" y="330" fill="#1a1d23" font-size="15" font-weight="700">  &amp;&amp; src.signed</text>
+<text x="1004" y="352" fill="#1a1d23" font-size="15" font-weight="700">  &amp;&amp; dst == payments-db</text>
+<text x="1004" y="404" fill="#8b92a5" font-size="12" letter-spacing="2">CALLER MATCHED?</text>
+<text x="1004" y="430" fill="#dc2626" font-size="15">no — web-frontend not in allowlist</text>
+<text x="1004" y="478" fill="#8b92a5" font-size="12" letter-spacing="2">DEFAULT ACTION</text>
+<text x="1004" y="504" fill="#dc2626" font-size="18" font-weight="700">deny</text>
+<rect x="60" y="540" width="430" height="300" rx="12" fill="#ffffff" stroke="#d5d9e0" stroke-width="1.5"/>
+<text x="84" y="576" fill="#9333ea" font-size="13" letter-spacing="3" font-weight="700">THALAMUS · IDS</text>
+<text x="84" y="622" fill="#8b92a5" font-size="12" letter-spacing="2">APP-LAYER PARSER</text>
+<text x="84" y="648" fill="#1a1d23" font-size="16" font-weight="700">PGSQL startup intercepted</text>
+<text x="84" y="698" fill="#8b92a5" font-size="12" letter-spacing="2">SIGNATURE</text>
+<text x="84" y="724" fill="#1a1d23" font-size="15" font-weight="700">LATERAL pg-client-anomaly</text>
+<text x="84" y="776" fill="#8b92a5" font-size="12" letter-spacing="2">VERDICT</text>
+<text x="84" y="802" fill="#9333ea" font-size="15">lateral movement · flow tracked</text>
+<rect x="520" y="540" width="430" height="300" rx="12" fill="#ffffff" stroke="#d5d9e0" stroke-width="1.5"/>
+<text x="544" y="576" fill="#9333ea" font-size="13" letter-spacing="3" font-weight="700">FINGERPRINT · CEREBELLUM</text>
+<text x="544" y="622" fill="#8b92a5" font-size="12" letter-spacing="2">AT THE DOOR (L02)</text>
+<text x="544" y="648" fill="16" font-size="15">JA4 looked ordinary — passed</text>
+<text x="544" y="698" fill="#8b92a5" font-size="12" letter-spacing="2">INSIDE CLUSTER</text>
+<text x="544" y="724" fill="#1a1d23" font-size="18" font-weight="700">LM-CLUSTER-03</text>
+<text x="544" y="776" fill="#8b92a5" font-size="12" letter-spacing="2">CONFIDENCE</text>
+<text x="544" y="802" fill="#1a1d23" font-size="15" font-weight="700">0.88 · seen east-west on 6 hosts</text>
+<rect x="980" y="540" width="460" height="300" rx="12" fill="rgba(220,38,38,0.05)" stroke="#dc2626" stroke-width="1.5"/>
+<text x="1004" y="576" fill="#dc2626" font-size="13" letter-spacing="3" font-weight="700">EAST-WEST ACTION</text>
+<text x="1004" y="622" fill="#8b92a5" font-size="12" letter-spacing="2">DECIDED BY</text>
+<text x="1004" y="648" fill="#1a1d23" font-size="16" font-weight="700">Amygdala — no static rule</text>
+<text x="1004" y="698" fill="#8b92a5" font-size="12" letter-spacing="2">EXECUTED BY</text>
+<text x="1004" y="724" fill="#1a1d23" font-size="16" font-weight="700">Hillock — eBPF, in-kernel</text>
+<text x="1004" y="776" fill="#8b92a5" font-size="12" letter-spacing="2">INCIDENT</text>
+<text x="1004" y="802" fill="#dc2626" font-size="15">opened in Workflow (L04) · &lt; 1 ms</text>
+<line x1="60" y1="922" x2="1440" y2="922" stroke="#e8eaef" stroke-width="1"/>
+<text x="60" y="956" fill="#8b92a5" font-size="13">Per-workload deny-by-default · inspected without decryption · same Synapse binary as the edge, deployed at an inside chokepoint · synthetic example · TLP:CLEAR</text>
+</svg>

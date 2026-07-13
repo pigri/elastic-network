@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" font-family="'JetBrains Mono', ui-monospace, monospace">
+<style>text{font-family:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;}</style>
+<defs>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e8eaef" stroke-width="0.5"/></pattern>
+  <marker id="ag" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0, 9 3.5, 0 7" fill="#16a34a"/></marker>
+  <marker id="ared" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0, 9 3.5, 0 7" fill="#dc2626"/></marker>
+</defs>
+<rect width="1600" height="900" fill="#ffffff"/>
+<rect width="1600" height="900" fill="url(#grid)"/>
+<text x="60" y="56" fill="#8b92a5" font-size="16" letter-spacing="6" font-weight="600">GEN0SEC · DOCTRINE</text>
+<rect x="60" y="100" width="68" height="68" rx="10" fill="#16a34a"/>
+<text x="94" y="144" fill="#ffffff" font-size="28" font-weight="700" text-anchor="middle">05</text>
+<text x="148" y="124" fill="#16a34a" font-size="14" letter-spacing="4" font-weight="600">LAYER 05 · INTELLIGENCE &amp; ADAPTATION — 1916</text>
+<text x="148" y="158" fill="#1a1d23" font-size="32" font-weight="700">The staff that rewrites the doctrine.</text>
+<text x="148" y="190" fill="#5a6178" font-size="16">Correlate every source, predict the next Schwerpunkt, and revise the doctrine before the next battle.</text>
+<path d="M 600 298 L 800 270 L 1000 298 Z" fill="rgba(22,163,74,0.10)" stroke="#16a34a" stroke-width="1.6"/>
+<rect x="600" y="298" width="400" height="122" rx="6" fill="rgba(22,163,74,0.05)" stroke="#16a34a" stroke-width="1.8"/>
+<text x="800" y="330" fill="#16a34a" font-size="18" font-weight="700" text-anchor="middle">GENERALSTAB</text>
+<text x="800" y="354" fill="#5a6178" font-size="12" font-weight="400" text-anchor="middle">the brain in the rear</text>
+<text x="800" y="382" fill="#1a1d23" font-size="13" font-weight="700" text-anchor="middle">correlate · predict · rewrite</text>
+<text x="800" y="404" fill="#5a6178" font-size="11" font-weight="400" text-anchor="middle">the doctrine, between battles</text>
+<rect x="1080" y="282" width="220" height="138" rx="8" fill="#ffffff" stroke="#d5d9e0" stroke-width="1.4"/>
+<text x="1190" y="306" fill="#8b92a5" font-size="11" font-weight="700" text-anchor="middle">PREDICTED SCHWERPUNKT</text>
+<path d="M 1104 374 q 30 -18 60 0 q 30 18 60 0 q 30 -18 52 0" fill="none" stroke="#16a34a" stroke-width="1.6"/>
+<line x1="1190" y1="328" x2="1190" y2="366" stroke="#dc2626" stroke-width="2.4" marker-end="url(#ared)"/>
+<g stroke="#dc2626" stroke-width="2"><line x1="1181" y1="374" x2="1199" y2="392"/><line x1="1199" y1="374" x2="1181" y2="392"/></g>
+<text x="1190" y="414" fill="#dc2626" font-size="10" font-weight="400" text-anchor="middle">reinforce here, first</text>
+<line x1="1000" y1="360" x2="1080" y2="352" stroke="#16a34a" stroke-width="1.2" stroke-dasharray="3,3" opacity="0.6"/>
+<text x="96" y="268" fill="#8b92a5" font-size="12" font-weight="700" text-anchor="start">MULTI-SOURCE INTELLIGENCE</text>
+<rect x="96" y="282" width="250" height="30" rx="6" fill="#ffffff" stroke="#d5d9e0" stroke-width="1.2"/>
+<circle cx="116" cy="297" r="4" fill="#16a34a"/>
+<text x="132" y="301" fill="#1a1d23" font-size="13" font-weight="700" text-anchor="start">aerial recon</text>
+<line x1="346" y1="297" x2="594" y2="324" stroke="#16a34a" stroke-width="1.4" stroke-dasharray="5,4" marker-end="url(#ag)" opacity="0.7"/>
+<rect x="96" y="342" width="250" height="30" rx="6" fill="#ffffff" stroke="#d5d9e0" stroke-width="1.2"/>
+<circle cx="116" cy="357" r="4" fill="#16a34a"/>
+<text x="132" y="361" fill="#1a1d23" font-size="13" font-weight="700" text-anchor="start">signals intercept</text>
+<line x1="346" y1="357" x2="594" y2="332" stroke="#16a34a" stroke-width="1.4" stroke-dasharray="5,4" marker-end="url(#ag)" opacity="0.7"/>
+<rect x="96" y="402" width="250" height="30" rx="6" fill="#ffffff" stroke="#d5d9e0" stroke-width="1.2"/>
+<circle cx="116" cy="417" r="4" fill="#16a34a"/>
+<text x="132" y="421" fill="#1a1d23" font-size="13" font-weight="700" text-anchor="start">prisoners · deserters</text>
+<line x1="346" y1="417" x2="594" y2="340" stroke="#16a34a" stroke-width="1.4" stroke-dasharray="5,4" marker-end="url(#ag)" opacity="0.7"/>
+<rect x="96" y="462" width="250" height="30" rx="6" fill="#ffffff" stroke="#d5d9e0" stroke-width="1.2"/>
+<circle cx="116" cy="477" r="4" fill="#16a34a"/>
+<text x="132" y="481" fill="#1a1d23" font-size="13" font-weight="700" text-anchor="start">captured documents</text>
+<line x1="346" y1="477" x2="594" y2="348" stroke="#16a34a" stroke-width="1.4" stroke-dasharray="5,4" marker-end="url(#ag)" opacity="0.7"/>
+<rect x="96" y="522" width="250" height="30" rx="6" fill="#ffffff" stroke="#d5d9e0" stroke-width="1.2"/>
+<circle cx="116" cy="537" r="4" fill="#16a34a"/>
+<text x="132" y="541" fill="#1a1d23" font-size="13" font-weight="700" text-anchor="start">front-line reports</text>
+<line x1="346" y1="537" x2="594" y2="356" stroke="#16a34a" stroke-width="1.4" stroke-dasharray="5,4" marker-end="url(#ag)" opacity="0.7"/>
+<text x="471" y="250" fill="#5a6178" font-size="12" font-weight="400" text-anchor="middle">every source the front cannot see itself</text>
+<line x1="120" y1="660" x2="1480" y2="660" stroke="#1a1d23" stroke-width="2"/>
+<rect x="120" y="626" width="1360" height="34" fill="rgba(22,163,74,0.03)"/>
+<text x="132" y="648" fill="#8b92a5" font-size="12" font-weight="700" text-anchor="start">THE FRONT</text>
+<rect x="386" y="630" width="68" height="26" rx="5" fill="#ffffff" stroke="#16a34a" stroke-width="1.3"/>
+<text x="420" y="648" fill="#16a34a" font-size="13" font-weight="700" text-anchor="middle">L01</text>
+<line x1="420" y1="660" x2="420" y2="676" stroke="#8b92a5" stroke-width="1"/>
+<rect x="606" y="630" width="68" height="26" rx="5" fill="#ffffff" stroke="#16a34a" stroke-width="1.3"/>
+<text x="640" y="648" fill="#16a34a" font-size="13" font-weight="700" text-anchor="middle">L02</text>
+<line x1="640" y1="660" x2="640" y2="676" stroke="#8b92a5" stroke-width="1"/>
+<rect x="826" y="630" width="68" height="26" rx="5" fill="#ffffff" stroke="#16a34a" stroke-width="1.3"/>
+<text x="860" y="648" fill="#16a34a" font-size="13" font-weight="700" text-anchor="middle">L03</text>
+<line x1="860" y1="660" x2="860" y2="676" stroke="#8b92a5" stroke-width="1"/>
+<rect x="1046" y="630" width="68" height="26" rx="5" fill="#ffffff" stroke="#16a34a" stroke-width="1.3"/>
+<text x="1080" y="648" fill="#16a34a" font-size="13" font-weight="700" text-anchor="middle">L04</text>
+<line x1="1080" y1="660" x2="1080" y2="676" stroke="#8b92a5" stroke-width="1"/>
+<text x="1300" y="648" fill="#5a6178" font-size="12" font-weight="400" text-anchor="middle">01–04 fight; 05 learns</text>
+<path d="M 430 624 C 430 540, 520 470, 670 424" fill="none" stroke="#16a34a" stroke-width="2.4" stroke-dasharray="7,5" marker-end="url(#ag)"/>
+<rect x="355" y="494" width="230" height="16" fill="#ffffff" opacity="0.92"/>
+<text x="470" y="518" fill="#16a34a" font-size="12" font-weight="700" text-anchor="middle">after-action reports ↑</text>
+<path d="M 930 424 C 1080 470, 1120 560, 1080 624" fill="none" stroke="#16a34a" stroke-width="3" marker-end="url(#ag)"/>
+<rect x="995" y="494" width="240" height="16" fill="#ffffff" opacity="0.92"/>
+<text x="1115" y="518" fill="#16a34a" font-size="12" font-weight="700" text-anchor="middle">↓ revised doctrine → every sector</text>
+<rect x="465" y="588" width="470" height="18" fill="#ffffff" opacity="0.92"/>
+<text x="700" y="612" fill="#5a6178" font-size="12" font-weight="700" text-anchor="middle">Cambrai 1917: absorbed the tanks ✓   ·   Hundred Days 1918: adapted too slow ✗</text>
+<line x1="60" y1="790" x2="1540" y2="790" stroke="#e8eaef" stroke-width="1"/>
+<text x="60" y="828" fill="#16a34a" font-size="12" letter-spacing="3" font-weight="700">DOCTRINE</text>
+<text x="60" y="860" fill="#1a1d23" font-size="22" font-weight="500">The best defence is not the strongest wall. It is the deepest — and the one that keeps learning.</text>
+</svg>
