@@ -1,0 +1,3 @@
+Layer three — Main defensive zone.
+
+The Hauptkampffeld and modern depth: deep inspection, east-west microsegmentation, and why every workload boundary is another wall.
