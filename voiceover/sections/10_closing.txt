@@ -1,0 +1,1 @@
+This is part three of a five-part series on elastic network defense. Layer four covers reserves and counterattack: the S-O-C, the SOAR, and the doctrine of automated response.

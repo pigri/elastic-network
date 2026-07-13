@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" font-family="'JetBrains Mono', ui-monospace, monospace">
+<style>text{font-family:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;}</style>
+<defs>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e8eaef" stroke-width="0.5"/></pattern>
+  <marker id="ag" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0, 9 3.5, 0 7" fill="#16a34a"/></marker>
+  <marker id="af" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0, 9 3.5, 0 7" fill="#8b92a5"/></marker>
+</defs>
+<rect width="1600" height="900" fill="#ffffff"/>
+<rect width="1600" height="900" fill="url(#grid)"/>
+<text x="60" y="56" fill="#8b92a5" font-size="16" letter-spacing="6" font-weight="600">GEN0SEC · ARCHITECTURE</text>
+<rect x="60" y="100" width="68" height="68" rx="10" fill="#16a34a"/>
+<text x="94" y="144" fill="#ffffff" font-size="28" font-weight="700" text-anchor="middle">05</text>
+<text x="148" y="124" fill="#16a34a" font-size="14" letter-spacing="4" font-weight="600">LAYER 05 · INTELLIGENCE &amp; ADAPTATION</text>
+<text x="148" y="158" fill="#1a1d23" font-size="32" font-weight="700">One brain, the whole front.</text>
+<text x="148" y="190" fill="#5a6178" font-size="16">Learn from every sensor at once; push the lesson to every sensor at once.</text>
+<rect x="560" y="256" width="480" height="138" rx="14" fill="rgba(22,163,74,0.05)" stroke="#16a34a" stroke-width="2"/>
+<text x="800" y="296" fill="#16a34a" font-size="22" font-weight="700" text-anchor="middle">CEREBELLUM</text>
+<text x="800" y="322" fill="#5a6178" font-size="13" font-weight="400" text-anchor="middle">the fleet brain — clusters adversaries, not packets</text>
+<text x="800" y="352" fill="#1a1d23" font-size="13" font-weight="700" text-anchor="middle">confidence model trained on outcomes</text>
+<text x="800" y="374" fill="#5a6178" font-size="11" font-weight="400" text-anchor="middle">Cortex feeds it from below (ML on each sensor)</text>
+<rect x="100" y="270" width="250" height="64" rx="10" fill="#ffffff" stroke="#d5d9e0" stroke-width="1.5"/>
+<text x="225" y="300" fill="#8b92a5" font-size="12" font-weight="700" text-anchor="middle">EXTERNAL CTI</text>
+<text x="225" y="322" fill="#5a6178" font-size="12" font-weight="400" text-anchor="middle">feeds · OSINT · ISAC</text>
+<line x1="350" y1="302" x2="554" y2="310" stroke="#8b92a5" stroke-width="1.6" stroke-dasharray="5,4" marker-end="url(#af)"/>
+<text x="150" y="432" fill="#16a34a" font-size="14" font-weight="700" text-anchor="start">TELEMETRY ↑</text>
+<text x="150" y="462" fill="#5a6178" font-size="13" font-weight="400" text-anchor="start">· JA4+ fingerprints</text>
+<text x="150" y="488" fill="#5a6178" font-size="13" font-weight="400" text-anchor="start">· Hillock verdicts</text>
+<text x="150" y="514" fill="#5a6178" font-size="13" font-weight="400" text-anchor="start">· Thalamus IDS hits</text>
+<text x="150" y="540" fill="#5a6178" font-size="13" font-weight="400" text-anchor="start">· microseg drops</text>
+<text x="150" y="566" fill="#5a6178" font-size="13" font-weight="400" text-anchor="start">· Workflow actions</text>
+<path d="M 360 560 C 420 520, 480 460, 620 400" fill="none" stroke="#16a34a" stroke-width="2.6" stroke-dasharray="7,5" marker-end="url(#ag)"/>
+<text x="1450" y="432" fill="#16a34a" font-size="14" font-weight="700" text-anchor="end">POLICY ↓</text>
+<text x="1450" y="462" fill="#16a34a" font-size="13" font-weight="700" text-anchor="end">Thalamus rules ·</text>
+<text x="1450" y="488" fill="#16a34a" font-size="13" font-weight="700" text-anchor="end">Hillock blocklist ·</text>
+<text x="1450" y="514" fill="#16a34a" font-size="13" font-weight="700" text-anchor="end">JA4+ classification ·</text>
+<text x="1450" y="540" fill="#16a34a" font-size="13" font-weight="700" text-anchor="end">Workflow triggers ·</text>
+<text x="1450" y="566" fill="#16a34a" font-size="13" font-weight="700" text-anchor="end">CTI verdicts ·</text>
+<path d="M 980 400 C 1140 460, 1200 520, 1240 560" fill="none" stroke="#16a34a" stroke-width="3" marker-end="url(#ag)"/>
+<line x1="120" y1="730" x2="1480" y2="730" stroke="#d5d9e0" stroke-width="1.2"/>
+<text x="132" y="632" fill="#8b92a5" font-size="12" font-weight="700" text-anchor="start">THE FLEET — every Cerebrum + Synapse is also a forward observer</text>
+<rect x="180" y="650" width="120" height="64" rx="9" fill="#ffffff" stroke="#16a34a" stroke-width="1.4"/>
+<text x="240" y="676" fill="#1a1d23" font-size="12" font-weight="700" text-anchor="middle">Synapse</text>
+<text x="240" y="696" fill="#5a6178" font-size="12" font-weight="400" text-anchor="middle">+ Cortex</text>
+<rect x="330" y="650" width="120" height="64" rx="9" fill="#ffffff" stroke="#16a34a" stroke-width="1.4"/>
+<text x="390" y="676" fill="#1a1d23" font-size="12" font-weight="700" text-anchor="middle">Synapse</text>
+<text x="390" y="696" fill="#5a6178" font-size="12" font-weight="400" text-anchor="middle">+ Cortex</text>
+<rect x="480" y="650" width="120" height="64" rx="9" fill="#ffffff" stroke="#16a34a" stroke-width="1.4"/>
+<text x="540" y="676" fill="#1a1d23" font-size="12" font-weight="700" text-anchor="middle">Synapse</text>
+<text x="540" y="696" fill="#5a6178" font-size="12" font-weight="400" text-anchor="middle">+ Cortex</text>
+<rect x="630" y="650" width="120" height="64" rx="9" fill="#ffffff" stroke="#16a34a" stroke-width="1.4"/>
+<text x="690" y="676" fill="#1a1d23" font-size="12" font-weight="700" text-anchor="middle">Synapse</text>
+<text x="690" y="696" fill="#5a6178" font-size="12" font-weight="400" text-anchor="middle">+ Cortex</text>
+<rect x="780" y="650" width="120" height="64" rx="9" fill="#ffffff" stroke="#16a34a" stroke-width="1.4"/>
+<text x="840" y="676" fill="#1a1d23" font-size="12" font-weight="700" text-anchor="middle">Synapse</text>
+<text x="840" y="696" fill="#5a6178" font-size="12" font-weight="400" text-anchor="middle">+ Cortex</text>
+<rect x="930" y="650" width="120" height="64" rx="9" fill="#ffffff" stroke="#16a34a" stroke-width="1.4"/>
+<text x="990" y="676" fill="#1a1d23" font-size="12" font-weight="700" text-anchor="middle">Synapse</text>
+<text x="990" y="696" fill="#5a6178" font-size="12" font-weight="400" text-anchor="middle">+ Cortex</text>
+<rect x="1080" y="650" width="120" height="64" rx="9" fill="#ffffff" stroke="#16a34a" stroke-width="1.4"/>
+<text x="1140" y="676" fill="#1a1d23" font-size="12" font-weight="700" text-anchor="middle">Synapse</text>
+<text x="1140" y="696" fill="#5a6178" font-size="12" font-weight="400" text-anchor="middle">+ Cortex</text>
+<rect x="1230" y="650" width="120" height="64" rx="9" fill="#ffffff" stroke="#16a34a" stroke-width="1.4"/>
+<text x="1290" y="676" fill="#1a1d23" font-size="12" font-weight="700" text-anchor="middle">Synapse</text>
+<text x="1290" y="696" fill="#5a6178" font-size="12" font-weight="400" text-anchor="middle">+ Cortex</text>
+<rect x="1380" y="650" width="120" height="64" rx="9" fill="rgba(22,163,74,0.10)" stroke="#16a34a" stroke-width="2.4"/>
+<rect x="1374" y="644" width="132" height="76" rx="12" fill="none" stroke="#16a34a" stroke-width="1" stroke-dasharray="4,3" opacity="0.6"/>
+<text x="1440" y="676" fill="#16a34a" font-size="12" font-weight="700" text-anchor="middle">customer</text>
+<text x="1440" y="696" fill="#16a34a" font-size="12" font-weight="700" text-anchor="middle">#101</text>
+<text x="1440" y="738" fill="#16a34a" font-size="11" font-weight="700" text-anchor="middle">never attacked —</text>
+<text x="1440" y="752" fill="#16a34a" font-size="11" font-weight="700" text-anchor="middle">protected on day one</text>
+<line x1="1240" y1="566" x2="1440" y2="646" stroke="#16a34a" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#ag)" opacity="0.85"/>
+<line x1="60" y1="790" x2="1540" y2="790" stroke="#e8eaef" stroke-width="1"/>
+<text x="60" y="828" fill="#16a34a" font-size="12" letter-spacing="3" font-weight="700">DOCTRINE</text>
+<text x="60" y="860" fill="#1a1d23" font-size="22" font-weight="500">Intelligence built from observing 100 customers is intelligence that protects the 101st on day one.</text>
+</svg>

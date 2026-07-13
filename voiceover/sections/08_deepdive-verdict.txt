@@ -1,0 +1,9 @@
+What a blocked lateral move looks like.
+
+Most segmentation tells you, after the fact, that two things talked. A flow log is a receipt. It records that ten-dot-oh-dot-four-dot-seven reached ten-dot-oh-dot-nine-dot-two on port fifty-four thirty-two at oh-two-fourteen, and it records this whether that flow was your payment service doing its job or an attacker walking your database. The log has no opinion, no identity, and no verdict. By the time someone reads it, the move has already happened.
+
+The deep zone does not produce a receipt. It produces a verdict: a structured, scored judgment about a single east-west flow, decided before the connection completes, with every reason attached. Here is one.
+
+The two workloads are identities, not addresses. The source is web-frontend, an ingress pod with no database grant. The target is payments-database, a P-C-I-zone service whose only allowed caller is payments-A-P-I. The verdict is written in terms of what these things are, not what I-P they happen to hold today. An attacker who pops the web tier inherits the web tier's address and its identity — and the identity is the half that matters, because it is the half with no path to the database.
+
+The wirefilter rule is the wall, in three lines. Allow T-C-P on port fifty-four thirty-two if the source service equals payments-A-P-I, and the source is signed, and the destination equals payments-database. The caller is web-frontend, which is not payments-A-P-I, so the predicate fails, and the default — deny — applies. There is no static I-P rule for this flow, and there did not need to be. The policy describes the one relationship allowed and, by construction, refuses everything else. This is segmentation expressed as syntax, evaluated per packet.

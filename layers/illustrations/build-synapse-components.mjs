@@ -4,13 +4,16 @@
 // (detection) → amygdala (decision-maker) → Pingora L7 proxy → backend, with the
 // enforcement loop back to hillock. Gen0Sec design, SVG → PNG via sharp.
 import { writeFile } from "node:fs/promises";
+import { existsSync } from "node:fs";
 import { createRequire } from "node:module";
 import path from "node:path";
 
 const here = path.dirname(new URL(import.meta.url).pathname);
-const req = createRequire(
+const SHARP_PKGS = [
   "/home/pigri/work/gen0sec/core/landing/node_modules/.pnpm/sharp@0.34.5/node_modules/sharp/package.json",
-);
+  "/Users/davidpapp/Tresorit/Projects/enterprise/src/kapnative/cf-integration/node_modules/.pnpm/sharp@0.33.5/node_modules/sharp/package.json",
+];
+const req = createRequire(SHARP_PKGS.find(existsSync) ?? SHARP_PKGS[0]);
 const sharp = req("sharp");
 
 const W = 1500, H = 1620;
@@ -86,7 +89,11 @@ arrow(MID + 120, 580, CX - 90, 658, "fingerprint suite", 1000, 628);
 stage(945, "ENFORCEMENT", "");
 box(MID, 880, 720, 116, C.green, "amygdala", ["Smart firewall — wirefilter rules over fingerprints · the decision-maker", "decides drops → dispatches to multi-backend (XDP / nftables / iptables)"]);
 arrow(TX + 60, 790, MID - 200, 878, "threat events", 470, 850);
-arrow(MID, 580, MID, 878, "FingerprintInfo (direct)", MID + 14, 740);
+arrow(MID, 580, MID, 878, "", 0, 0);
+// dendrite → amygdala label, centered in the gap between thalamus and cortex with a
+// white halo so it sits on the arrow without overlapping either detection box
+P(`<rect x="${MID - 94}" y="731" width="188" height="18" fill="#ffffff" opacity="0.95"/>`);
+P(`<text x="${MID}" y="744" fill="${C.sub}" font-size="13" text-anchor="middle">FingerprintInfo (direct)</text>`);
 arrow(CX - 60, 790, MID + 200, 878, "classify + block", 980, 850);
 
 // proxy

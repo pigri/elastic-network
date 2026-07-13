@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" font-family="'JetBrains Mono', ui-monospace, monospace">
+<style>text{font-family:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;}</style>
+<defs>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e8eaef" stroke-width="0.5"/></pattern>
+  <marker id="arr-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#dc2626"/></marker>
+  <marker id="arr-redt" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#dc2626"/></marker>
+  <marker id="arr-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#16a34a"/></marker>
+  <marker id="arr-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#006fff"/></marker>
+</defs>
+<rect width="1600" height="900" fill="#ffffff"/>
+<rect width="1600" height="900" fill="url(#grid)"/>
+<text x="60" y="56" fill="#8b92a5" font-size="16" letter-spacing="6" font-weight="600">GEN0SEC · DOCTRINE</text>
+<rect x="60" y="100" width="68" height="68" rx="10" fill="#006fff"/>
+<text x="94" y="144" fill="#ffffff" font-size="28" font-weight="700" text-anchor="middle">03</text>
+<text x="148" y="124" fill="#006fff" font-size="14" letter-spacing="4" font-weight="600">LAYER 03 · MAIN DEFENSIVE ZONE — 1916</text>
+<text x="148" y="158" fill="#1a1d23" font-size="32" font-weight="700">Penetration is a step deeper into the trap.</text>
+<text x="148" y="190" fill="#5a6178" font-size="16">Lines in depth. The first is thinly held on purpose; the breakthrough lands where the fire is heaviest.</text>
+<text x="230" y="246" fill="#dc2626" font-size="14" font-weight="700" letter-spacing="2" text-anchor="middle">BREAKTHROUGH FROM THE BELT</text>
+<text x="830" y="246" fill="#006fff" font-size="14" font-weight="700" letter-spacing="2" text-anchor="middle">HAUPTKAMPFFELD · MAIN DEFENSIVE ZONE</text>
+<text x="1400" y="246" fill="#16a34a" font-size="14" font-weight="700" letter-spacing="2" text-anchor="middle">EINGREIF · COUNTERATTACK</text>
+<line x1="420" y1="260" x2="420" y2="720" stroke="#d5d9e0" stroke-width="1" stroke-dasharray="6,6"/>
+<line x1="1290" y1="260" x2="1290" y2="720" stroke="#d5d9e0" stroke-width="1" stroke-dasharray="6,6"/>
+<rect x="420" y="260" width="870" height="460" rx="6" fill="rgba(0,111,255,0.04)"/>
+<line x1="40" y1="600" x2="1560" y2="600" stroke="#1a1d23" stroke-width="2"/>
+<g fill="#8b92a5" opacity="0.4">
+<circle cx="100" cy="656" r="1"/>
+<circle cx="220" cy="656" r="1"/>
+<circle cx="340" cy="656" r="1"/>
+<circle cx="460" cy="656" r="1"/>
+<circle cx="580" cy="656" r="1"/>
+<circle cx="700" cy="656" r="1"/>
+<circle cx="820" cy="656" r="1"/>
+<circle cx="940" cy="656" r="1"/>
+<circle cx="1060" cy="656" r="1"/>
+<circle cx="1180" cy="656" r="1"/>
+<circle cx="1300" cy="656" r="1"/>
+<circle cx="1420" cy="656" r="1"/>
+<circle cx="1540" cy="656" r="1"/>
+</g>
+<line x1="60" y1="430" x2="410" y2="430" stroke="#dc2626" stroke-width="4" marker-end="url(#arr-red)" opacity="0.9"/>
+<rect x="150" y="396" width="232" height="18" fill="#ffffff" opacity="0.92"/>
+<text x="235" y="410" fill="#dc2626" font-size="13" font-weight="700" text-anchor="middle">WEAKER · LATER · ON OUR AXIS</text>
+<g transform="translate(250,600) scale(1)" stroke="#dc2626" stroke-width="2" fill="#dc2626"><circle cx="0" cy="-22" r="4"/><line x1="0" y1="-18" x2="0" y2="-8"/><line x1="0" y1="-14" x2="-6" y2="-10"/><line x1="0" y1="-14" x2="6" y2="-10"/><line x1="0" y1="-8" x2="-5" y2="0"/><line x1="0" y1="-8" x2="5" y2="0"/></g>
+<g transform="translate(310,600) scale(1)" stroke="#dc2626" stroke-width="2" fill="#dc2626"><circle cx="0" cy="-22" r="4"/><line x1="0" y1="-18" x2="0" y2="-8"/><line x1="0" y1="-14" x2="-6" y2="-10"/><line x1="0" y1="-14" x2="6" y2="-10"/><line x1="0" y1="-8" x2="-5" y2="0"/><line x1="0" y1="-8" x2="5" y2="0"/></g>
+<g transform="translate(360,600) scale(0.85)" stroke="#dc2626" stroke-width="2" fill="#dc2626"><circle cx="0" cy="-22" r="4"/><line x1="0" y1="-18" x2="0" y2="-8"/><line x1="0" y1="-14" x2="-6" y2="-10"/><line x1="0" y1="-14" x2="6" y2="-10"/><line x1="0" y1="-8" x2="-5" y2="0"/><line x1="0" y1="-8" x2="5" y2="0"/></g>
+<rect x="255" y="552" width="110" height="16" fill="#ffffff" opacity="0.92"/>
+<text x="310" y="564" fill="#dc2626" font-size="10" text-anchor="middle">what survived L02</text>
+<path d="M 50 605 L 70 620 L 90 605 L 110 620 L 130 605 L 150 620 L 170 605 L 190 620 L 210 605 L 230 620 L 250 605 L 270 620 L 290 605 L 310 620 L 330 605 L 350 620 L 370 605 L 390 620 L 410 605" fill="none" stroke="#dc2626" stroke-width="2"/>
+<path d="M 500 605 L 525 622 L 550 605 L 575 622 L 600 605" fill="none" stroke="#006fff" stroke-width="2"/>
+<g transform="translate(560,600) scale(0.8)" stroke="#006fff" stroke-width="2" fill="#006fff"><circle cx="0" cy="-22" r="4"/><line x1="0" y1="-18" x2="0" y2="-8"/><line x1="0" y1="-14" x2="-6" y2="-10"/><line x1="0" y1="-14" x2="6" y2="-10"/><line x1="0" y1="-8" x2="-5" y2="0"/><line x1="0" y1="-8" x2="5" y2="0"/></g>
+<rect x="470" y="638" width="170" height="30" fill="#ffffff" opacity="0.92"/>
+<text x="555" y="650" fill="#006fff" font-size="11" font-weight="700" text-anchor="middle">FIRST LINE</text>
+<text x="555" y="664" fill="#5a6178" font-size="10" text-anchor="middle">thinly held — deliberately</text>
+<polygon points="660,300 820,470 820,530 660,700" fill="rgba(220,38,38,0.07)" stroke="#dc2626" stroke-width="1" stroke-dasharray="4,4"/>
+<g stroke="#dc2626" stroke-width="1.4" opacity="0.85">
+<g><line x1="705" y1="490" x2="705" y2="430"/><line x1="693" y1="445" x2="717" y2="445"/><line x1="696" y1="432" x2="714" y2="458"/><line x1="714" y1="432" x2="696" y2="458"/></g>
+<g><line x1="745" y1="490" x2="745" y2="430"/><line x1="733" y1="445" x2="757" y2="445"/><line x1="736" y1="432" x2="754" y2="458"/><line x1="754" y1="432" x2="736" y2="458"/></g>
+<g><line x1="785" y1="490" x2="785" y2="430"/><line x1="773" y1="445" x2="797" y2="445"/><line x1="776" y1="432" x2="794" y2="458"/><line x1="794" y1="432" x2="776" y2="458"/></g>
+</g>
+<rect x="672" y="322" width="136" height="30" fill="#ffffff" opacity="0.92"/>
+<text x="740" y="334" fill="#dc2626" font-size="11" font-weight="700" text-anchor="middle">KILLING GROUND</text>
+<text x="740" y="348" fill="#5a6178" font-size="10" text-anchor="middle">pre-registered fire</text>
+<path d="M 770 605 L 795 622 L 820 605 L 845 622 L 870 605 L 895 622 L 920 605" fill="none" stroke="#006fff" stroke-width="3"/>
+<g transform="translate(800,600)" stroke="#006fff" stroke-width="2" fill="none"><rect x="-13" y="-26" width="26" height="14" fill="rgba(0,111,255,0.10)"/><line x1="0" y1="-19" x2="22" y2="-19" stroke-width="3"/></g>
+<g transform="translate(884,600)" stroke="#006fff" stroke-width="2" fill="none"><rect x="-13" y="-26" width="26" height="14" fill="rgba(0,111,255,0.10)"/><line x1="0" y1="-19" x2="22" y2="-19" stroke-width="3"/></g>
+<g transform="translate(845,600) scale(1)" stroke="#006fff" stroke-width="2" fill="#006fff"><circle cx="0" cy="-22" r="4"/><line x1="0" y1="-18" x2="0" y2="-8"/><line x1="0" y1="-14" x2="-6" y2="-10"/><line x1="0" y1="-14" x2="6" y2="-10"/><line x1="0" y1="-8" x2="-5" y2="0"/><line x1="0" y1="-8" x2="5" y2="0"/></g>
+<g transform="translate(910,600) scale(0.9)" stroke="#006fff" stroke-width="2" fill="#006fff"><circle cx="0" cy="-22" r="4"/><line x1="0" y1="-18" x2="0" y2="-8"/><line x1="0" y1="-14" x2="-6" y2="-10"/><line x1="0" y1="-14" x2="6" y2="-10"/><line x1="0" y1="-8" x2="-5" y2="0"/><line x1="0" y1="-8" x2="5" y2="0"/></g>
+<rect x="760" y="668" width="170" height="16" fill="#ffffff" opacity="0.92"/>
+<text x="845" y="680" fill="#006fff" font-size="11" font-weight="700" text-anchor="middle">SECOND LINE — main strength</text>
+<g stroke="#dc2626" stroke-width="2.6" opacity="0.95"><line x1="742" y1="492" x2="762" y2="512"/><line x1="762" y1="492" x2="742" y2="512"/></g>
+<path d="M 1080 605 L 1105 622 L 1130 605 L 1155 622 L 1180 605 L 1205 622 L 1230 605" fill="none" stroke="#006fff" stroke-width="2.5"/>
+<g stroke="#006fff" stroke-width="1.6" fill="rgba(0,111,255,0.08)"><rect x="1095" y="566" width="20" height="16"/><rect x="1118" y="566" width="20" height="16"/><rect x="1106" y="548" width="20" height="16"/></g>
+<g transform="translate(1160,600) scale(0.85)" stroke="#16a34a" stroke-width="2" fill="#16a34a"><circle cx="0" cy="-22" r="4"/><line x1="0" y1="-18" x2="0" y2="-8"/><line x1="0" y1="-14" x2="-6" y2="-10"/><line x1="0" y1="-14" x2="6" y2="-10"/><line x1="0" y1="-8" x2="-5" y2="0"/><line x1="0" y1="-8" x2="5" y2="0"/></g>
+<g transform="translate(1195,600) scale(0.85)" stroke="#16a34a" stroke-width="2" fill="#16a34a"><circle cx="0" cy="-22" r="4"/><line x1="0" y1="-18" x2="0" y2="-8"/><line x1="0" y1="-14" x2="-6" y2="-10"/><line x1="0" y1="-14" x2="6" y2="-10"/><line x1="0" y1="-8" x2="-5" y2="0"/><line x1="0" y1="-8" x2="5" y2="0"/></g>
+<g transform="translate(1230,600) scale(0.85)" stroke="#16a34a" stroke-width="2" fill="#16a34a"><circle cx="0" cy="-22" r="4"/><line x1="0" y1="-18" x2="0" y2="-8"/><line x1="0" y1="-14" x2="-6" y2="-10"/><line x1="0" y1="-14" x2="6" y2="-10"/><line x1="0" y1="-8" x2="-5" y2="0"/><line x1="0" y1="-8" x2="5" y2="0"/></g>
+<rect x="1080" y="520" width="180" height="16" fill="#ffffff" opacity="0.92"/>
+<text x="1170" y="532" fill="#16a34a" font-size="10" font-weight="700" text-anchor="middle">reserves — not yet committed</text>
+<rect x="1070" y="668" width="220" height="30" fill="#ffffff" opacity="0.92"/>
+<text x="1180" y="680" fill="#006fff" font-size="11" font-weight="700" text-anchor="middle">THIRD LINE — prepared in depth</text>
+<text x="1180" y="694" fill="#5a6178" font-size="10" text-anchor="middle">ammunition · wire · fresh reserves</text>
+<rect x="560" y="380" width="300" height="18" fill="#ffffff" opacity="0.92"/>
+<text x="710" y="394" fill="#dc2626" font-size="12" font-weight="700" text-anchor="middle">PENETRATION ≠ BREAKTHROUGH →</text>
+<path d="M 430 440 C 540 440 560 470 660 492" fill="none" stroke="#dc2626" stroke-width="2.4" stroke-dasharray="7,5" opacity="0.7"/>
+<path d="M 430 500 C 560 500 600 500 740 500" fill="none" stroke="#dc2626" stroke-width="2.4" stroke-dasharray="7,5" opacity="0.7"/>
+<path d="M 430 560 C 540 560 560 530 660 508" fill="none" stroke="#dc2626" stroke-width="2.4" stroke-dasharray="7,5" opacity="0.7"/>
+<path d="M 1150 470 C 1000 360 820 360 770 452" fill="none" stroke="#16a34a" stroke-width="3.2" marker-end="url(#arr-green)"/>
+<rect x="905" y="350" width="196" height="16" fill="#ffffff" opacity="0.92"/>
+<text x="1003" y="362" fill="#16a34a" font-size="11" font-weight="700" text-anchor="middle">counterattack from depth</text>
+<line x1="520" y1="285" x2="1130" y2="285" stroke="#006fff" stroke-width="1" stroke-dasharray="3,4" opacity="0.5" marker-end="url(#arr-blue)"/>
+<rect x="640" y="277" width="360" height="16" fill="#ffffff" opacity="0.92"/>
+<text x="820" y="289" fill="#006fff" font-size="11" font-weight="700" text-anchor="middle">each line costs the attacker more than the last →</text>
+<text x="1400" y="450" fill="#5a6178" font-size="11" text-anchor="middle">layers 04 · 05</text>
+<text x="1400" y="464" fill="#5a6178" font-size="11" text-anchor="middle">reserves &amp; staff →</text>
+<line x1="1330" y1="478" x2="1540" y2="478" stroke="#5a6178" stroke-width="1.5" stroke-dasharray="4,4" marker-end="url(#arr-green)" opacity="0.6"/>
+<line x1="60" y1="780" x2="1540" y2="780" stroke="#e8eaef" stroke-width="1"/>
+<text x="60" y="820" fill="#006fff" font-size="12" letter-spacing="3" font-weight="700">DOCTRINE</text>
+<text x="60" y="852" fill="#1a1d23" font-size="22" font-weight="500">Depth substitutes for density. One line can be ranged and reduced; many lines in depth cannot all be reduced at once.</text>
+</svg>

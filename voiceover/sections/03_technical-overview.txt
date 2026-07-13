@@ -1,0 +1,13 @@
+The technical version.
+
+The Hauptkampffeld of a modern network is the layer where deep inspection happens and where lateral movement is constrained. Two technologies. One doctrine.
+
+The first technology is deep inline inspection. I-D-S, I-P-S, N-D-R. Suricata-grade rules, application-layer parsers, flow tracking, behavioral pattern matching — the slower and more contextual cousin of edge filtering. The second is east-west microsegmentation: per-workload, per-service, per-port-pair policies that constrain what any one component can talk to once it is inside the network.
+
+Most security teams understand the first one. The second one is where the doctrinal interpretation matters.
+
+Traditional segmentation has the same shape as a single trench line. There is an outside and an inside. The D-M-Z contains the web tier; the internal network contains everything else; and there might be a small number of dedicated zones, such as the payments network. The model has a perimeter and a sanctuary. The perimeter is the wall. The sanctuary is what the wall protects. Pop the wall and the sanctuary is yours — which is why every breach report reads the same way: initial access, then weeks of unobstructed lateral movement.
+
+Microsegmentation has the same shape as the Hauptkampffeld. There is no inside. There are many small zones, each isolated from the others by policy, with explicit allow rules for the flows that legitimately need to cross zone boundaries. A single workload boundary is not the defense. The defense has many boundaries, distributed in depth, each enforcing a small part of the policy. When an attacker pops one workload, they have not popped the network. They have popped one workload. The next workload they want to reach has its own deny-by-default rules, authentication requirements, and minimum allowed callers. Lateral movement is not free. Every step costs evidence and time.
+
+This is the network instantiation of "depth substitutes for density." A perfect perimeter is a single line. A microsegmented network is dozens or hundreds of lines, each one cheap, each one enforced by simple syntax, each one converting "the attacker is inside" from a binary state into a gradient of how far they have actually got.
