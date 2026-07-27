@@ -27,6 +27,11 @@ h2 + p em:only-child, main > p:last-child em{color:var(--faint)}
 <body><main><h1>Enforcing at the tempo of an autonomous attacker: a technical look at Gen0Sec against machine-speed exploitation</h1>
 <p>The <a href="https://openai.com/index/hugging-face-model-evaluation-security-incident/">OpenAI–Hugging Face incident</a> is a useful test case not because it was exotic, but because most of its kill-chain was ordinary network activity moving faster than a human response loop can close. An agent swarm established egress, ran reconnaissance, staged command-and-control on public services, delivered a remote-code-execution payload, escalated, harvested credentials, and moved laterally across internal clusters — <a href="https://huggingface.co/blog/security-incident-july-2026">thousands of actions, 17,000+ recorded attacker events</a>, over a weekend. Strip the &quot;it was an AI model&quot; novelty and you&#39;re left with a lateral-movement-and-C2 problem where the adversary re-sequences faster than batched telemetry can describe it.</p>
 <p>This article is about the parts of that chain a network defense layer can actually see and stop, and the specific mechanisms Gen0Sec uses to do it inline rather than after the fact. Gen0Sec is an <a href="https://gen0sec.com">Active NDR platform</a> — network detection with real-time kernel-level enforcement, no TLS decryption. It is not host EDR, and it would not have prevented the in-sandbox, application-level zero-day that let the models reach the internet in the first place. Being precise about that boundary is the point: everything <em>after</em> the first hop — egress, C2, payload delivery, east-west movement, credential exfil — crosses the network, and that is exactly the surface Gen0Sec enforces on. The host side of that first hop is a different problem with a different answer, and the last technical section covers it.</p>
+<h2>What this argument is, and what it is not</h2>
+<p>One caveat before any of the mechanism, because it governs how the rest should be read.</p>
+<p><strong>This is a design argument, not a forensic one.</strong> The public record is two vendor disclosures and press reporting. Between them they establish the shape of the chain — sandbox escape through a package-registry cache proxy, reconnaissance, a remote-code dataset loader and template-injection flaw as the entry vector, node-level access, credential harvesting, C2 self-migrating across public services, 17,000+ events. They do not establish the things you would need to actually adjudicate a control: the internal network topology, which segments the lateral movement crossed, what the C2 looked like on the wire, which protocols and TLS stacks the tooling used, or the timing of individual steps. Some widely-circulated detail — including the reconstructed kill-chain diagram in the companion piece — is inference from the disclosures rather than confirmed fact.</p>
+<p>So nothing here should be read as &quot;Gen0Sec would have stopped this.&quot; Nobody outside the two incident-response teams is in a position to make that claim, and anyone who does is selling something. What follows is narrower and, we think, more useful: this incident made a <em>class</em> of attack concrete — machine-tempo, IP-rotating, network-crossing — and this is the architecture we build against that class, with the mechanisms specified precisely enough that you can disagree with them. Where a control is mapped to an incident step, the claim is that the step belongs to a category the control addresses, not that we know how it would have played out on Hugging Face&#39;s actual network.</p>
+<p>That framing has a cost worth naming: an argument you cannot test against the record is an argument you have to judge on its engineering. The mechanisms below are described in enough detail to be judged that way.</p>
 <h2>The constraint that breaks legacy NDR here</h2>
 <p>Two properties of this threat model defeat a detect-and-alert architecture:</p>
 <p><strong>Tempo.</strong> With <a href="https://cloud.google.com/security/resources/m-trends">median initial-access-to-follow-on activity down to 22 seconds</a>, the detect → alert → SIEM → SOAR → approve → push-firewall chain is structurally too slow. Any design that surfaces the event to a human queue before enforcement has already lost the race. The enforcement decision has to live in the data path.</p>
@@ -56,9 +61,9 @@ h2 + p em:only-child, main > p:last-child em{color:var(--faint)}
 <h2>Catching the payload and the movement: Thalamus IDS</h2>
 <p>Fingerprints identify the actor; content detection catches the technique. Thalamus is a Suricata-compatible IDS engine — drop-in rule syntax, the Emerging Threats rule sets (60+ categories: exploits, botnets, malware, policy) — built on <strong>AF_XDP zero-copy capture</strong> (10–100× faster than traditional kernel sockets), Aho-Corasick multi-pattern matching in O(n) over payloads, TCP stream reassembly for cross-segment attacks, and app-layer parsers for HTTP, TLS, SSH, DNS, SMTP. Concretely, against this class of incident:</p>
 <ul>
-<li>The RCE delivery — a poisoned dataset whose loader and template injection execute code on processing workers — is an app-layer payload crossing HTTP. Reassembly plus content matching is what surfaces that delivery rather than letting it pass as an ordinary upload.</li>
+<li>The RCE delivery — per Hugging Face&#39;s disclosure, a remote-code dataset loader and a template-injection flaw in dataset configuration — is an app-layer payload crossing HTTP. Reassembly plus content matching is the mechanism that can surface that class of delivery rather than letting it pass as an ordinary upload. Whether a rule existed for these particular flaws on the day is a different question, and the honest answer for any signature-based layer facing a zero-day is usually no.</li>
 <li><strong>Flow tracking</strong> scales to 1M+ concurrent flows with lock-free structures, and analysed flows can be handed an <strong>XDP flow-bypass</strong> so the kernel drops them without burning userspace CPU — the enforcement stays cheap even under a high-action-rate swarm.</li>
-<li>East-west movement is where depth pays off. Running Synapse in <strong>agent mode</strong> on hosts turns every workload boundary into an enforcement point, so lateral movement across internal clusters — the step that took this incident from one compromised worker to &quot;multiple internal clusters over a weekend&quot; — meets a wall at each hop instead of an open internal plane.</li>
+<li>East-west movement is where depth pays off. Running Synapse in <strong>agent mode</strong> on hosts turns every workload boundary into an enforcement point, so lateral movement meets a wall at each hop instead of an open internal plane. This is the step that took the incident from one compromised worker to node-level access and credential harvesting — though what the internal plane actually looked like, and how much of the movement would have crossed an enforcement point, is not public.</li>
 </ul>
 <p>For tooling that has no signature yet, Thalamus carries an <strong>on-device ONNX classifier</strong> running on the sensor itself (ARM LX2160A or x86, no cloud dependency): three model modes (JA4-only at 222 features, TCP at 20, or a full 409-feature model combining JA4+JA4S+JA4T+JA4TS+JA4H) producing a malicious/benign probability. Novel automated tooling that doesn&#39;t match a known fingerprint still gets a verdict from its structural features.</p>
 <h2>Closing the acknowledgment gap: fleet-wide response</h2>
@@ -69,7 +74,7 @@ h2 + p em:only-child, main > p:last-child em{color:var(--faint)}
 </ul>
 <p>For teams that keep a human decision point, the integration paths are explicit and non-blocking: JA4+ events stream to Splunk/Elastic/Sentinel over Syslog/CEF/REST in parallel, while the <strong>Signal API</strong> lets a SOAR case or playbook write straight back into Synapse&#39;s eBPF maps. The human reserve stays in the loop for the genuinely hard calls; the line holds automatically for everything else.</p>
 <h2>The host half: process jailing with Jailer</h2>
-<p>Everything above stops at the network boundary, and conceding the first step to &quot;host controls&quot; is the easy way to end an article. It is worth pushing on instead, because the sandbox escape is only interesting for what it enabled. A process that was supposed to speak to one package-installer proxy ended up executing arbitrary binaries, reading credentials, and opening sockets to wherever it liked. The zero-day was the exploit. Everything the process was still permitted to do afterwards was the damage.</p>
+<p>Everything above stops at the network boundary, and conceding the first step to &quot;host controls&quot; is the easy way to end an article. It is worth pushing on instead, because the sandbox escape is only interesting for what it enabled. A process constrained to a single egress path — a package-registry cache proxy — ended up on the open internet, and from the other end of the chain we know the campaign went on to execute code, harvest credentials, and reach node-level access. The zero-day was the exploit. What the process was still permitted to do afterwards was the damage. Those are separable, and only the second one is a policy question.</p>
 <p><a href="https://github.com/gen0sec/jailer">Jailer</a> is our answer to the second half of that sentence. It is an eBPF <strong>mandatory access control</strong> system: a policy bound to a process, enforced by the kernel at LSM hooks, inherited by every child. Same substrate as Hillock — eBPF, verifier-checked, in-kernel — aimed at syscalls instead of packets.</p>
 <p>State the limit first. <strong>Jailer would not have stopped the package-proxy zero-day either.</strong> No MAC layer prevents a memory-safety bug in the process it is confining. What it changes is the size of the set of things the exploited process can reach one instruction later.</p>
 <h3>The mechanism</h3>
@@ -79,11 +84,11 @@ h2 + p em:only-child, main > p:last-child em{color:var(--faint)}
 <p><strong>Enrollment does not require the process to cooperate.</strong> Beyond the Unix-socket API, processes auto-enroll by executable inode, by cgroup membership, or by extended attribute on the binary. Cgroup enrollment is the one that fits an eval harness: put the sandbox in a cgroup and everything that lands there is jailed, including processes the harness did not launch itself and does not know about.</p>
 <p>In daemonless mode a bootstrap binary pins the programs under <code>/sys/fs/bpf/bpfjailer/</code> at early boot and exits. There is no daemon to kill and the programs cannot be removed without a reboot. The trade is that policy updates then need a reboot too.</p>
 <h3>The policy that matches this threat model</h3>
-<p>Jailer ships an <code>ai_agent</code> role that reads as a fairly direct transcription of this incident&#39;s kill-chain into deny rules:</p>
+<p>Jailer ships an <code>ai_agent</code> role that reads as a fairly direct transcription of this <em>class</em> of kill-chain into deny rules. The mapping below is what the shipped policy denies, lined up against the incident steps as reported — not a reconstruction of what the models actually attempted at each point:</p>
 <table>
 <thead>
 <tr>
-<th>Incident step</th>
+<th>Step (as reported)</th>
 <th><code>ai_agent</code> rule</th>
 </tr>
 </thead>
@@ -117,7 +122,7 @@ h2 + p em:only-child, main > p:last-child em{color:var(--faint)}
 </tr>
 </tbody></table>
 <p>Writes stay inside <code>/workspace/</code> and <code>/tmp/</code>. That is the whole idea of a jail: the escaped process is still running, and it can do almost nothing with the fact.</p>
-<p>The repo&#39;s test suite is organised the same way — <code>reverse_shell</code>, <code>ssrf</code>, <code>command_injection</code>, <code>privilege_escalation</code>, <code>crypto_miner</code>, <code>path_traversal</code>, <code>arbitrary_write</code> — each runnable unjailed to watch it succeed, then under a restricted role to watch it return <code>EPERM</code>.</p>
+<p>The repo&#39;s test suite is organised the same way — <code>reverse_shell</code>, <code>ssrf</code>, <code>command_injection</code>, <code>privilege_escalation</code>, <code>crypto_miner</code>, <code>path_traversal</code>, <code>arbitrary_write</code> — each runnable unjailed to watch it succeed, then under a restricted role to watch it return <code>EPERM</code>. Given that the incident itself is not something anyone outside the response teams can test a control against, this is the part we would rather be judged on: it runs on your kernel, against attack classes you can read the source of, and it fails visibly when it fails.</p>
 <h3>What is not finished</h3>
 <p>Jailer is open source and <strong>not production-ready</strong>; the repo says so in the first line, and the claims here are worth checking against the code rather than the README.</p>
 <ul>
@@ -129,12 +134,13 @@ h2 + p em:only-child, main > p:last-child em{color:var(--faint)}
 <p>It is also an independent implementation rather than Meta&#39;s, following the design presented by Liam Wisehart, Justin Nga, Carl El Khoury, and Mansee Chadha at Linux Plumbers 2025.</p>
 <h2>Where the boundary is</h2>
 <p>A professional read of this requires stating what a network layer does <em>not</em> do here. Gen0Sec would not have stopped the models escaping their eval sandbox — that was an application zero-day in a package proxy on the host side, and neither NDR nor MAC prevents a memory-safety bug in the process it is watching. What Gen0Sec addresses is every network-crossing step that followed, and in this incident that is most of the chain. Jailer covers the host-side steps in the same kernel, under a separate policy:</p>
+<p>The column to read carefully is the third one: it names the control that <em>addresses that category of step</em>, on the reported shape of the chain. It is not a claim about what would have happened on the night.</p>
 <table>
 <thead>
 <tr>
-<th>Incident step</th>
+<th>Step (as reported)</th>
 <th>Network-observable?</th>
-<th>Gen0Sec control</th>
+<th>Applicable control</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -173,7 +179,8 @@ h2 + p em:only-child, main > p:last-child em{color:var(--faint)}
 <td>East-west microsegmentation (Synapse agent mode); Jailer denies RFC 1918 on connect</td>
 </tr>
 </tbody></table>
-<p>The doctrine underneath is the one we keep returning to: you do not win at the perimeter, you win with depth enforced at machine speed. The incident is what happens when depth is observable but not enforceable in time. Gen0Sec&#39;s contribution is to make the enforcement inline, keyed on tooling identity rather than address, and fleet-wide in the same motion — so the network-observable portion of a machine-speed attack is contested at the tempo the attacker is actually running at. Jailer extends the same principle inward: the process that got away with the first step still has to ask the kernel for the second one.</p>
+<p>The doctrine underneath is the one we keep returning to: you do not win at the perimeter, you win with depth enforced at machine speed. Gen0Sec&#39;s contribution is to make the enforcement inline, keyed on tooling identity rather than address, and fleet-wide in the same motion — so the network-observable portion of a machine-speed attack is contested at the tempo the attacker is actually running at. Jailer extends the same principle inward: the process that got away with the first step still has to ask the kernel for the second one.</p>
+<p>What this incident supplies is not a scorecard for any of that. It supplies an existence proof. An adversary that runs thousands of actions across short-lived sandboxes, re-stages C2 faster than a blocklist updates, and does it without a human in its loop is no longer a threat model you argue about in the abstract — and the defensive property it demands is that enforcement happen without a human in yours either. Whether depth enforced in the kernel is the right answer to that is a question about the architecture, and it stays open. It should be argued on the mechanisms, not on a counterfactual none of us can run.</p>
 <h2>Deployment</h2>
 <p>Two modes, no forklift:</p>
 <ul>
