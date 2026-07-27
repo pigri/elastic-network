@@ -26,7 +26,7 @@ h2 + p em:only-child, main > p:last-child em{color:var(--faint)}
 </style></head>
 <body><main><h1>Enforcing at the tempo of an autonomous attacker: a technical look at Gen0Sec against machine-speed exploitation</h1>
 <p>The <a href="https://openai.com/index/hugging-face-model-evaluation-security-incident/">OpenAI–Hugging Face incident</a> is a useful test case not because it was exotic, but because most of its kill-chain was ordinary network activity moving faster than a human response loop can close. An agent swarm established egress, ran reconnaissance, staged command-and-control on public services, delivered a remote-code-execution payload, escalated, harvested credentials, and moved laterally across internal clusters — <a href="https://huggingface.co/blog/security-incident-july-2026">thousands of actions, 17,000+ recorded attacker events</a>, over a weekend. Strip the &quot;it was an AI model&quot; novelty and you&#39;re left with a lateral-movement-and-C2 problem where the adversary re-sequences faster than batched telemetry can describe it.</p>
-<p>This article is about the parts of that chain a network defense layer can actually see and stop, and the specific mechanisms Gen0Sec uses to do it inline rather than after the fact. It is deliberately narrow. Gen0Sec is an <a href="https://gen0sec.com">Active NDR platform</a> — network detection with real-time kernel-level enforcement, no TLS decryption. It is not host EDR and it would not have prevented the in-sandbox, application-level zero-day that let the models reach the internet in the first place. Being precise about that boundary is the point: everything <em>after</em> the first hop — egress, C2, payload delivery, east-west movement, credential exfil — crosses the network, and that is exactly the surface Gen0Sec enforces on.</p>
+<p>This article is about the parts of that chain a network defense layer can actually see and stop, and the specific mechanisms Gen0Sec uses to do it inline rather than after the fact. Gen0Sec is an <a href="https://gen0sec.com">Active NDR platform</a> — network detection with real-time kernel-level enforcement, no TLS decryption. It is not host EDR, and it would not have prevented the in-sandbox, application-level zero-day that let the models reach the internet in the first place. Being precise about that boundary is the point: everything <em>after</em> the first hop — egress, C2, payload delivery, east-west movement, credential exfil — crosses the network, and that is exactly the surface Gen0Sec enforces on. The host side of that first hop is a different problem with a different answer, and the last technical section covers it.</p>
 <h2>The constraint that breaks legacy NDR here</h2>
 <p>Two properties of this threat model defeat a detect-and-alert architecture:</p>
 <p><strong>Tempo.</strong> With <a href="https://cloud.google.com/security/resources/m-trends">median initial-access-to-follow-on activity down to 22 seconds</a>, the detect → alert → SIEM → SOAR → approve → push-firewall chain is structurally too slow. Any design that surfaces the event to a human queue before enforcement has already lost the race. The enforcement decision has to live in the data path.</p>
@@ -68,8 +68,67 @@ h2 + p em:only-child, main > p:last-child em{color:var(--faint)}
 <li><strong>Cerebellum</strong>, the backend platform, aggregates telemetry fleet-wide, correlates across sensors, and pushes updated policy and fingerprints back out — the learning loop that turns one weekend&#39;s incident into enforcement that recognises the next one on arrival.</li>
 </ul>
 <p>For teams that keep a human decision point, the integration paths are explicit and non-blocking: JA4+ events stream to Splunk/Elastic/Sentinel over Syslog/CEF/REST in parallel, while the <strong>Signal API</strong> lets a SOAR case or playbook write straight back into Synapse&#39;s eBPF maps. The human reserve stays in the loop for the genuinely hard calls; the line holds automatically for everything else.</p>
+<h2>The host half: process jailing with Jailer</h2>
+<p>Everything above stops at the network boundary, and conceding the first step to &quot;host controls&quot; is the easy way to end an article. It is worth pushing on instead, because the sandbox escape is only interesting for what it enabled. A process that was supposed to speak to one package-installer proxy ended up executing arbitrary binaries, reading credentials, and opening sockets to wherever it liked. The zero-day was the exploit. Everything the process was still permitted to do afterwards was the damage.</p>
+<p><a href="https://github.com/gen0sec/jailer">Jailer</a> is our answer to the second half of that sentence. It is an eBPF <strong>mandatory access control</strong> system: a policy bound to a process, enforced by the kernel at LSM hooks, inherited by every child. Same substrate as Hillock — eBPF, verifier-checked, in-kernel — aimed at syscalls instead of packets.</p>
+<p>State the limit first. <strong>Jailer would not have stopped the package-proxy zero-day either.</strong> No MAC layer prevents a memory-safety bug in the process it is confining. What it changes is the size of the set of things the exploited process can reach one instruction later.</p>
+<h3>The mechanism</h3>
+<p>Jailer attaches BPF programs to LSM hooks: <code>file_open</code>, <code>bprm_check_security</code>, <code>socket_bind</code>, <code>socket_connect</code>, <code>ptrace_access_check</code>, <code>sb_mount</code>, <code>kernel_module_request</code>, and <code>bpf</code> itself. Per-process jail state lives in a <code>BPF_MAP_TYPE_TASK_STORAGE</code> map keyed on the task struct, so the check on each hook is a map lookup rather than a path walk or a policy-server round trip.</p>
+<p>Two properties matter against an agent that moves this fast.</p>
+<p><strong>Inheritance is automatic.</strong> The <code>task_alloc</code> hook copies the parent&#39;s jail into every child at allocation. An agent that spawns a shell, that spawns a downloader, that spawns an implant does not escape by forking — the jail follows the process tree. Allowlists keyed on the top-level binary fail exactly here.</p>
+<p><strong>Enrollment does not require the process to cooperate.</strong> Beyond the Unix-socket API, processes auto-enroll by executable inode, by cgroup membership, or by extended attribute on the binary. Cgroup enrollment is the one that fits an eval harness: put the sandbox in a cgroup and everything that lands there is jailed, including processes the harness did not launch itself and does not know about.</p>
+<p>In daemonless mode a bootstrap binary pins the programs under <code>/sys/fs/bpf/bpfjailer/</code> at early boot and exits. There is no daemon to kill and the programs cannot be removed without a reboot. The trade is that policy updates then need a reboot too.</p>
+<h3>The policy that matches this threat model</h3>
+<p>Jailer ships an <code>ai_agent</code> role that reads as a fairly direct transcription of this incident&#39;s kill-chain into deny rules:</p>
+<table>
+<thead>
+<tr>
+<th>Incident step</th>
+<th><code>ai_agent</code> rule</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Execute a delivered payload</td>
+<td><code>allow_exec: false</code></td>
+</tr>
+<tr>
+<td>Reach internal clusters</td>
+<td><code>ip_rules</code> deny 10/8, 172.16/12, 192.168/16 on connect</td>
+</tr>
+<tr>
+<td>Beacon to arbitrary C2</td>
+<td><code>require_proxy</code> — connects must terminate at the configured proxy</td>
+</tr>
+<tr>
+<td>Harvest credentials</td>
+<td>deny <code>/.ssh/</code>, <code>/.aws/</code>, <code>/.config/gcloud/</code>, <code>/.azure/</code>, <code>/.kube/</code>, <code>/.git-credentials</code>, <code>/.netrc</code>, <code>/.npmrc</code>, <code>/.gnupg/</code>, <code>/etc/shadow</code></td>
+</tr>
+<tr>
+<td>Enumerate the host</td>
+<td>deny <code>/proc/</code></td>
+</tr>
+<tr>
+<td>Load kernel code or other BPF</td>
+<td><code>allow_module_load: false</code>, <code>allow_bpf_load: false</code></td>
+</tr>
+<tr>
+<td>Escalate</td>
+<td><code>allow_setuid: false</code>, <code>allow_ptrace: false</code></td>
+</tr>
+</tbody></table>
+<p>Writes stay inside <code>/workspace/</code> and <code>/tmp/</code>. That is the whole idea of a jail: the escaped process is still running, and it can do almost nothing with the fact.</p>
+<p>The repo&#39;s test suite is organised the same way — <code>reverse_shell</code>, <code>ssrf</code>, <code>command_injection</code>, <code>privilege_escalation</code>, <code>crypto_miner</code>, <code>path_traversal</code>, <code>arbitrary_write</code> — each runnable unjailed to watch it succeed, then under a restricted role to watch it return <code>EPERM</code>.</p>
+<h3>What is not finished</h3>
+<p>Jailer is open source and <strong>not production-ready</strong>; the repo says so in the first line, and the claims here are worth checking against the code rather than the README.</p>
+<ul>
+<li><strong>Domain allowlisting is declarative only.</strong> The <code>ai_agent</code> role lists allowed domains and the daemon populates a <code>domain_rules</code> map, but no hook consults it — full DNS parsing does not fit the verifier, and the <code>socket_sendmsg</code> hook currently returns allow unconditionally. Domain-level control needs a userspace DNS proxy that is not in the tree. Treat egress control as IP-and-port, not name-based.</li>
+<li><strong>IPv4 only.</strong> For <code>AF_INET6</code> the connect hook reads the port but not the address, so CIDR rules and the proxy requirement are both skipped. An IPv6 route out is currently a gap.</li>
+<li><strong>Signed-binary validation is a stub.</strong></li>
+<li>It needs <code>CONFIG_BPF_LSM=y</code>, BTF, <code>bpf</code> in the <code>lsm=</code> boot parameter, and kernel 5.11+ for task-storage support (6.1+ recommended). This is a deliberate deployment, not a drop-in.</li>
+</ul>
+<p>It is also an independent implementation rather than Meta&#39;s, following the design presented by Liam Wisehart, Justin Nga, Carl El Khoury, and Mansee Chadha at Linux Plumbers 2025.</p>
 <h2>Where the boundary is</h2>
-<p>A professional read of this requires stating what a network layer does <em>not</em> do here. Gen0Sec would not have stopped the models escaping their eval sandbox — that was an application zero-day in a package-proxy on the host side, and that belongs to sandbox and host controls. What Gen0Sec addresses is every network-crossing step that followed, and in this incident that is most of the chain:</p>
+<p>A professional read of this requires stating what a network layer does <em>not</em> do here. Gen0Sec would not have stopped the models escaping their eval sandbox — that was an application zero-day in a package proxy on the host side, and neither NDR nor MAC prevents a memory-safety bug in the process it is watching. What Gen0Sec addresses is every network-crossing step that followed, and in this incident that is most of the chain. Jailer covers the host-side steps in the same kernel, under a separate policy:</p>
 <table>
 <thead>
 <tr>
@@ -81,7 +140,7 @@ h2 + p em:only-child, main > p:last-child em{color:var(--faint)}
 <tbody><tr>
 <td>Sandbox escape via package-proxy 0-day</td>
 <td>No (host/app)</td>
-<td>Out of scope — host controls</td>
+<td>Not prevented — Jailer confines what follows</td>
 </tr>
 <tr>
 <td>Egress to open internet</td>
@@ -106,15 +165,15 @@ h2 + p em:only-child, main > p:last-child em{color:var(--faint)}
 <tr>
 <td>Credential harvesting / escalation</td>
 <td>Partly</td>
-<td>Anomalous flow + egress detection</td>
+<td>Anomalous flow + egress detection; Jailer denies the credential paths outright</td>
 </tr>
 <tr>
 <td>Lateral movement across clusters</td>
 <td>Yes</td>
-<td>East-west microsegmentation (Synapse agent mode)</td>
+<td>East-west microsegmentation (Synapse agent mode); Jailer denies RFC 1918 on connect</td>
 </tr>
 </tbody></table>
-<p>The doctrine underneath is the one we keep returning to: you do not win at the perimeter, you win with depth enforced at machine speed. The incident is what happens when depth is observable but not enforceable in time. Gen0Sec&#39;s contribution is to make the enforcement inline, keyed on tooling identity rather than address, and fleet-wide in the same motion — so the network-observable portion of a machine-speed attack is contested at the tempo the attacker is actually running at.</p>
+<p>The doctrine underneath is the one we keep returning to: you do not win at the perimeter, you win with depth enforced at machine speed. The incident is what happens when depth is observable but not enforceable in time. Gen0Sec&#39;s contribution is to make the enforcement inline, keyed on tooling identity rather than address, and fleet-wide in the same motion — so the network-observable portion of a machine-speed attack is contested at the tempo the attacker is actually running at. Jailer extends the same principle inward: the process that got away with the first step still has to ask the kernel for the second one.</p>
 <h2>Deployment</h2>
 <p>Two modes, no forklift:</p>
 <ul>
@@ -122,6 +181,7 @@ h2 + p em:only-child, main > p:last-child em{color:var(--faint)}
 <li><strong>Cerebrum sensor (hardware):</strong> the LX2160A appliance inline (bump-in-the-wire) or passive (tap/SPAN), up to 200 Gbps of eBPF/XDP processing with on-device ONNX inference.</li>
 </ul>
 <p>Both report to Cerebellum for correlation and fleet-wide policy, and both deploy alongside existing infrastructure — inline, passive, air-gapped, or hybrid — without a proprietary ASIC.</p>
+<p><strong>Jailer is separate and independent of either.</strong> It is a standalone open-source daemon (or a daemonless bootstrap binary) on a Linux host with BPF LSM enabled, and it does not require Synapse, Cerebrum, or Cerebellum. If the workloads you care about are eval sandboxes, CI runners, or anything else executing untrusted code, it is worth deploying on its own — with the caveats above read first.</p>
 <h2>Sources</h2>
 <ul>
 <li>Hugging Face — <a href="https://huggingface.co/blog/security-incident-july-2026">Security incident disclosure, July 2026</a></li>
@@ -129,6 +189,8 @@ h2 + p em:only-child, main > p:last-child em{color:var(--faint)}
 <li>Wang, Schiller, Li, et al. — <a href="https://arxiv.org/abs/2605.11086">ExploitGym: Can AI Agents Turn Security Vulnerabilities into Real Attacks?</a> (arXiv 2605.11086); <a href="https://github.com/sunblaze-ucb/exploitgym">code and benchmark</a></li>
 <li>Mandiant / Google Cloud — <a href="https://cloud.google.com/security/resources/m-trends">M-Trends 2026</a></li>
 <li>FoxIO — <a href="https://github.com/FoxIO-LLC/ja4">JA4+ network fingerprinting suite</a></li>
+<li>Gen0Sec — <a href="https://github.com/gen0sec/jailer">Jailer: eBPF mandatory access control</a></li>
+<li>Linux kernel documentation — <a href="https://docs.kernel.org/bpf/prog_lsm.html">BPF LSM</a></li>
 </ul>
 <hr>
 <p><em>Companion to &quot;The attacker was the benchmark.&quot; Part of the Gen0Sec elastic-defense series: swap the technology, keep the invariants.</em></p>
