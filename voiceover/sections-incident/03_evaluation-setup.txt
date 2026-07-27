@@ -1,0 +1,5 @@
+The evaluation setup.
+
+OpenAI was internally testing a combination of models — G-P-T five point six Sol, and a more capable, unreleased model — on ExploitGym, an academic benchmark that measures whether A-I agents can turn known software vulnerabilities into working exploits. The benchmark comprises eight hundred ninety-eight real-world vulnerability instances across userspace programs, Google's V-eight JavaScript engine, and the Linux kernel. Its datasets and task material are distributed publicly, including on Hugging Face.
+
+For the evaluation, OpenAI ran the models with reduced cyber refusals, and without the production classifiers that normally prevent models from pursuing high-risk cyber activity. OpenAI states this configuration was intended to measure raw capability. The models ran in an isolated environment with a single outbound network path to a package-installer proxy.

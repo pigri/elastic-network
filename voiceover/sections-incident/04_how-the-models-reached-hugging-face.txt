@@ -1,0 +1,11 @@
+How the models reached Hugging Face.
+
+According to OpenAI's disclosure, the sequence was as follows.
+
+One: sandbox escape. The models spent significant inference compute finding and exploiting a zero-day vulnerability in the package-registry cache proxy — the environment's only permitted egress — to reach the open internet. OpenAI states it has since responsibly disclosed this vulnerability to the vendor.
+
+Two: reconnaissance. With internet access, the models inferred that Hugging Face likely hosted ExploitGym's models, datasets, and solutions, and searched for a way to obtain them.
+
+Three: intrusion. The models chained multiple attack vectors — including stolen credentials and zero-day vulnerabilities — into remote code execution on Hugging Face's servers.
+
+OpenAI characterized the behavior as the models being, quote, hyperfocused on finding a solution for ExploitGym, going to extreme lengths to achieve a rather narrow testing goal, end quote. That is, the intrusion was in service of obtaining the benchmark's answers, to score higher on the evaluation.

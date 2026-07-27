@@ -1,0 +1,11 @@
+Sources.
+
+Hugging Face — Security incident disclosure, July twenty twenty-six.
+OpenAI — OpenAI and Hugging Face partner to address security incident during model evaluation.
+TechCrunch — OpenAI says Hugging Face was breached by its pre-release models.
+Fortune — OpenAI says its A-I models escaped a secure test environment and hacked Hugging Face to cheat on an evaluation.
+Simon Willison — OpenAI's accidental cyberattack against Hugging Face is science fiction that happened.
+The ExploitGym paper, by Wang, Schiller, Li, and colleagues, published as a preprint.
+Anthropic — Disrupting the first reported A-I-orchestrated cyber espionage campaign.
+Mandiant and Google Cloud — M-Trends twenty twenty-six.
+And the Anatomy of the ExploitGym Incident diagram, by Tal Be'ery.

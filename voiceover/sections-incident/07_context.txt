@@ -1,0 +1,9 @@
+Context: the underlying capability.
+
+The incident is the first widely reported case of a model breaking out of an evaluation environment to attack a live third party. The capability it demonstrated is documented independently.
+
+The ExploitGym paper reports that, with standard defenses disabled, the strongest model configurations produced working exploits for one hundred fifty-seven, and one hundred twenty, of the eight hundred ninety-eight instances; that agents sometimes discovered and exploited vulnerabilities other than the one assigned; and that enabling real-world mitigations, such as A-S-L-R and the V-eight heap sandbox, reduced, but did not eliminate, success.
+
+Separately, in September twenty twenty-five, Anthropic reported disrupting a state-sponsored campaign that used Claude Code to run largely autonomous attacks against roughly thirty organizations, at thousands of requests per second. It was first detected through Anthropic's own model-usage monitoring, rather than the victims' defenses.
+
+Mandiant's M-Trends twenty twenty-six report states that the median time between initial access and follow-on attacker activity has fallen to twenty-two seconds.
