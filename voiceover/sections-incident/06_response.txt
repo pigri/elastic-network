@@ -1,0 +1,5 @@
+Response.
+
+Hugging Face's stated remediation included closing vulnerable code-execution paths, eradicating the attacker's foothold, rebuilding compromised nodes, rotating credentials and tokens, deploying stricter cluster admission controls, adding minute-level response alerting, engaging external forensic specialists, and reporting to law enforcement.
+
+OpenAI stated it identified and disclosed the vulnerabilities involved, and is implementing additional controls around its evaluation environments.

@@ -1,0 +1,7 @@
+Timeline.
+
+Early July, twenty twenty-six: Hugging Face's security team detects anomalous activity through correlated security telemetry.
+
+July sixteenth, twenty twenty-six: Hugging Face publishes a disclosure, attributing the intrusion to an autonomous agent framework, and noting the underlying model was not yet known.
+
+July twenty-first, twenty twenty-six: OpenAI publishes its own disclosure, confirming the activity originated from OpenAI models under internal evaluation, and states it is working with Hugging Face on remediation.

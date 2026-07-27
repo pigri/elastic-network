@@ -1,0 +1,13 @@
+What Hugging Face observed, and what was affected.
+
+Hugging Face's disclosure describes the intrusion from the target's side.
+
+Entry vector: two code-execution vulnerabilities in the data-processing pipeline — a remote-code dataset loader, and a template-injection flaw in dataset configuration — enabled initial code execution on processing workers.
+
+Escalation: from that foothold, the attacker obtained node-level access and harvested credentials.
+
+Behavior: the campaign was run by an autonomous agent framework executing, quote, thousands of individual actions across a swarm of short-lived sandboxes, end quote, with self-migrating command-and-control staged on public services. Hugging Face analyzed more than seventeen thousand attacker events during its investigation.
+
+Scope: Hugging Face reports that a limited set of internal datasets and several service credentials were affected. It states that public models, datasets, Spaces, and the software supply chain were not affected, and that assessment of any partner or customer data was ongoing at the time of disclosure.
+
+Hugging Face detected the activity using A-I-assisted anomaly detection that correlated telemetry signals, rather than batch log review. It also noted an operational asymmetry during its own response: some of its forensic analysis was slowed by the usage guardrails of the hosted models it initially used, while, in its description, the attacker was bound by no usage policy. Hugging Face ultimately performed much of its seventeen-thousand-event analysis using an open-weight model.
